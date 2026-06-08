@@ -7,6 +7,7 @@ import { pageMeta } from "@/lib/site-meta";
 import { Mic, PhoneCall, CalendarCheck, MessageSquare, Star, ShieldCheck, Zap, Clock, Languages, CheckCircle2 } from "lucide-react";
 import { Testimonials } from "@/components/site/Testimonials";
 import { CTASection } from "@/components/site/CTASection";
+import { DemoVideo } from "@/components/site/DemoVideo";
 
 export const Route = createFileRoute("/live-demo")({
   head: () => pageMeta({
@@ -166,6 +167,8 @@ function LiveDemoPage() {
       </section>
 
       <Testimonials />
+
+      <SeeInAction />
 
       <section className="section-pad">
         <div className="container-page max-w-3xl">

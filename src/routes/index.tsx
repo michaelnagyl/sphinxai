@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { SectionHeader } from "@/components/site/SectionHeader";
@@ -8,12 +9,13 @@ import { CTASection } from "@/components/site/CTASection";
 import { Soundwave } from "@/components/site/Soundwave";
 import { TrustBar } from "@/components/site/TrustBar";
 import { Testimonials } from "@/components/site/Testimonials";
+import { VideoModal } from "@/components/site/VideoModal";
 import heroImg from "@/assets/hero-voice.jpg";
 import {
   Clock, Languages, Building2, Rocket, PhoneOff, UserX, MoonStar, MailWarning,
   Timer, Wallet, Bot, CalendarCheck, Users, Headphones, Plug, Route as RouteIcon,
   BarChart3, PhoneCall, ShieldCheck, Globe2, Layers, TrendingUp,
-  ArrowRight, Workflow, Star, CheckCircle2
+  ArrowRight, Workflow, Star, CheckCircle2, PlayCircle
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -48,6 +50,7 @@ function Index() {
 }
 
 function Hero() {
+  const [videoOpen, setVideoOpen] = useState(false);
   const trust = [
     { icon: Clock, label: "24/7 AI Call Handling" },
     { icon: Languages, label: "Arabic & English" },
@@ -82,6 +85,14 @@ function Hero() {
             </Button>
             <Button asChild variant="outlineBrand" size="xl">
               <Link to="/live-demo"><PhoneCall className="h-4 w-4" /> Talk To AI Now</Link>
+            </Button>
+            <Button
+              type="button"
+              variant="ghostBrand"
+              size="xl"
+              onClick={() => setVideoOpen(true)}
+            >
+              <PlayCircle className="h-5 w-5" /> Watch Demo
             </Button>
           </div>
           <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-muted-foreground">
@@ -148,6 +159,7 @@ function Hero() {
           </div>
         </div>
       </div>
+      <VideoModal open={videoOpen} onClose={() => setVideoOpen(false)} />
     </section>
   );
 }
