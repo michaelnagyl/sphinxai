@@ -16,24 +16,24 @@ const links = [
 export function Navbar() {
   const [open, setOpen] = useState(false);
   return (
-    <header className="sticky top-0 z-50 border-b border-border/60 bg-white/85 backdrop-blur supports-[backdrop-filter]:bg-white/70">
-      <div className="container-page flex h-16 items-center justify-between">
+    <header className="sticky top-0 z-50 border-b border-border/60 bg-white/90 shadow-[0_1px_0_0_rgba(15,23,42,0.04)] backdrop-blur supports-[backdrop-filter]:bg-white/75">
+      <div className="container-page flex h-20 items-center justify-between md:h-[88px]">
         <Link to="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
           <img
             src={logoAsset.url}
             alt="SphinxAI"
-            className="h-8 w-auto md:h-10"
-            width={180}
-            height={40}
+            className="h-10 w-auto md:h-12 lg:h-14"
+            width={200}
+            height={56}
           />
         </Link>
 
-        <nav className="hidden items-center gap-1 lg:flex">
+        <nav className="hidden items-center gap-2 lg:flex">
           {links.map((l) => (
             <Link
               key={l.to}
               to={l.to}
-              className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-brand-soft hover:text-brand"
+              className="rounded-md px-3.5 py-2 text-[15px] font-medium text-muted-foreground transition-colors hover:bg-brand-soft hover:text-brand"
               activeProps={{ className: "text-brand bg-brand-soft" }}
               activeOptions={{ exact: l.to === "/" }}
             >
@@ -42,11 +42,11 @@ export function Navbar() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-2 lg:flex">
-          <Button asChild variant="ghostBrand" size="default">
+        <div className="hidden items-center gap-3 lg:flex">
+          <Button asChild variant="ghostBrand" size="lg">
             <Link to="/live-demo">Talk To AI</Link>
           </Button>
-          <Button asChild variant="hero" size="default">
+          <Button asChild variant="hero" size="lg">
             <Link to="/contact">Book Free Demo</Link>
           </Button>
         </div>
