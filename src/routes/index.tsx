@@ -97,14 +97,15 @@ function Hero() {
             AI Voice Platform For Egypt & MENA
           </div>
           <h1 className="mt-7 font-display text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.25rem]">
-            Turn Every Missed Call{" "}
+            Turn Every Call{" "}
             <span className="bg-gradient-to-r from-[#FDBA08] via-[#FFD66B] to-[#FDBA08] bg-clip-text text-transparent">
               Into Revenue
             </span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/75 md:text-lg lg:text-xl">
-            SphinxAI provides human-like AI voice agents that answer calls, qualify leads,
-            book appointments, and automate customer communication in Arabic and English — 24/7.
+            SphinxAI helps businesses answer every call instantly using human-like AI voice
+            agents available 24/7 — qualifying leads, booking appointments, and automating
+            customer communication in Arabic & English.
           </p>
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap">
             <Button asChild variant="gold" size="xl" className="min-w-[200px] shadow-[0_10px_40px_-10px_rgba(253,186,8,0.5)]">
