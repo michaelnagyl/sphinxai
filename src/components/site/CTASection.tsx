@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
-import { PhoneCall, CalendarCheck, CheckCircle2, MessageCircle } from "lucide-react";
+import { PhoneCall, CalendarCheck, CheckCircle2 } from "lucide-react";
 
 export function CTASection() {
   return (
@@ -35,16 +35,6 @@ export function CTASection() {
               </Button>
               <Button asChild variant="outline" size="xl" className="w-full border-white/30 bg-transparent text-white hover:bg-white hover:text-ink md:w-auto">
                 <Link to="/live-demo"><PhoneCall className="h-4 w-4" /> Talk To AI Now</Link>
-              </Button>
-              <Button
-                asChild
-                variant="outline"
-                size="xl"
-                className="w-full border-emerald-300/40 bg-emerald-500/10 text-emerald-100 hover:bg-emerald-500 hover:text-white md:w-auto"
-              >
-                <a href="https://wa.me/201000000000" target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="h-4 w-4" /> WhatsApp Us
-                </a>
               </Button>
             </div>
           </div>
