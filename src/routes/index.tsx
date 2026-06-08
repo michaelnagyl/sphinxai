@@ -6,19 +6,17 @@ import { SiteLayout } from "@/components/site/SiteLayout";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import { FeatureCard } from "@/components/site/FeatureCard";
 import { CTASection } from "@/components/site/CTASection";
-import { Soundwave } from "@/components/site/Soundwave";
 import { TrustBar } from "@/components/site/TrustBar";
 import { Testimonials } from "@/components/site/Testimonials";
 import { VideoModal } from "@/components/site/VideoModal";
 import { DemoVideo } from "@/components/site/DemoVideo";
-import heroImg from "@/assets/hero-voice.jpg";
 import heroVideo from "@/assets/sphinx-demo.mp4.asset.json";
 import heroPoster from "@/assets/demo-poster.jpg.asset.json";
 import {
-  Clock, Languages, Building2, Rocket, PhoneOff, UserX, MoonStar, MailWarning,
+  Clock, Languages, Rocket, PhoneOff, UserX, MoonStar, MailWarning,
   Timer, Wallet, Bot, CalendarCheck, Users, Headphones, Plug, Route as RouteIcon,
   BarChart3, PhoneCall, ShieldCheck, Globe2, Layers, TrendingUp,
-  ArrowRight, Workflow, Star, CheckCircle2, PlayCircle, Stethoscope, HeartPulse
+  ArrowRight, Workflow, CheckCircle2, PlayCircle, Stethoscope, HeartPulse
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -65,9 +63,9 @@ function Hero() {
   ];
   return (
     <section className="relative isolate overflow-hidden bg-[#070B17] text-white">
-      {/* Background video */}
+      {/* Background video — muted, autoplay, loop, poster fallback */}
       <video
-        className="absolute inset-0 -z-20 h-full w-full object-cover"
+        className="absolute inset-0 -z-20 h-full w-full object-cover opacity-60 [filter:saturate(0.85)_contrast(1.05)]"
         src={heroVideo.url}
         poster={heroPoster.url}
         autoPlay
@@ -75,16 +73,18 @@ function Hero() {
         loop
         playsInline
         preload="metadata"
+        disablePictureInPicture
         aria-hidden="true"
+        tabIndex={-1}
       />
-      {/* Overlays for legibility + brand tone */}
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,rgba(7,11,23,0.55),rgba(7,11,23,0.92))]" />
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-[#070B17]/70 via-[#070B17]/55 to-[#070B17]" />
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(120deg,rgba(60,84,143,0.35),transparent_45%,rgba(253,186,8,0.12))]" />
+      {/* Layered overlays for legibility and premium brand tone */}
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,rgba(7,11,23,0.65),rgba(7,11,23,0.95))]" />
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-[#070B17]/85 via-[#070B17]/65 to-[#070B17]" />
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(120deg,rgba(60,84,143,0.28),transparent_50%,rgba(253,186,8,0.10))]" />
       <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
-      <div className="container-page relative flex min-h-[92vh] flex-col justify-center pb-20 pt-28 md:pt-32 lg:min-h-screen lg:pb-28">
-        <div className="mx-auto max-w-4xl text-center">
+      <div className="container-page relative flex min-h-[92vh] flex-col items-center justify-center pb-20 pt-28 md:pt-32 lg:min-h-screen lg:pb-28">
+        <div className="mx-auto flex w-full max-w-4xl flex-col items-center text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/85 backdrop-blur">
             <span className="relative inline-flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
