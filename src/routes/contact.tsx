@@ -8,7 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
 import { pageMeta } from "@/lib/site-meta";
 import {
-  CalendarCheck, MessageCircle, PhoneCall, Mail, MapPin,
+  CalendarCheck, PhoneCall, Mail, MapPin,
   CheckCircle2, Star, Clock, ShieldCheck, Sparkles, ArrowRight,
 } from "lucide-react";
 import { z } from "zod";
