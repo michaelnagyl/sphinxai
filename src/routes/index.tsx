@@ -182,13 +182,16 @@ function Stat({ k, v }: { k: string; v: string }) {
 }
 
 function ProblemSection() {
+  const stats = [
+    { icon: PhoneOff, kpi: "1 in 3", label: "business calls go unanswered", tint: "from-rose-50 to-white", accent: "text-rose-600", ring: "ring-rose-100" },
+    { icon: MoonStar, kpi: "62%", label: "of leads call outside working hours", tint: "from-amber-50 to-white", accent: "text-amber-600", ring: "ring-amber-100" },
+    { icon: Timer, kpi: "< 5 min", label: "to lose a hot lead to a competitor", tint: "from-sky-50 to-white", accent: "text-sky-600", ring: "ring-sky-100" },
+    { icon: TrendingDown, kpi: "−38%", label: "revenue lost to slow response", tint: "from-violet-50 to-white", accent: "text-violet-600", ring: "ring-violet-100" },
+  ];
   const items = [
-    { icon: PhoneOff, title: "Unanswered calls", desc: "Every missed ring is a missed customer." },
-    { icon: UserX, title: "Overloaded teams", desc: "Reps can't keep up with peak hours." },
-    { icon: MoonStar, title: "After-hours leads", desc: "Customers call when no one is there." },
-    { icon: MailWarning, title: "No follow-up", desc: "Hot leads go cold within minutes." },
-    { icon: Timer, title: "Slow response", desc: "Time-to-reply kills conversion." },
-    { icon: Wallet, title: "Expensive ops", desc: "Manual communication doesn't scale." },
+    { icon: UserX, title: "Overloaded reception", desc: "Teams can't keep up with peak hours and weekends." },
+    { icon: MailWarning, title: "No follow-up", desc: "Hot leads go cold within minutes when nobody calls back." },
+    { icon: Wallet, title: "Expensive operations", desc: "Manual call handling doesn't scale with demand." },
   ];
   return (
     <section className="section-pad bg-surface">
@@ -196,9 +199,23 @@ function ProblemSection() {
         <SectionHeader
           eyebrow="The problem"
           title="Every missed call is lost revenue"
-          description="Businesses lose opportunities every day because customer communication is manual, slow, and limited by working hours."
+          description="Businesses across Egypt and MENA lose customers every day because phones go unanswered, follow-ups are slow, and reception teams can't scale."
         />
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {stats.map((s) => (
+            <div
+              key={s.label}
+              className={`relative overflow-hidden rounded-2xl border border-border bg-gradient-to-br ${s.tint} p-6 shadow-[0_1px_0_0_rgba(15,23,42,0.03)] transition hover:-translate-y-1 hover:shadow-premium`}
+            >
+              <div className={`inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white ring-1 ${s.ring} ${s.accent}`}>
+                <s.icon className="h-5 w-5" />
+              </div>
+              <div className={`mt-5 font-display text-4xl font-bold tracking-tight ${s.accent}`}>{s.kpi}</div>
+              <div className="mt-2 text-sm font-medium text-ink/80">{s.label}</div>
+            </div>
+          ))}
+        </div>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((i) => (
             <FeatureCard key={i.title} icon={i.icon} title={i.title} description={i.desc} />
           ))}
