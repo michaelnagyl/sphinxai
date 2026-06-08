@@ -284,61 +284,112 @@ function ResultsSection() {
 }
 
 function WhySphinx() {
-  const items = [
-    { icon: ShieldCheck, title: "Enterprise-grade Voice AI", desc: "Reliable, secure, production-ready." },
-    { icon: Languages, title: "Arabic & English native", desc: "True regional language fluency." },
-    { icon: Globe2, title: "Built for Middle East", desc: "Local workflows and customer behavior." },
-    { icon: Rocket, title: "Fast deployment", desc: "Launch in days, not months." },
-    { icon: Layers, title: "Scalable infrastructure", desc: "From 100 calls to 100,000." },
-    { icon: Bot, title: "Human-like conversations", desc: "Natural speech that feels real." },
-    { icon: Workflow, title: "Business-focused automation", desc: "Tied to outcomes, not gimmicks." },
-    { icon: Plug, title: "CRM & workflow integration", desc: "Plays nice with your stack." },
+function IndustriesSection() {
+  const industries = [
+    {
+      icon: Stethoscope,
+      title: "Clinics & Medical Centers",
+      desc: "Answer patient calls 24/7, book appointments, and reduce pressure on reception teams.",
+      points: ["Dental & beauty clinics", "Appointment automation", "Patient FAQ handling"],
+    },
+    {
+      icon: Building2,
+      title: "Real Estate",
+      desc: "Qualify property inquiries instantly, capture buyer intent, and route hot leads to agents.",
+      points: ["Inbound lead capture", "Project & unit Q&A", "Viewing scheduling"],
+    },
+    {
+      icon: Sparkles,
+      title: "Beauty Centers",
+      desc: "Explain treatments, answer pricing questions, and book consultations around the clock.",
+      points: ["Service explanations", "Consultation booking", "After-hours coverage"],
+    },
+    {
+      icon: Headphones,
+      title: "Customer Service",
+      desc: "Resolve repetitive inquiries instantly and escalate complex cases to human agents.",
+      points: ["Tier-1 deflection", "Order & account lookups", "Smart escalation"],
+    },
+    {
+      icon: Briefcase,
+      title: "Sales Teams",
+      desc: "Qualify inbound leads, book discovery calls, and push clean data straight to your CRM.",
+      points: ["Lead qualification", "Calendar booking", "CRM sync"],
+    },
   ];
   return (
     <section className="section-pad bg-surface">
       <div className="container-page">
-        <SectionHeader eyebrow="Why SphinxAI" title="Why businesses choose SphinxAI" />
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {items.map((i) => (
-            <FeatureCard key={i.title} icon={i.icon} title={i.title} description={i.desc} />
+        <SectionHeader
+          eyebrow="Industries"
+          title="Built for the businesses that live on the phone"
+          description="SphinxAI is tuned for the real workflows of clinics, real estate, beauty centers, customer service, and sales teams across Egypt and MENA."
+        />
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {industries.map((i) => (
+            <div key={i.title} className="group flex flex-col rounded-2xl border border-border bg-white p-7 shadow-[0_1px_0_0_rgba(15,23,42,0.03)] transition hover:-translate-y-1 hover:border-brand/30 hover:shadow-premium">
+              <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-brand-soft text-brand transition group-hover:bg-brand group-hover:text-brand-foreground">
+                <i.icon className="h-5 w-5" />
+              </div>
+              <h3 className="mt-5 font-display text-lg font-semibold text-ink">{i.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{i.desc}</p>
+              <ul className="mt-5 space-y-2 border-t border-border pt-4">
+                {i.points.map((p) => (
+                  <li key={p} className="flex items-center gap-2 text-xs font-medium text-ink/80">
+                    <CheckCircle2 className="h-3.5 w-3.5 text-brand" /> {p}
+                  </li>
+                ))}
+              </ul>
+            </div>
           ))}
+        </div>
+        <div className="mt-10 flex justify-center">
+          <Button asChild variant="outlineBrand" size="xl">
+            <Link to="/industries">Explore all industries <ArrowRight className="h-4 w-4" /></Link>
+          </Button>
         </div>
       </div>
     </section>
   );
 }
 
-function SeeInAction() {
+function LiveDemoSection() {
   const bullets = [
-    "Answers calls instantly",
-    "Qualifies serious leads",
-    "Books appointments",
-    "Collects customer data",
-    "Works after business hours",
+    "Hear a natural Arabic & English voice",
+    "Watch it qualify a real inquiry",
+    "See an appointment booked live",
+    "Experience sub-second response time",
   ];
   return (
-    <section className="section-pad bg-gradient-to-b from-white via-brand-soft/30 to-white">
+    <section className="section-pad bg-gradient-to-b from-white via-brand-soft/40 to-white">
       <div className="container-page">
         <div className="mx-auto max-w-3xl text-center">
-          <div className="inline-flex items-center rounded-full border border-brand/20 bg-brand-soft px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand">
-            Watch the demo
+          <div className="inline-flex items-center gap-2 rounded-full border border-brand/20 bg-white px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand">
+            <Mic className="h-3.5 w-3.5" /> Live Demo
           </div>
           <h2 className="mt-5 font-display text-4xl font-bold text-ink md:text-5xl lg:text-6xl">
-            See SphinxAI In Action
+            Experience SphinxAI Live
           </h2>
           <p className="mt-5 text-lg text-muted-foreground md:text-xl">
-            Watch how an AI Voice Agent can answer calls, understand customers, collect information,
-            qualify leads, and help your business respond instantly.
+            Talk directly with an AI voice agent. Ask questions, request a booking, or test it in
+            Arabic and English — no signup required.
           </p>
         </div>
         <div className="mt-16 grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
           <div className="order-2 lg:order-1">
-            <h3 className="font-display text-3xl font-bold text-ink md:text-4xl">
-              Real conversations. Real business outcomes.
+            <div className="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700 ring-1 ring-emerald-200">
+              <span className="relative inline-flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+              </span>
+              AI agent online
+            </div>
+            <h3 className="mt-4 font-display text-3xl font-bold text-ink md:text-4xl">
+              Don't read about it. Talk to it.
             </h3>
             <p className="mt-5 text-lg text-muted-foreground">
-              See how SphinxAI can answer calls, qualify leads, collect customer details, and help
-              your business respond instantly — even outside working hours.
+              In under 30 seconds you'll hear how natural, fast, and business-ready our AI voice
+              agent really is.
             </p>
             <ul className="mt-7 space-y-3">
               {bullets.map((b) => (
@@ -352,10 +403,10 @@ function SeeInAction() {
             </ul>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Button asChild variant="hero" size="xl">
-                <Link to="/contact"><CalendarCheck className="h-4 w-4" /> Book A Business Demo</Link>
+                <Link to="/live-demo"><PhoneCall className="h-4 w-4" /> Start Live Conversation</Link>
               </Button>
               <Button asChild variant="outlineBrand" size="xl">
-                <Link to="/live-demo"><PhoneCall className="h-4 w-4" /> Start Live Conversation</Link>
+                <Link to="/contact"><CalendarCheck className="h-4 w-4" /> Book A Discovery Call</Link>
               </Button>
             </div>
           </div>
@@ -368,72 +419,54 @@ function SeeInAction() {
   );
 }
 
-function ClinicSection() {
-  const cards = [
+function FAQSection() {
+  const faqs = [
     {
-      icon: PhoneCall,
-      title: "Never Miss A Patient Call",
-      desc: "SphinxAI answers patient calls 24/7, even after working hours, so clinics do not lose bookings.",
+      q: "How does SphinxAI work?",
+      a: "SphinxAI connects to your phone line, website, or messaging channels. When a customer calls, our AI voice agent answers instantly, understands the request, and either completes the task — booking, qualification, FAQ — or routes the call to your team with full context.",
     },
     {
-      icon: CalendarCheck,
-      title: "Automated Appointment Booking",
-      desc: "The AI agent can collect patient details, understand the requested service, and guide patients toward booking a visit.",
+      q: "Can it speak Egyptian Arabic?",
+      a: "Yes. SphinxAI is built for MENA and speaks natural Egyptian Arabic as well as Modern Standard Arabic and English, switching languages mid-conversation when needed.",
     },
     {
-      icon: Stethoscope,
-      title: "Dental Clinic Call Answering",
-      desc: "Answer dental calls instantly and book cleanings, check-ups, and consultations — even during procedures.",
+      q: "Can it book appointments?",
+      a: "Yes. The AI can check availability, collect customer details, confirm the slot, and write the booking directly into your calendar or clinic management system.",
     },
     {
-      icon: HeartPulse,
-      title: "Beauty Clinic Booking Automation",
-      desc: "Explain treatments, qualify inquiries, and book consultations for beauty clinics and aesthetic centers.",
+      q: "Can it qualify leads?",
+      a: "Yes. You define the qualification questions and disqualification rules. SphinxAI asks them naturally, scores the lead, and only escalates serious buyers to your sales team.",
     },
     {
-      icon: Headphones,
-      title: "Reception Team Support",
-      desc: "Reduce repetitive calls and help your reception team focus on important cases with AI handling routine inquiries and follow-ups.",
+      q: "Can it integrate with CRM systems?",
+      a: "Yes. SphinxAI integrates with major CRMs, calendars, and helpdesks via native connectors and webhooks, so transcripts and structured data land where your team already works.",
     },
     {
-      icon: Languages,
-      title: "Arabic & English Patient Communication",
-      desc: "Support patients naturally in Egyptian Arabic and English with clear, professional conversations.",
+      q: "How is pricing calculated?",
+      a: "Pricing is based on call minutes and the features you enable. Most businesses start with a tailored plan after a short discovery call — book a demo and we'll size it to your volume.",
     },
   ];
   return (
-    <section className="section-pad bg-gradient-to-b from-white via-brand-soft/30 to-white">
+    <section className="section-pad bg-surface">
       <div className="container-page">
-        <div className="mx-auto max-w-3xl text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-brand/20 bg-white px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand">
-            <Stethoscope className="h-3.5 w-3.5" /> For Clinics & Medical Centers
-          </div>
-          <h2 className="mt-5 font-display text-3xl font-bold text-ink md:text-5xl">
-            AI Receptionist For <span className="brand-gradient-text">Clinics & Medical Centers</span>
-          </h2>
-          <p className="mt-5 text-base text-muted-foreground md:text-lg">
-            SphinxAI helps clinics answer patient calls, book appointments, collect patient
-            information, answer common questions, and reduce pressure on reception teams.
-          </p>
-        </div>
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {cards.map((c) => (
-            <div key={c.title} className="rounded-2xl border border-border bg-white p-6 shadow-[0_1px_0_0_rgba(15,23,42,0.03)] transition hover:-translate-y-1 hover:border-brand/30 hover:shadow-premium">
-              <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-soft text-brand">
-                <c.icon className="h-5 w-5" />
-              </div>
-              <h3 className="mt-4 font-display text-lg font-semibold text-ink">{c.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{c.desc}</p>
-            </div>
-          ))}
-        </div>
-        <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <Button asChild variant="hero" size="xl">
-            <Link to="/contact"><HeartPulse className="h-4 w-4" /> Book A Clinic Demo</Link>
-          </Button>
-          <Button asChild variant="outlineBrand" size="xl">
-            <Link to="/live-demo"><PhoneCall className="h-4 w-4" /> See Live Demo</Link>
-          </Button>
+        <SectionHeader
+          eyebrow="FAQ"
+          title="Questions, answered"
+          description="Everything you need to know before bringing SphinxAI into your business."
+        />
+        <div className="mx-auto mt-12 max-w-3xl rounded-2xl border border-border bg-white p-2 shadow-[0_1px_0_0_rgba(15,23,42,0.03)] md:p-4">
+          <Accordion type="single" collapsible className="w-full">
+            {faqs.map((f, i) => (
+              <AccordionItem key={f.q} value={`item-${i}`} className="border-border last:border-b-0">
+                <AccordionTrigger className="px-4 py-5 text-base font-semibold text-ink hover:no-underline md:text-lg">
+                  {f.q}
+                </AccordionTrigger>
+                <AccordionContent className="px-4 pb-5 text-[15px] leading-relaxed text-muted-foreground">
+                  {f.a}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </div>
     </section>
