@@ -11,6 +11,8 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import faviconAsset from "../assets/sphinx-favicon-32.png.asset.json";
+import faviconLargeAsset from "../assets/sphinx-favicon-512.png.asset.json";
 
 function NotFoundComponent() {
   return (
@@ -91,6 +93,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
+      { rel: "icon", type: "image/png", sizes: "32x32", href: faviconAsset.url },
+      { rel: "icon", type: "image/png", sizes: "512x512", href: faviconLargeAsset.url },
+      { rel: "apple-touch-icon", href: faviconLargeAsset.url },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
