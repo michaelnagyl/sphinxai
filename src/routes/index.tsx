@@ -64,20 +64,20 @@ function Hero() {
     <section className="relative overflow-hidden">
       <div className="pointer-events-none absolute inset-0 -z-10 grid-bg opacity-60 [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
       <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[700px] bg-[radial-gradient(ellipse_at_top,rgba(60,84,143,0.12),transparent_60%)]" />
-      <div className="container-page grid items-center gap-12 pb-20 pt-12 md:pt-20 lg:grid-cols-[1.05fr_1fr] lg:pb-28">
+      <div className="container-page grid items-center gap-12 pb-20 pt-14 md:pt-24 lg:grid-cols-[1.1fr_1fr] lg:gap-16 lg:pb-32">
         <div>
-          <div className="inline-flex items-center gap-2 rounded-full border border-brand/20 bg-white/80 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand shadow-sm backdrop-blur">
+          <div className="inline-flex items-center gap-2 rounded-full border border-brand/20 bg-white/80 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-brand shadow-sm backdrop-blur">
             <span className="relative inline-flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
             </span>
             Now live in Egypt & MENA
           </div>
-          <h1 className="mt-5 font-display text-[2.5rem] font-bold leading-[1.05] tracking-tight text-ink sm:text-5xl md:text-6xl">
-            Turn Every Missed Call <br className="hidden md:block" />
+          <h1 className="mt-6 font-display text-[2.75rem] font-bold leading-[1.05] tracking-tight text-ink sm:text-5xl md:text-6xl lg:text-[4.5rem] xl:text-[5rem]">
+            Turn Every Missed Call{" "}
             <span className="brand-gradient-text">Into Revenue.</span>
           </h1>
-          <p className="mt-5 max-w-xl text-base text-muted-foreground md:text-lg">
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground md:text-xl">
             SphinxAI gives your business a human-like AI voice agent that answers calls instantly,
             qualifies leads, books appointments, answers customer questions, and works 24/7.
           </p>
@@ -105,27 +105,27 @@ function Hero() {
               <CheckCircle2 className="h-4 w-4 text-emerald-500" /> Cancel anytime
             </div>
           </div>
-          <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+          <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
             {trust.map((t) => (
-              <div key={t.label} className="flex items-center gap-2 rounded-lg border border-border bg-white/70 px-3 py-2 text-xs font-medium text-ink backdrop-blur">
-                <t.icon className="h-4 w-4 text-brand" />
+              <div key={t.label} className="flex items-center gap-2 rounded-xl border border-border bg-white/80 px-3 py-2.5 text-xs font-medium text-ink shadow-[0_1px_0_0_rgba(15,23,42,0.03)] backdrop-blur">
+                <t.icon className="h-4 w-4 shrink-0 text-brand" />
                 {t.label}
               </div>
             ))}
           </div>
         </div>
         <div className="relative">
-          <div className="absolute -inset-6 -z-10 rounded-[2rem] bg-gradient-to-br from-brand/15 via-transparent to-gold/15 blur-2xl" />
-          <div className="overflow-hidden rounded-3xl border border-border bg-white shadow-premium">
+          <div className="absolute -inset-8 -z-10 rounded-[2.5rem] bg-gradient-to-br from-brand/20 via-transparent to-gold/20 blur-3xl" />
+          <div className="overflow-hidden rounded-[2rem] border border-border bg-white shadow-premium">
             <img
               src={heroImg}
               alt="Abstract AI voice communication waves and network"
               width={1536}
               height={1152}
-              className="aspect-[4/3] w-full object-cover"
+              className="aspect-[5/4] w-full object-cover"
               loading="eager"
             />
-            <div className="border-t border-border p-5">
+            <div className="border-t border-border p-6">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2 text-sm font-semibold text-ink">
                   <span className="inline-flex h-2 w-2 animate-pulse rounded-full bg-emerald-500" />
@@ -133,8 +133,8 @@ function Hero() {
                 </div>
                 <span className="text-xs text-muted-foreground">00:42</span>
               </div>
-              <Soundwave className="mt-3" animate />
-              <div className="mt-4 grid grid-cols-3 gap-3 border-t border-border pt-4 text-center">
+              <Soundwave className="mt-4" animate />
+              <div className="mt-5 grid grid-cols-3 gap-3 border-t border-border pt-5 text-center">
                 <Stat k="< 1s" v="Pickup" />
                 <Stat k="100%" v="Answered" />
                 <Stat k="24/7" v="Available" />
