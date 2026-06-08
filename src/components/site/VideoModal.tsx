@@ -49,10 +49,12 @@ export function VideoModal({ open, onClose }: { open: boolean; onClose: () => vo
             src={videoAsset.url}
             poster={posterAsset.url}
             controls
-            autoPlay
             playsInline
-            className="aspect-[9/19.5] w-full bg-black"
-          />
+            preload="metadata"
+            className="aspect-[9/19.5] w-full bg-black object-contain"
+          >
+            Demo video could not be loaded.
+          </video>
         </div>
       </div>
     </div>

@@ -7,28 +7,35 @@ import posterAsset from "@/assets/demo-poster.jpg.asset.json";
 export function DemoVideo({ className = "" }: { className?: string }) {
   const ref = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(false);
+  const [errored, setErrored] = useState(false);
 
   const play = () => {
     const v = ref.current;
     if (!v) return;
-    v.play();
-    setPlaying(true);
+    v.play().then(() => setPlaying(true)).catch(() => setErrored(true));
   };
 
   return (
     <PhoneFrame className={className}>
-      <video
-        ref={ref}
-        src={videoAsset.url}
-        poster={posterAsset.url}
-        className="h-full w-full object-cover"
-        playsInline
-        controls={playing}
-        preload="none"
-        onPause={() => setPlaying(false)}
-        onEnded={() => setPlaying(false)}
-      />
-      {!playing && (
+      {errored ? (
+        <div className="absolute inset-0 grid place-items-center bg-black p-6 text-center text-sm text-white/80">
+          Demo video could not be loaded.
+        </div>
+      ) : (
+        <video
+          ref={ref}
+          src={videoAsset.url}
+          poster={posterAsset.url}
+          className="h-full w-full object-contain bg-black"
+          playsInline
+          controls={playing}
+          preload="metadata"
+          onPause={() => setPlaying(false)}
+          onEnded={() => setPlaying(false)}
+          onError={() => setErrored(true)}
+        />
+      )}
+      {!playing && !errored && (
         <button
           type="button"
           onClick={play}
