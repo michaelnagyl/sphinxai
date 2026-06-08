@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
-import { PhoneCall, CalendarCheck, CheckCircle2 } from "lucide-react";
+import { PhoneCall, CalendarCheck, CheckCircle2, PlayCircle } from "lucide-react";
 
 export function CTASection() {
   return (
@@ -31,10 +31,13 @@ export function CTASection() {
             </div>
             <div className="flex flex-col gap-3 md:items-end">
               <Button asChild variant="gold" size="xl" className="w-full md:w-auto">
-                <Link to="/contact"><CalendarCheck className="h-4 w-4" /> Book A Demo</Link>
+                <Link to="/contact"><CalendarCheck className="h-4 w-4" /> Book Free Demo</Link>
               </Button>
               <Button asChild variant="outline" size="xl" className="w-full border-white/30 bg-transparent text-white hover:bg-white hover:text-ink md:w-auto">
                 <Link to="/live-demo"><PhoneCall className="h-4 w-4" /> Talk To AI Now</Link>
+              </Button>
+              <Button asChild variant="ghost" size="xl" className="w-full text-white/90 hover:bg-white/10 hover:text-white md:w-auto">
+                <Link to="/live-demo"><PlayCircle className="h-4 w-4" /> See Live Demo</Link>
               </Button>
             </div>
           </div>
