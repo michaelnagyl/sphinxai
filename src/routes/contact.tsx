@@ -15,8 +15,8 @@ import { z } from "zod";
 
 export const Route = createFileRoute("/contact")({
   head: () => pageMeta({
-    title: "Book Your Free Demo — SphinxAI Voice Agents",
-    description: "Get a free 20-minute demo of SphinxAI tailored to your business. See how AI voice agents can capture every call, qualify leads, and book appointments 24/7.",
+    title: "Contact SphinxAI | Book An AI Voice Agent Demo",
+    description: "Contact SphinxAI to build an AI voice agent for your clinic, business, call center, or sales team. Book a demo and automate customer communication.",
     path: "/contact",
   }),
   component: ContactPage,
@@ -28,6 +28,7 @@ const schema = z.object({
   email: z.string().trim().email("Invalid email").max(255),
   phone: z.string().trim().min(4, "Phone required").max(30),
   industry: z.string().trim().min(1, "Industry required").max(80),
+  business_type: z.string().trim().min(1, "Business type required").max(80),
   contact_method: z.string().trim().min(1).max(40),
   goal: z.string().trim().min(1, "Tell us your goal").max(200),
   message: z.string().trim().max(1000).optional(),
