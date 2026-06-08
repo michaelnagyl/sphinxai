@@ -78,10 +78,10 @@ function Hero() {
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Button asChild variant="hero" size="xl">
-              <Link to="/live-demo"><PhoneCall className="h-4 w-4" /> Talk To AI Now</Link>
+              <Link to="/contact"><CalendarCheck className="h-4 w-4" /> Book Free Demo</Link>
             </Button>
             <Button asChild variant="outlineBrand" size="xl">
-              <Link to="/contact"><CalendarCheck className="h-4 w-4" /> Book A Discovery Call</Link>
+              <Link to="/live-demo"><PhoneCall className="h-4 w-4" /> Talk To AI Now</Link>
             </Button>
           </div>
           <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-muted-foreground">

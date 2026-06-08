@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
-import { PhoneCall, CalendarCheck } from "lucide-react";
+import { PhoneCall, CalendarCheck, CheckCircle2 } from "lucide-react";
 
 export function CTASection() {
   return (
@@ -18,16 +18,23 @@ export function CTASection() {
                 Automate every call. Capture every opportunity.
               </h2>
               <p className="mt-4 max-w-xl text-white/70">
-                Talk to SphinxAI now, or book a discovery call. We&apos;ll help you launch your AI
-                voice agent in days, not months.
+                Book a free 20-minute demo or talk to our AI live. Either way, you will see exactly
+                how SphinxAI captures every call and turns it into revenue.
               </p>
+              <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-xs text-white/80">
+                {["Live in 7 days", "No credit card", "Cancel anytime"].map((b) => (
+                  <li key={b} className="flex items-center gap-1.5">
+                    <CheckCircle2 className="h-4 w-4 text-gold" /> {b}
+                  </li>
+                ))}
+              </ul>
             </div>
             <div className="flex flex-col gap-3 md:items-end">
               <Button asChild variant="gold" size="xl" className="w-full md:w-auto">
-                <Link to="/live-demo"><PhoneCall className="h-4 w-4" /> Talk To AI Now</Link>
+                <Link to="/contact"><CalendarCheck className="h-4 w-4" /> Book Free Demo</Link>
               </Button>
               <Button asChild variant="outline" size="xl" className="w-full border-white/30 bg-transparent text-white hover:bg-white hover:text-ink md:w-auto">
-                <Link to="/contact"><CalendarCheck className="h-4 w-4" /> Book A Demo</Link>
+                <Link to="/live-demo"><PhoneCall className="h-4 w-4" /> Talk To AI Now</Link>
               </Button>
             </div>
           </div>

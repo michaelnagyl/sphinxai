@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { CTASection } from "@/components/site/CTASection";
+import { InlineLeadCTA } from "@/components/site/InlineLeadCTA";
 import { Button } from "@/components/ui/button";
 import { pageMeta } from "@/lib/site-meta";
 import { Stethoscope, Home, Sparkles, Headphones, TrendingUp, ArrowRight } from "lucide-react";
@@ -62,7 +63,7 @@ function IndustriesPage() {
         </div>
       </section>
 
-      <section className="pb-20">
+      <section className="pb-10">
         <div className="container-page">
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {industries.map((ind) => (
@@ -81,6 +82,12 @@ function IndustriesPage() {
           </div>
         </div>
       </section>
+
+      <InlineLeadCTA
+        eyebrow="Built for your industry"
+        title="Get a demo customized to your business"
+        description="We will configure SphinxAI around your industry's real call flows and show you live results in 20 minutes."
+      />
 
       <CTASection />
     </SiteLayout>
