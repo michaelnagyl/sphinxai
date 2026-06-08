@@ -8,8 +8,8 @@ import { Bot, PhoneCall, Users, CalendarCheck, Plug, BarChart3, Check, X, Stetho
 
 export const Route = createFileRoute("/solutions")({
   head: () => pageMeta({
-    title: "AI Call Center, AI Receptionist & Business Automation | SphinxAI",
-    description: "Automate call answering, appointment booking, lead qualification, CRM workflows, and conversation analytics with SphinxAI voice agents.",
+    title: "AI Call Center, AI Receptionist & Appointment Booking Automation | SphinxAI",
+    description: "Automate call answering, appointment booking, lead qualification, CRM workflows, and conversation analytics with SphinxAI voice agents — built for Egyptian businesses.",
     path: "/solutions",
   }),
   component: SolutionsPage,

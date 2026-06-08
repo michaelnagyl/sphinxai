@@ -11,8 +11,8 @@ import { DemoVideo } from "@/components/site/DemoVideo";
 
 export const Route = createFileRoute("/live-demo")({
   head: () => pageMeta({
-    title: "Live AI Voice Agent Demo | SphinxAI",
-    description: "Experience SphinxAI live and see how AI voice agents answer calls, qualify leads, and automate customer communication.",
+    title: "Talk To A Live AI Voice Agent | SphinxAI",
+    description: "Talk to SphinxAI live and experience how a human-like AI voice agent answers calls, qualifies leads, and books appointments — in Arabic and English.",
     path: "/live-demo",
   }),
   component: LiveDemoPage,
@@ -54,12 +54,11 @@ function LiveDemoPage() {
             Live Voice AI — free to try
           </div>
           <h1 className="mt-4 font-display text-4xl font-bold leading-tight text-ink md:text-6xl">
-            Experience SphinxAI <br className="hidden md:block" />
-            <span className="brand-gradient-text">Live.</span>
+            Talk To SphinxAI <span className="brand-gradient-text">Live</span>
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-base text-muted-foreground md:text-lg">
-            Talk directly with our AI Voice Agent and see how AI can transform your
-            business communication.
+            Experience how a human-like AI voice agent can answer calls, understand customers,
+            qualify leads, and book appointments — in Arabic and English.
           </p>
           <p className="mx-auto mt-3 max-w-xl text-xs text-muted-foreground/80">
             Live voice integration is ready for future connection with Vapi, ElevenLabs, or custom voice APIs.
