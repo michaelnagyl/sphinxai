@@ -11,13 +11,7 @@ import { TrustBar } from "@/components/site/TrustBar";
 import { Testimonials } from "@/components/site/Testimonials";
 import { VideoModal } from "@/components/site/VideoModal";
 import { DemoVideo } from "@/components/site/DemoVideo";
-import heroImg from "@/assets/hero-ai-agent.jpg";
-import vizMissedCalls from "@/assets/viz-missed-calls.jpg";
-import vizAiAnswering from "@/assets/viz-ai-answering.jpg";
-import vizBooking from "@/assets/viz-booking.jpg";
-import vizLeads from "@/assets/viz-leads.jpg";
-import vizLanguages from "@/assets/viz-languages.jpg";
-import vizCrm from "@/assets/viz-crm.jpg";
+import heroImg from "@/assets/hero-voice.jpg";
 import {
   Clock, Languages, Building2, Rocket, PhoneOff, UserX, MoonStar, MailWarning,
   Timer, Wallet, Bot, CalendarCheck, Users, Headphones, Plug, Route as RouteIcon,
