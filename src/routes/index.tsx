@@ -20,7 +20,7 @@ import {
   Timer, Wallet, Bot, CalendarCheck, Users, Headphones, Plug, Route as RouteIcon,
   BarChart3, PhoneCall, ShieldCheck, Globe2, Layers, TrendingUp,
   ArrowRight, Workflow, CheckCircle2, PlayCircle, Stethoscope, Sparkles,
-  Building2, Briefcase, Mic, TrendingDown, Volume2, Zap, Smile,
+  Building2, Briefcase, TrendingDown, Zap, Smile,
   Check, Crown,
 } from "lucide-react";
 
@@ -49,7 +49,6 @@ function Index() {
       <IndustriesSection />
       <HowItWorks />
       <ResultsSection />
-      <LiveDemoSection />
       <DemoVideoSection />
       <HomePackagesSection />
       <Testimonials />
