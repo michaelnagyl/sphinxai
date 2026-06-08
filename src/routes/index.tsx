@@ -11,13 +11,7 @@ import { TrustBar } from "@/components/site/TrustBar";
 import { Testimonials } from "@/components/site/Testimonials";
 import { VideoModal } from "@/components/site/VideoModal";
 import { DemoVideo } from "@/components/site/DemoVideo";
-import heroImg from "@/assets/hero-ai-agent.jpg";
-import vizMissedCalls from "@/assets/viz-missed-calls.jpg";
-import vizAiAnswering from "@/assets/viz-ai-answering.jpg";
-import vizBooking from "@/assets/viz-booking.jpg";
-import vizLeads from "@/assets/viz-leads.jpg";
-import vizLanguages from "@/assets/viz-languages.jpg";
-import vizCrm from "@/assets/viz-crm.jpg";
+import heroImg from "@/assets/hero-voice.jpg";
 import {
   Clock, Languages, Building2, Rocket, PhoneOff, UserX, MoonStar, MailWarning,
   Timer, Wallet, Bot, CalendarCheck, Users, Headphones, Plug, Route as RouteIcon,
@@ -45,7 +39,6 @@ function Index() {
     <SiteLayout>
       <Hero />
       <TrustBar />
-      <CapabilitiesVisuals />
       <SeeInAction />
       <ProblemSection />
       <SolutionSection />
@@ -129,7 +122,7 @@ function Hero() {
               alt="Friendly AI voice agent answering a business phone call"
               width={1536}
               height={1280}
-              className="aspect-[5/4] w-full bg-gradient-to-br from-brand-soft/60 to-white object-contain"
+              className="aspect-[5/4] w-full bg-gradient-to-br from-brand-soft/60 to-white object-cover"
               loading="eager"
             />
             <div className="border-t border-border p-6">
@@ -206,50 +199,6 @@ function ProblemSection() {
   );
 }
 
-function CapabilitiesVisuals() {
-  const items = [
-    { img: vizAiAnswering, title: "AI answers every call", desc: "Instant pickup with a natural, human-like voice — even outside working hours." },
-    { img: vizMissedCalls, title: "No more missed revenue", desc: "Every ring is captured, qualified, and turned into a real opportunity." },
-    { img: vizBooking, title: "Appointment booking", desc: "Customers book directly on your calendar during the call." },
-    { img: vizLeads, title: "Smart lead qualification", desc: "Asks the right questions and filters serious buyers automatically." },
-    { img: vizLanguages, title: "Arabic & English support", desc: "Native fluency in both languages, with regional tone and context." },
-    { img: vizCrm, title: "CRM & workflow automation", desc: "Clean structured data pushed into your stack, in real time." },
-  ];
-  return (
-    <section className="section-pad">
-      <div className="container-page">
-        <SectionHeader
-          eyebrow="What SphinxAI does"
-          title="A complete AI voice employee for your business"
-          description="One platform that handles calls, qualifies leads, books appointments, supports customers, and feeds your CRM — 24/7."
-        />
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {items.map((it) => (
-            <div
-              key={it.title}
-              className="group overflow-hidden rounded-2xl border border-border bg-white shadow-[0_1px_0_0_rgba(15,23,42,0.03)] transition-all hover:-translate-y-1 hover:border-brand/30 hover:shadow-[0_24px_60px_-25px_rgba(60,84,143,0.45)]"
-            >
-              <div className="aspect-[4/3] w-full overflow-hidden bg-gradient-to-br from-brand-soft/60 to-white">
-                <img
-                  src={it.img}
-                  alt={it.title}
-                  width={1024}
-                  height={768}
-                  loading="lazy"
-                  className="h-full w-full object-contain p-6 transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
-              <div className="border-t border-border p-6">
-                <h3 className="font-display text-lg font-semibold text-ink">{it.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{it.desc}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function SolutionSection() {
   const features = [

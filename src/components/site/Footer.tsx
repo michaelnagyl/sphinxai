@@ -44,8 +44,8 @@ export function Footer() {
             <div>
               <div className="text-sm font-semibold text-white">Follow</div>
               <div className="mt-4 flex gap-3">
-                <a href="#" aria-label="LinkedIn" className="grid h-9 w-9 place-items-center rounded-md bg-white/10 hover:bg-gold hover:text-ink"><Linkedin className="h-4 w-4" /></a>
-                <a href="#" aria-label="Facebook" className="grid h-9 w-9 place-items-center rounded-md bg-white/10 hover:bg-gold hover:text-ink"><Facebook className="h-4 w-4" /></a>
+                <a href="https://www.linkedin.com/company/sphinxai" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" className="grid h-9 w-9 place-items-center rounded-md bg-white/10 hover:bg-gold hover:text-ink"><Linkedin className="h-4 w-4" /></a>
+                <a href="https://www.facebook.com/profile.php?id=100066607550479&sk=about" aria-label="Facebook" target="_blank" rel="noopener noreferrer" className="grid h-9 w-9 place-items-center rounded-md bg-white/10 hover:bg-gold hover:text-ink"><Facebook className="h-4 w-4" /></a>
                 <a href="#" aria-label="Instagram" className="grid h-9 w-9 place-items-center rounded-md bg-white/10 hover:bg-gold hover:text-ink"><Instagram className="h-4 w-4" /></a>
                 <a href="#" aria-label="TikTok" className="grid h-9 w-9 place-items-center rounded-md bg-white/10 text-xs font-bold hover:bg-gold hover:text-ink">TT</a>
               </div>
