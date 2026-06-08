@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SolutionsRouteImport } from './routes/solutions'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as PresentationRouteImport } from './routes/presentation'
 import { Route as PackagesRouteImport } from './routes/packages'
 import { Route as LiveDemoRouteImport } from './routes/live-demo'
 import { Route as IndustriesRouteImport } from './routes/industries'
@@ -26,6 +27,11 @@ const SolutionsRoute = SolutionsRouteImport.update({
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PresentationRoute = PresentationRouteImport.update({
+  id: '/presentation',
+  path: '/presentation',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PackagesRoute = PackagesRouteImport.update({
@@ -66,6 +72,7 @@ export interface FileRoutesByFullPath {
   '/industries': typeof IndustriesRoute
   '/live-demo': typeof LiveDemoRoute
   '/packages': typeof PackagesRoute
+  '/presentation': typeof PresentationRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/solutions': typeof SolutionsRoute
 }
@@ -76,6 +83,7 @@ export interface FileRoutesByTo {
   '/industries': typeof IndustriesRoute
   '/live-demo': typeof LiveDemoRoute
   '/packages': typeof PackagesRoute
+  '/presentation': typeof PresentationRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/solutions': typeof SolutionsRoute
 }
@@ -87,6 +95,7 @@ export interface FileRoutesById {
   '/industries': typeof IndustriesRoute
   '/live-demo': typeof LiveDemoRoute
   '/packages': typeof PackagesRoute
+  '/presentation': typeof PresentationRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/solutions': typeof SolutionsRoute
 }
@@ -99,6 +108,7 @@ export interface FileRouteTypes {
     | '/industries'
     | '/live-demo'
     | '/packages'
+    | '/presentation'
     | '/sitemap.xml'
     | '/solutions'
   fileRoutesByTo: FileRoutesByTo
@@ -109,6 +119,7 @@ export interface FileRouteTypes {
     | '/industries'
     | '/live-demo'
     | '/packages'
+    | '/presentation'
     | '/sitemap.xml'
     | '/solutions'
   id:
@@ -119,6 +130,7 @@ export interface FileRouteTypes {
     | '/industries'
     | '/live-demo'
     | '/packages'
+    | '/presentation'
     | '/sitemap.xml'
     | '/solutions'
   fileRoutesById: FileRoutesById
@@ -130,6 +142,7 @@ export interface RootRouteChildren {
   IndustriesRoute: typeof IndustriesRoute
   LiveDemoRoute: typeof LiveDemoRoute
   PackagesRoute: typeof PackagesRoute
+  PresentationRoute: typeof PresentationRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SolutionsRoute: typeof SolutionsRoute
 }
@@ -148,6 +161,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/presentation': {
+      id: '/presentation'
+      path: '/presentation'
+      fullPath: '/presentation'
+      preLoaderRoute: typeof PresentationRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/packages': {
@@ -202,9 +222,20 @@ const rootRouteChildren: RootRouteChildren = {
   IndustriesRoute: IndustriesRoute,
   LiveDemoRoute: LiveDemoRoute,
   PackagesRoute: PackagesRoute,
+  PresentationRoute: PresentationRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SolutionsRoute: SolutionsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
