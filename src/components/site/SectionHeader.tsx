@@ -14,11 +14,11 @@ export function SectionHeader({ eyebrow, title, description, align = "center" }:
           {eyebrow}
         </div>
       )}
-      <h2 className="font-display text-3xl font-bold leading-tight text-ink md:text-4xl">
+      <h2 className="font-display text-3xl font-bold leading-tight text-ink md:text-4xl lg:text-5xl">
         {title}
       </h2>
       {description && (
-        <p className="mt-4 text-base text-muted-foreground md:text-lg">{description}</p>
+        <p className="mt-5 text-base text-muted-foreground md:text-lg lg:text-xl">{description}</p>
       )}
     </div>
   );
