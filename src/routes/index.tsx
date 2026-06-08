@@ -122,7 +122,7 @@ function Hero() {
               alt="Friendly AI voice agent answering a business phone call"
               width={1536}
               height={1280}
-              className="aspect-[5/4] w-full bg-gradient-to-br from-brand-soft/60 to-white object-contain"
+              className="aspect-[5/4] w-full bg-gradient-to-br from-brand-soft/60 to-white object-cover"
               loading="eager"
             />
             <div className="border-t border-border p-6">
