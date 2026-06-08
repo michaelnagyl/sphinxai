@@ -21,6 +21,7 @@ import {
   BarChart3, PhoneCall, ShieldCheck, Globe2, Layers, TrendingUp,
   ArrowRight, Workflow, CheckCircle2, PlayCircle, Stethoscope, Sparkles,
   Building2, Briefcase, Mic, TrendingDown, Volume2, Zap, Smile,
+  Check, Crown,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -49,6 +50,8 @@ function Index() {
       <HowItWorks />
       <ResultsSection />
       <LiveDemoSection />
+      <DemoVideoSection />
+      <HomePackagesSection />
       <Testimonials />
       <FAQSection />
       <CTASection />
@@ -567,5 +570,263 @@ function FAQSection() {
         </div>
       </div>
     </section>
+  );
+}
+
+function DemoVideoSection() {
+  return (
+    <section className="section-pad bg-white">
+      <div className="container-page">
+        <SectionHeader
+          eyebrow="See it in action"
+          title="See SphinxAI In Action"
+          description="Watch how an AI Voice Agent can answer calls, understand customers, collect information, qualify leads, and help your business respond instantly."
+        />
+        <div className="mt-14 grid items-center gap-12 lg:grid-cols-2">
+          <div className="order-2 lg:order-1">
+            <div className="inline-flex items-center rounded-full border border-brand/20 bg-brand-soft px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand">
+              Real conversations · Real outcomes
+            </div>
+            <h3 className="mt-4 font-display text-3xl font-bold leading-tight text-ink md:text-4xl">
+              Real conversations. Real business outcomes.
+            </h3>
+            <p className="mt-4 text-base leading-relaxed text-muted-foreground md:text-lg">
+              See how SphinxAI can answer calls, qualify leads, collect customer details, and help
+              your business respond instantly — even outside working hours.
+            </p>
+            <ul className="mt-7 space-y-3">
+              {[
+                "Answers calls instantly",
+                "Qualifies serious leads",
+                "Books appointments",
+                "Collects customer data",
+                "Works after business hours",
+              ].map((b) => (
+                <li key={b} className="flex items-start gap-3 text-[15px] text-ink">
+                  <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-emerald-100 text-emerald-600">
+                    <Check className="h-3 w-3" strokeWidth={3} />
+                  </span>
+                  {b}
+                </li>
+              ))}
+            </ul>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Button asChild variant="gold" size="xl">
+                <Link to="/contact"><CalendarCheck className="h-5 w-5" /> Book A Business Demo</Link>
+              </Button>
+              <Button asChild variant="outlineBrand" size="xl">
+                <Link to="/live-demo"><PhoneCall className="h-5 w-5" /> Start Live Conversation</Link>
+              </Button>
+            </div>
+          </div>
+          <div className="order-1 lg:order-2">
+            <DemoVideo />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+type HomePlan = {
+  name: string;
+  label: string;
+  icon: typeof Rocket;
+  description: string;
+  features: string[];
+  bestFor: string;
+  cta: { label: string; to: string };
+  highlighted?: boolean;
+  badge?: string;
+};
+
+const HOME_PLANS: HomePlan[] = [
+  {
+    name: "Sphinx Lite",
+    label: "Essential AI Call Automation",
+    icon: Rocket,
+    description:
+      "A simple AI voice agent for businesses starting to automate calls and reduce missed opportunities.",
+    features: [
+      "Inbound calls only",
+      "Single AI voice agent",
+      "Predefined call script",
+      "One language support",
+      "Essential call analytics",
+      "Basic lead capture",
+    ],
+    bestFor: "Small businesses, solo clinics, and support teams starting with AI call automation.",
+    cta: { label: "Book Lite Demo", to: "/contact" },
+  },
+  {
+    name: "Sphinx Pro",
+    label: "Smart AI Calling & Booking",
+    icon: Zap,
+    badge: "Most Popular",
+    highlighted: true,
+    description:
+      "Smarter conversations, appointment booking, lead qualification, and Arabic & English support.",
+    features: [
+      "Inbound and outbound calling",
+      "Intelligent conversation flows",
+      "Arabic and English support",
+      "Lead qualification and summaries",
+      "Appointment booking workflows",
+      "CRM-ready data export",
+      "Better analytics & reporting",
+    ],
+    bestFor: "Clinics, dental & beauty centers, real estate, and growing sales teams.",
+    cta: { label: "Book Pro Demo", to: "/contact" },
+  },
+  {
+    name: "Sphinx Elite",
+    label: "Advanced AI Voice Automation",
+    icon: Crown,
+    description:
+      "Complete AI voice automation for high-volume businesses, multi-branch operations, and custom workflows.",
+    features: [
+      "Multi-agent AI architecture",
+      "Advanced inbound & outbound",
+      "Full CRM integration",
+      "Custom brand voice & tone",
+      "Advanced analytics & reporting",
+      "Multi-branch workflows",
+      "Priority technical support",
+    ],
+    bestFor: "Large clinics, medical centers, multi-branch businesses, and enterprise call centers.",
+    cta: { label: "Book Elite Demo", to: "/contact" },
+  },
+];
+
+function HomePackagesSection() {
+  return (
+    <section className="relative isolate overflow-hidden bg-[#070B17] py-24 text-white md:py-32">
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,rgba(70,112,168,0.28),transparent_55%)]" />
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_bottom,rgba(253,186,8,0.10),transparent_55%)]" />
+      <div className="pointer-events-none absolute -left-32 top-1/3 -z-10 h-[420px] w-[420px] rounded-full bg-[radial-gradient(circle,rgba(70,112,168,0.35),transparent_60%)] blur-2xl animate-float-y" />
+      <div className="pointer-events-none absolute -right-24 top-10 -z-10 h-[380px] w-[380px] rounded-full bg-[radial-gradient(circle,rgba(253,186,8,0.18),transparent_60%)] blur-2xl animate-float-y [animation-delay:-3s]" />
+
+      <div className="container-page">
+        <div className="mx-auto max-w-3xl text-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-white/90 backdrop-blur">
+            <Sparkles className="h-3.5 w-3.5 text-[#FDBA08]" /> Packages
+          </div>
+          <h2 className="mt-6 font-display text-4xl font-bold leading-[1.05] tracking-[-0.03em] text-white md:text-5xl lg:text-6xl">
+            Choose The Right AI Voice Plan{" "}
+            <span className="bg-gradient-to-r from-[#FDBA08] via-[#FFD66B] to-[#FDBA08] bg-clip-text text-transparent">
+              For Your Business
+            </span>
+          </h2>
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
+            Flexible AI voice agent packages for clinics, medical centers, real estate companies,
+            customer service teams, and growing businesses.
+          </p>
+        </div>
+
+        <div className="mt-16 grid gap-6 lg:grid-cols-3 lg:items-stretch">
+          {HOME_PLANS.map((p) => (
+            <HomePlanCard key={p.name} plan={p} />
+          ))}
+        </div>
+
+        <div className="mx-auto mt-16 max-w-4xl rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.06] to-white/[0.02] p-8 text-center backdrop-blur-xl md:p-12">
+          <h3 className="font-display text-2xl font-bold leading-tight text-white md:text-3xl">
+            Not Sure Which Plan Fits Your Business?
+          </h3>
+          <p className="mx-auto mt-3 max-w-2xl text-sm text-white/70 md:text-base">
+            Talk to SphinxAI and we'll help you choose the right AI voice setup for your clinic,
+            sales team, or customer support operation.
+          </p>
+          <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <Button asChild variant="gold" size="xl" className="h-14 min-w-[220px] rounded-2xl px-7 text-base font-bold shadow-[0_20px_60px_-12px_rgba(253,186,8,0.5)]">
+              <Link to="/packages"><Layers className="h-5 w-5" /> View All Packages</Link>
+            </Button>
+            <Button asChild variant="ghost" size="xl" className="h-14 min-w-[200px] rounded-2xl border border-white/20 bg-white/[0.04] text-white hover:bg-white/10 hover:text-white">
+              <Link to="/contact"><CalendarCheck className="h-5 w-5" /> Book Free Demo</Link>
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function HomePlanCard({ plan }: { plan: HomePlan }) {
+  const Icon = plan.icon;
+  const highlighted = plan.highlighted;
+  return (
+    <div
+      className={`group relative flex h-full flex-col overflow-hidden rounded-3xl p-8 transition md:p-9 ${
+        highlighted
+          ? "border border-[#FDBA08]/40 bg-gradient-to-b from-[#101a35] to-[#0a1024] shadow-[0_40px_120px_-30px_rgba(253,186,8,0.35)] lg:-translate-y-3"
+          : "border border-white/10 bg-white/[0.03] hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.05]"
+      }`}
+    >
+      {highlighted && (
+        <>
+          <span className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-[#FDBA08]/20 blur-3xl" />
+          <span className="pointer-events-none absolute -bottom-24 -left-10 h-56 w-56 rounded-full bg-[#4670A8]/25 blur-3xl" />
+          <div className="absolute right-6 top-6">
+            <span className="inline-flex items-center gap-1 rounded-full bg-[#FDBA08] px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[#0B1226] shadow-[0_8px_24px_-6px_rgba(253,186,8,0.6)]">
+              <Sparkles className="h-3 w-3" /> {plan.badge}
+            </span>
+          </div>
+        </>
+      )}
+
+      <div className="relative">
+        <div
+          className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl ${
+            highlighted
+              ? "bg-gradient-to-br from-[#FDBA08] to-[#E59C00] text-[#0B1226]"
+              : "bg-white/[0.06] text-[#FDBA08] ring-1 ring-white/10"
+          }`}
+        >
+          <Icon className="h-5 w-5" />
+        </div>
+        <h3 className="mt-6 font-display text-2xl font-bold text-white md:text-3xl">{plan.name}</h3>
+        <div className="mt-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-[#FDBA08]">
+          {plan.label}
+        </div>
+        <p className="mt-4 text-sm leading-relaxed text-white/70">{plan.description}</p>
+      </div>
+
+      <ul className="relative mt-7 flex-1 space-y-3 border-t border-white/10 pt-6">
+        {plan.features.map((f) => (
+          <li key={f} className="flex items-start gap-3 text-sm text-white/85">
+            <span
+              className={`mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full ${
+                highlighted ? "bg-[#FDBA08]/15 text-[#FDBA08]" : "bg-white/10 text-[#FDBA08]"
+              }`}
+            >
+              <Check className="h-3 w-3" strokeWidth={3} />
+            </span>
+            {f}
+          </li>
+        ))}
+      </ul>
+
+      <div className="relative mt-7 border-t border-white/10 pt-5">
+        <div className="text-[11px] font-bold uppercase tracking-wider text-white/50">Best for</div>
+        <p className="mt-2 text-sm leading-relaxed text-white/75">{plan.bestFor}</p>
+      </div>
+
+      <div className="relative mt-6">
+        <Button
+          asChild
+          size="xl"
+          variant={highlighted ? "gold" : "default"}
+          className={
+            highlighted
+              ? "h-12 w-full rounded-xl text-sm font-bold shadow-[0_20px_60px_-12px_rgba(253,186,8,0.55)]"
+              : "h-12 w-full rounded-xl bg-white text-sm font-semibold text-[#0B1226] hover:bg-white/90"
+          }
+        >
+          <Link to={plan.cta.to}>
+            <CalendarCheck className="h-4 w-4" /> {plan.cta.label}
+          </Link>
+        </Button>
+      </div>
+    </div>
   );
 }
