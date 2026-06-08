@@ -12,7 +12,7 @@ import heroImg from "@/assets/hero-voice.jpg";
 import {
   Clock, Languages, Building2, Rocket, PhoneOff, UserX, MoonStar, MailWarning,
   Timer, Wallet, Bot, CalendarCheck, Users, Headphones, Plug, Route as RouteIcon,
-  BarChart3, PhoneCall, ShieldCheck, Globe2, Layers, Sparkles, TrendingUp,
+  BarChart3, PhoneCall, ShieldCheck, Globe2, Layers, TrendingUp,
   ArrowRight, Workflow, Star, CheckCircle2
 } from "lucide-react";
 
