@@ -10,6 +10,7 @@ import { pageMeta } from "@/lib/site-meta";
 import {
   CalendarCheck, PhoneCall, Mail, MapPin,
   CheckCircle2, Star, Clock, ShieldCheck, Sparkles,
+  Linkedin, Facebook, Instagram, Building2, Bot,
 } from "lucide-react";
 import { z } from "zod";
 
