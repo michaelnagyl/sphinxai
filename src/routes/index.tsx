@@ -39,7 +39,6 @@ function Index() {
     <SiteLayout>
       <Hero />
       <TrustBar />
-      <CapabilitiesVisuals />
       <SeeInAction />
       <ProblemSection />
       <SolutionSection />
