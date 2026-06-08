@@ -4,7 +4,9 @@ import { SiteLayout } from "@/components/site/SiteLayout";
 import { Soundwave } from "@/components/site/Soundwave";
 import { Button } from "@/components/ui/button";
 import { pageMeta } from "@/lib/site-meta";
-import { Mic, PhoneCall, CalendarCheck, MessageSquare, Sparkles } from "lucide-react";
+import { Mic, PhoneCall, CalendarCheck, MessageSquare, Star, ShieldCheck, Zap, Clock, Languages, CheckCircle2 } from "lucide-react";
+import { Testimonials } from "@/components/site/Testimonials";
+import { CTASection } from "@/components/site/CTASection";
 
 export const Route = createFileRoute("/live-demo")({
   head: () => pageMeta({
