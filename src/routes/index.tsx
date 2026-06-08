@@ -10,6 +10,7 @@ import { Soundwave } from "@/components/site/Soundwave";
 import { TrustBar } from "@/components/site/TrustBar";
 import { Testimonials } from "@/components/site/Testimonials";
 import { VideoModal } from "@/components/site/VideoModal";
+import { DemoVideo } from "@/components/site/DemoVideo";
 import heroImg from "@/assets/hero-voice.jpg";
 import {
   Clock, Languages, Building2, Rocket, PhoneOff, UserX, MoonStar, MailWarning,
@@ -38,6 +39,7 @@ function Index() {
     <SiteLayout>
       <Hero />
       <TrustBar />
+      <SeeInAction />
       <ProblemSection />
       <SolutionSection />
       <HowItWorks />
@@ -54,8 +56,9 @@ function Hero() {
   const trust = [
     { icon: Clock, label: "24/7 AI Call Handling" },
     { icon: Languages, label: "Arabic & English" },
-    { icon: Building2, label: "Built For Businesses" },
-    { icon: Rocket, label: "Fast Deployment" },
+    { icon: Users, label: "Lead Qualification" },
+    { icon: CalendarCheck, label: "Appointment Booking" },
+    { icon: Building2, label: "Built For MENA Businesses" },
   ];
   return (
     <section className="relative overflow-hidden">
@@ -71,24 +74,20 @@ function Hero() {
             Now live in Egypt & MENA
           </div>
           <h1 className="mt-5 font-display text-[2.5rem] font-bold leading-[1.05] tracking-tight text-ink sm:text-5xl md:text-6xl">
-            Never Miss a Call.<br className="hidden md:block" />
-            <span className="brand-gradient-text">Never Miss Revenue.</span>
+            Turn Every Missed Call <br className="hidden md:block" />
+            <span className="brand-gradient-text">Into Revenue.</span>
           </h1>
           <p className="mt-5 max-w-xl text-base text-muted-foreground md:text-lg">
-            SphinxAI deploys human-like AI voice agents that answer every call in under a second,
-            qualify leads, book appointments, and push clean data to your CRM — 24/7, in fluent
-            Arabic and English.
+            SphinxAI gives your business a human-like AI voice agent that answers calls instantly,
+            qualifies leads, books appointments, answers customer questions, and works 24/7.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Button asChild variant="hero" size="xl">
-              <Link to="/contact"><CalendarCheck className="h-4 w-4" /> Book Free Demo</Link>
-            </Button>
-            <Button asChild variant="outlineBrand" size="xl">
               <Link to="/live-demo"><PhoneCall className="h-4 w-4" /> Talk To AI Now</Link>
             </Button>
             <Button
               type="button"
-              variant="ghostBrand"
+              variant="outlineBrand"
               size="xl"
               onClick={() => setVideoOpen(true)}
             >
@@ -97,16 +96,16 @@ function Hero() {
           </div>
           <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-muted-foreground">
             <div className="flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-emerald-500" /> No credit card
+              <CheckCircle2 className="h-4 w-4 text-emerald-500" /> Live in 7 days
             </div>
             <div className="flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-emerald-500" /> Live in 7 days
+              <CheckCircle2 className="h-4 w-4 text-emerald-500" /> No credit card
             </div>
             <div className="flex items-center gap-1.5">
               <CheckCircle2 className="h-4 w-4 text-emerald-500" /> Cancel anytime
             </div>
           </div>
-          <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
+          <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
             {trust.map((t) => (
               <div key={t.label} className="flex items-center gap-2 rounded-lg border border-border bg-white/70 px-3 py-2 text-xs font-medium text-ink backdrop-blur">
                 <t.icon className="h-4 w-4 text-brand" />
