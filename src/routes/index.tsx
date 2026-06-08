@@ -395,14 +395,24 @@ function ClinicSection() {
       desc: "The AI agent can collect patient details, understand the requested service, and guide patients toward booking a visit.",
     },
     {
+      icon: Stethoscope,
+      title: "Dental Clinic Call Answering",
+      desc: "Answer dental calls instantly and book cleanings, check-ups, and consultations — even during procedures.",
+    },
+    {
+      icon: HeartPulse,
+      title: "Beauty Clinic Booking Automation",
+      desc: "Explain treatments, qualify inquiries, and book consultations for beauty clinics and aesthetic centers.",
+    },
+    {
       icon: Headphones,
-      title: "Reception Team Support",
-      desc: "Reduce repetitive calls and help your reception team focus on important cases.",
+      title: "Patient Follow-up Support",
+      desc: "Reduce repetitive calls and help your reception team focus on important cases with AI follow-up.",
     },
     {
       icon: Languages,
       title: "Arabic & English Patient Communication",
-      desc: "Support patients naturally in Arabic and English with clear, professional conversations.",
+      desc: "Support patients naturally in Egyptian Arabic and English with clear, professional conversations.",
     },
   ];
   return (
@@ -413,14 +423,14 @@ function ClinicSection() {
             <Stethoscope className="h-3.5 w-3.5" /> For Clinics & Medical Centers
           </div>
           <h2 className="mt-5 font-display text-3xl font-bold text-ink md:text-5xl">
-            AI Voice Agents For <span className="brand-gradient-text">Clinics & Medical Centers</span>
+            AI Receptionist For <span className="brand-gradient-text">Clinics & Medical Centers</span>
           </h2>
           <p className="mt-5 text-base text-muted-foreground md:text-lg">
-            SphinxAI helps clinics answer patient calls instantly, book appointments, collect patient details,
-            answer common questions, and reduce pressure on reception teams.
+            SphinxAI helps clinics answer patient calls, book appointments, collect patient
+            information, answer common questions, and reduce pressure on reception teams.
           </p>
         </div>
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {cards.map((c) => (
             <div key={c.title} className="rounded-2xl border border-border bg-white p-6 shadow-[0_1px_0_0_rgba(15,23,42,0.03)] transition hover:-translate-y-1 hover:border-brand/30 hover:shadow-premium">
               <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-soft text-brand">
