@@ -1,12 +1,22 @@
 import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { PhoneCall, CalendarCheck, CheckCircle2 } from "lucide-react";
+import sphinxBg from "@/assets/sphinx-bg.jpg.asset.json";
 
 export function CTASection() {
   return (
     <section className="section-pad">
       <div className="container-page">
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#3C548F] via-[#3C548F] to-[#1E2A4A] p-8 text-white shadow-[0_30px_80px_-30px_rgba(60,84,143,0.6)] md:p-14">
+        <div className="relative overflow-hidden rounded-3xl bg-[#0B1020] p-8 text-white shadow-[0_30px_80px_-30px_rgba(11,16,32,0.7)] md:p-14">
+          {/* Sphinx-inspired background */}
+          <img
+            src={sphinxBg.url}
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+            className="pointer-events-none absolute inset-0 -z-0 h-full w-full object-cover opacity-40 [filter:saturate(0.85)]"
+          />
+          <div className="pointer-events-none absolute inset-0 -z-0 bg-gradient-to-br from-[#3C548F]/80 via-[#0B1020]/85 to-[#0B1020]/95" />
           <div className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-gold/20 blur-3xl" />
           <div className="pointer-events-none absolute -bottom-24 -left-10 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
           <div className="relative grid items-center gap-8 md:grid-cols-[1.4fr_1fr]">
