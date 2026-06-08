@@ -323,32 +323,39 @@ function IndustriesSection() {
     {
       icon: Stethoscope,
       title: "Clinics & Medical Centers",
-      desc: "Answer patient calls 24/7, book appointments, and reduce pressure on reception teams.",
-      points: ["Dental & beauty clinics", "Appointment automation", "Patient FAQ handling"],
+      problem: "Reception teams overwhelmed; patients hang up and book elsewhere.",
+      outcome: "Every patient call answered. Bookings captured 24/7.",
     },
     {
       icon: Building2,
       title: "Real Estate",
-      desc: "Qualify property inquiries instantly, capture buyer intent, and route hot leads to agents.",
-      points: ["Inbound lead capture", "Project & unit Q&A", "Viewing scheduling"],
+      problem: "Hot buyer inquiries lost between agents and after hours.",
+      outcome: "Instant qualification and viewings booked on the spot.",
     },
     {
       icon: Sparkles,
       title: "Beauty Centers",
-      desc: "Explain treatments, answer pricing questions, and book consultations around the clock.",
-      points: ["Service explanations", "Consultation booking", "After-hours coverage"],
+      problem: "Constant pricing & treatment questions tie up the front desk.",
+      outcome: "Consultations booked while your team focuses on clients.",
     },
     {
       icon: Headphones,
       title: "Customer Service",
-      desc: "Resolve repetitive inquiries instantly and escalate complex cases to human agents.",
-      points: ["Tier-1 deflection", "Order & account lookups", "Smart escalation"],
+      problem: "Repetitive questions drown high-value support requests.",
+      outcome: "Tier-1 inquiries resolved instantly, humans handle the rest.",
     },
     {
       icon: Briefcase,
       title: "Sales Teams",
-      desc: "Qualify inbound leads, book discovery calls, and push clean data straight to your CRM.",
-      points: ["Lead qualification", "Calendar booking", "CRM sync"],
+      problem: "Reps waste hours on unqualified leads and admin work.",
+      outcome: "Only serious buyers reach your team, with CRM pre-filled.",
+    },
+    {
+      icon: Globe2,
+      title: "Service Businesses",
+      desc: "And more — restaurants, agencies, and any team that lives on the phone.",
+      problem: "Calls outside hours = lost jobs and lost revenue.",
+      outcome: "24/7 coverage in Arabic & English with zero hires.",
     },
   ];
   return (
@@ -357,23 +364,33 @@ function IndustriesSection() {
         <SectionHeader
           eyebrow="Industries"
           title="Built for the businesses that live on the phone"
-          description="SphinxAI is tuned for the real workflows of clinics, real estate, beauty centers, customer service, and sales teams across Egypt and MENA."
+          description="Tuned to the real workflows of clinics, real estate, beauty centers, customer service, and sales teams across Egypt and MENA."
         />
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {industries.map((i) => (
-            <div key={i.title} className="group flex flex-col rounded-2xl border border-border bg-white p-7 shadow-[0_1px_0_0_rgba(15,23,42,0.03)] transition hover:-translate-y-1 hover:border-brand/30 hover:shadow-premium">
-              <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-brand-soft text-brand transition group-hover:bg-brand group-hover:text-brand-foreground">
+            <div
+              key={i.title}
+              className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-white p-7 shadow-[0_1px_0_0_rgba(15,23,42,0.03)] transition hover:-translate-y-1 hover:border-brand/30 hover:shadow-premium"
+            >
+              <div className="pointer-events-none absolute -right-12 -top-12 h-32 w-32 rounded-full bg-brand-soft opacity-0 blur-2xl transition group-hover:opacity-100" />
+              <div className="relative inline-flex h-12 w-12 items-center justify-center rounded-xl bg-brand-soft text-brand transition group-hover:bg-brand group-hover:text-brand-foreground">
                 <i.icon className="h-5 w-5" />
               </div>
-              <h3 className="mt-5 font-display text-lg font-semibold text-ink">{i.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{i.desc}</p>
-              <ul className="mt-5 space-y-2 border-t border-border pt-4">
-                {i.points.map((p) => (
-                  <li key={p} className="flex items-center gap-2 text-xs font-medium text-ink/80">
-                    <CheckCircle2 className="h-3.5 w-3.5 text-brand" /> {p}
-                  </li>
-                ))}
-              </ul>
+              <h3 className="relative mt-5 font-display text-xl font-semibold text-ink">{i.title}</h3>
+              <div className="relative mt-5 space-y-4 border-t border-border pt-5">
+                <div>
+                  <div className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-rose-600">
+                    <TrendingDown className="h-3 w-3" /> Problem
+                  </div>
+                  <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{i.problem}</p>
+                </div>
+                <div>
+                  <div className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-emerald-600">
+                    <TrendingUp className="h-3 w-3" /> Outcome
+                  </div>
+                  <p className="mt-1.5 text-sm font-medium leading-relaxed text-ink">{i.outcome}</p>
+                </div>
+              </div>
             </div>
           ))}
         </div>
