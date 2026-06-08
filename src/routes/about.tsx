@@ -7,8 +7,8 @@ import { Target, Eye, Heart, Globe2 } from "lucide-react";
 
 export const Route = createFileRoute("/about")({
   head: () => pageMeta({
-    title: "About SphinxAI — Voice AI Built for the Middle East",
-    description: "SphinxAI is an Egyptian AI company helping businesses automate customer communication using human-like Voice AI technology.",
+    title: "About SphinxAI | AI Voice Platform For Egypt & MENA",
+    description: "SphinxAI is an Egyptian AI company helping businesses in Egypt and the Middle East automate customer communication using advanced Voice AI technology.",
     path: "/about",
   }),
   component: AboutPage,
