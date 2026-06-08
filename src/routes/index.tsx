@@ -20,7 +20,7 @@ import {
   Timer, Wallet, Bot, CalendarCheck, Users, Headphones, Plug, Route as RouteIcon,
   BarChart3, PhoneCall, ShieldCheck, Globe2, Layers, TrendingUp,
   ArrowRight, Workflow, CheckCircle2, PlayCircle, Stethoscope, Sparkles,
-  Building2, Briefcase, Mic, Radio, Database, TrendingDown,
+  Building2, Briefcase, Mic, TrendingDown, Volume2, Zap, Smile,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -58,18 +58,11 @@ function Index() {
 
 function Hero() {
   const [videoOpen, setVideoOpen] = useState(false);
-  const trust = [
-    { icon: Clock, label: "24/7 Call Answering" },
-    { icon: Languages, label: "Arabic & English Support" },
-    { icon: CalendarCheck, label: "Clinic Booking Automation" },
-    { icon: Users, label: "Lead Qualification" },
-    { icon: Globe2, label: "Built For Egypt & MENA" },
-  ];
   return (
     <section className="relative isolate overflow-hidden bg-[#070B17] text-white">
       {/* Background video — muted, autoplay, loop, poster fallback */}
       <video
-        className="absolute inset-0 -z-20 h-full w-full object-cover opacity-60 [filter:saturate(0.85)_contrast(1.05)]"
+        className="absolute inset-0 -z-20 h-full w-full object-cover opacity-45 [filter:saturate(0.8)_contrast(1.05)]"
         src={heroVideo.url}
         poster={heroPoster.url}
         autoPlay
@@ -82,44 +75,59 @@ function Hero() {
         tabIndex={-1}
       />
       {/* Layered overlays for legibility and premium brand tone */}
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,rgba(7,11,23,0.65),rgba(7,11,23,0.95))]" />
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-[#070B17]/85 via-[#070B17]/65 to-[#070B17]" />
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(120deg,rgba(60,84,143,0.28),transparent_50%,rgba(253,186,8,0.10))]" />
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,rgba(7,11,23,0.7),rgba(7,11,23,0.97))]" />
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-[#070B17]/90 via-[#070B17]/70 to-[#070B17]" />
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(120deg,rgba(60,84,143,0.30),transparent_50%,rgba(253,186,8,0.10))]" />
+      {/* Floating glow orbs */}
+      <div className="pointer-events-none absolute -left-32 top-1/3 -z-10 h-[420px] w-[420px] rounded-full bg-[radial-gradient(circle,rgba(70,112,168,0.35),transparent_60%)] blur-2xl animate-float-y" />
+      <div className="pointer-events-none absolute -right-24 top-10 -z-10 h-[380px] w-[380px] rounded-full bg-[radial-gradient(circle,rgba(253,186,8,0.18),transparent_60%)] blur-2xl animate-float-y [animation-delay:-3s]" />
       <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
-      <div className="container-page relative flex min-h-[92vh] flex-col items-center justify-center pb-20 pt-28 md:pt-32 lg:min-h-screen lg:pb-28">
-        <div className="mx-auto flex w-full max-w-4xl flex-col items-center text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/85 backdrop-blur">
+      <div className="container-page relative flex min-h-[94vh] flex-col items-center justify-center pb-24 pt-28 md:pt-32 lg:min-h-screen lg:pb-32">
+        <div className="mx-auto flex w-full max-w-5xl flex-col items-center text-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-white/90 backdrop-blur">
             <span className="relative inline-flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
             </span>
-            AI Voice Platform For Egypt & MENA
+            AI Voice Platform · Egypt & MENA
           </div>
-          <h1 className="mt-7 font-display text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.25rem]">
+          <h1 className="mt-8 font-display text-[2.75rem] font-bold leading-[1.02] tracking-[-0.035em] text-white sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[6.5rem]">
             Turn Every Call{" "}
             <span className="bg-gradient-to-r from-[#FDBA08] via-[#FFD66B] to-[#FDBA08] bg-clip-text text-transparent">
               Into Revenue
             </span>
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/75 md:text-lg lg:text-xl">
+          <p className="mx-auto mt-7 max-w-2xl text-base leading-relaxed text-white/75 md:text-lg lg:text-xl">
             SphinxAI helps businesses answer every call instantly using human-like AI voice
             agents available 24/7 — qualifying leads, booking appointments, and automating
             customer communication in Arabic & English.
           </p>
-          <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap">
-            <Button asChild variant="gold" size="xl" className="min-w-[200px] shadow-[0_10px_40px_-10px_rgba(253,186,8,0.5)]">
-              <Link to="/live-demo"><PhoneCall className="h-4 w-4" /> Talk To AI Now</Link>
-            </Button>
-            <Button asChild size="xl" className="min-w-[200px] bg-white text-[#0B1226] hover:bg-white/90">
-              <Link to="/contact"><CalendarCheck className="h-4 w-4" /> Book Free Demo</Link>
-            </Button>
+
+          {/* Voice wave */}
+          <div className="mt-10">
+            <VoiceWave dark />
+          </div>
+
+          {/* Dominant CTA cluster */}
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <div className="relative">
+              <span className="pointer-events-none absolute inset-0 -z-0 rounded-2xl bg-[#FDBA08] opacity-50 blur-2xl animate-soft-pulse" />
+              <Button
+                asChild
+                variant="gold"
+                size="xl"
+                className="relative h-14 min-w-[240px] rounded-2xl px-8 text-base font-bold shadow-[0_20px_60px_-12px_rgba(253,186,8,0.65)] hover:-translate-y-0.5"
+              >
+                <Link to="/live-demo"><PhoneCall className="h-5 w-5" /> Talk To AI Now</Link>
+              </Button>
+            </div>
             <Button
               type="button"
               size="xl"
               variant="ghost"
               onClick={() => setVideoOpen(true)}
-              className="min-w-[180px] border border-white/20 bg-white/[0.04] text-white hover:bg-white/10 hover:text-white"
+              className="h-14 min-w-[180px] rounded-2xl border border-white/20 bg-white/[0.04] px-6 text-white hover:bg-white/10 hover:text-white"
             >
               <PlayCircle className="h-5 w-5" /> Watch Demo
             </Button>
@@ -136,21 +144,31 @@ function Hero() {
             </div>
           </div>
         </div>
-
-        <div className="mt-14 grid w-full grid-cols-2 gap-2.5 sm:grid-cols-3 md:gap-3 lg:grid-cols-5">
-          {trust.map((t) => (
-            <div
-              key={t.label}
-              className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.05] px-3 py-2.5 text-xs font-medium text-white/85 backdrop-blur transition hover:border-white/20 hover:bg-white/[0.08]"
-            >
-              <t.icon className="h-4 w-4 shrink-0 text-[#FDBA08]" />
-              {t.label}
-            </div>
-          ))}
-        </div>
       </div>
       <VideoModal open={videoOpen} onClose={() => setVideoOpen(false)} />
     </section>
+  );
+}
+
+/* Lightweight CSS-only voice wave */
+function VoiceWave({ dark = false, bars = 28 }: { dark?: boolean; bars?: number }) {
+  const heights = [22, 38, 54, 70, 48, 30, 60, 80, 44, 26, 58, 72, 40, 24, 52, 68, 36, 50, 28, 64, 76, 42, 30, 58, 46, 34, 62, 50];
+  return (
+    <div
+      className="flex h-16 items-center justify-center gap-[5px]"
+      aria-hidden="true"
+    >
+      {Array.from({ length: bars }).map((_, i) => (
+        <span
+          key={i}
+          className={`w-[3px] origin-center rounded-full ${dark ? "bg-gradient-to-t from-[#FDBA08] to-white/80" : "bg-gradient-to-t from-brand to-[#FDBA08]"}`}
+          style={{
+            height: `${heights[i % heights.length]}%`,
+            animation: `vw-bar ${0.9 + (i % 5) * 0.15}s ease-in-out ${i * 0.05}s infinite`,
+          }}
+        />
+      ))}
+    </div>
   );
 }
 
