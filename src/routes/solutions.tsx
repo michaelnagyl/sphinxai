@@ -4,12 +4,12 @@ import { SectionHeader } from "@/components/site/SectionHeader";
 import { CTASection } from "@/components/site/CTASection";
 import { InlineLeadCTA } from "@/components/site/InlineLeadCTA";
 import { pageMeta } from "@/lib/site-meta";
-import { Bot, PhoneCall, Workflow, Users, CalendarCheck, Plug, BarChart3, MessageCircle, Check, X } from "lucide-react";
+import { Bot, PhoneCall, Users, CalendarCheck, Plug, BarChart3, Check, X, Stethoscope, HeartPulse } from "lucide-react";
 
 export const Route = createFileRoute("/solutions")({
   head: () => pageMeta({
-    title: "Solutions — Voice AI for Modern Businesses | SphinxAI",
-    description: "AI voice agents, call automation, lead qualification, booking workflows, CRM integration, and conversation analytics — one business-ready platform.",
+    title: "AI Call Center, AI Receptionist & Business Automation | SphinxAI",
+    description: "Automate call answering, appointment booking, lead qualification, CRM workflows, and conversation analytics with SphinxAI voice agents.",
     path: "/solutions",
   }),
   component: SolutionsPage,
@@ -22,7 +22,19 @@ const solutions = [
   { icon: Users, title: "Lead Qualification", desc: "Ask the right questions, understand customer intent, and identify serious leads." },
   { icon: Plug, title: "CRM & Google Sheets Integration", desc: "Push structured customer data to your CRM, Google Sheets, or business dashboards." },
   { icon: BarChart3, title: "Conversation Analytics", desc: "Track call outcomes, customer intent, conversion rates, missed opportunities, and business insights." },
-  { icon: MessageCircle, title: "WhatsApp & Workflow Automation Ready", desc: "Connect calls to WhatsApp, n8n, Zapier, and your internal workflows out of the box." },
+];
+
+const clinicSolutions = [
+  {
+    icon: Stethoscope,
+    title: "Clinic Appointment Booking AI",
+    desc: "Automate patient calls, appointment requests, branch questions, service inquiries, and follow-up communication using a human-like AI voice agent built for clinics and medical centers.",
+  },
+  {
+    icon: HeartPulse,
+    title: "AI Receptionist For Medical Centers",
+    desc: "SphinxAI works like an AI receptionist that answers calls, collects patient details, handles common questions, and organizes information for your team.",
+  },
 ];
 
 const compareLeft = [
@@ -69,6 +81,32 @@ function SolutionsPage() {
               <p className={`mt-2 text-sm leading-relaxed ${i === 0 ? "md:text-white/80" : "text-muted-foreground"}`}>{s.desc}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="section-pad bg-surface">
+        <div className="container-page">
+          <SectionHeader
+            eyebrow="Built for healthcare"
+            title="Solutions for Clinics & Medical Centers"
+            description="SphinxAI is purpose-built to support clinics, dental practices, beauty clinics, and medical centers across Egypt and the Middle East."
+          />
+          <div className="mt-12 grid gap-6 md:grid-cols-2">
+            {clinicSolutions.map((s) => (
+              <div key={s.title} className="rounded-2xl border border-brand/20 bg-white p-7 shadow-[0_20px_50px_-30px_rgba(60,84,143,0.4)]">
+                <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-soft text-brand">
+                  <s.icon className="h-5 w-5" />
+                </div>
+                <h3 className="font-display text-xl font-semibold text-ink">{s.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-8 text-center text-xs text-muted-foreground">
+            AI receptionist for clinics · AI appointment booking · clinic call center automation ·
+            medical call answering service · Arabic AI voice agent · AI voice agent for medical
+            centers · dental clinic AI assistant
+          </p>
         </div>
       </section>
 

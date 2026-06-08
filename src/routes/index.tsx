@@ -16,16 +16,16 @@ import {
   Clock, Languages, Building2, Rocket, PhoneOff, UserX, MoonStar, MailWarning,
   Timer, Wallet, Bot, CalendarCheck, Users, Headphones, Plug, Route as RouteIcon,
   BarChart3, PhoneCall, ShieldCheck, Globe2, Layers, TrendingUp,
-  ArrowRight, Workflow, Star, CheckCircle2, PlayCircle
+  ArrowRight, Workflow, Star, CheckCircle2, PlayCircle, Stethoscope, HeartPulse
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "SphinxAI — AI Voice Agents That Turn Every Call Into Revenue" },
-      { name: "description", content: "SphinxAI provides human-like AI voice agents that answer calls, qualify leads, book appointments and automate customer communication 24/7 for businesses in Egypt and the Middle East." },
-      { property: "og:title", content: "SphinxAI — AI Voice Platform For Businesses" },
-      { property: "og:description", content: "Human-like AI voice agents that answer every call, qualify leads, and book appointments — 24/7, in Arabic and English." },
+      { title: "SphinxAI | AI Voice Agents & AI Call Center For Businesses" },
+      { name: "description", content: "SphinxAI provides human-like AI voice agents for clinics, real estate, customer service, and sales teams. Automate calls, qualify leads, book appointments, and answer customers 24/7." },
+      { property: "og:title", content: "SphinxAI | AI Voice Agents & AI Call Center For Businesses" },
+      { property: "og:description", content: "Human-like AI voice agents for clinics, medical centers, and businesses. Answer calls, book appointments, qualify leads — 24/7 in Arabic and English." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
     ],
@@ -40,6 +40,7 @@ function Index() {
       <Hero />
       <TrustBar />
       <SeeInAction />
+      <ClinicSection />
       <ProblemSection />
       <SolutionSection />
       <HowItWorks />
@@ -371,6 +372,68 @@ function SeeInAction() {
           <div className="order-1 lg:order-2">
             <DemoVideo />
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ClinicSection() {
+  const cards = [
+    {
+      icon: PhoneCall,
+      title: "Never Miss A Patient Call",
+      desc: "SphinxAI answers patient calls 24/7, even after working hours, so clinics do not lose bookings.",
+    },
+    {
+      icon: CalendarCheck,
+      title: "Automated Appointment Booking",
+      desc: "The AI agent can collect patient details, understand the requested service, and guide patients toward booking a visit.",
+    },
+    {
+      icon: Headphones,
+      title: "Reception Team Support",
+      desc: "Reduce repetitive calls and help your reception team focus on important cases.",
+    },
+    {
+      icon: Languages,
+      title: "Arabic & English Patient Communication",
+      desc: "Support patients naturally in Arabic and English with clear, professional conversations.",
+    },
+  ];
+  return (
+    <section className="section-pad bg-gradient-to-b from-white via-brand-soft/30 to-white">
+      <div className="container-page">
+        <div className="mx-auto max-w-3xl text-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-brand/20 bg-white px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand">
+            <Stethoscope className="h-3.5 w-3.5" /> For Clinics & Medical Centers
+          </div>
+          <h2 className="mt-5 font-display text-3xl font-bold text-ink md:text-5xl">
+            AI Voice Agents For <span className="brand-gradient-text">Clinics & Medical Centers</span>
+          </h2>
+          <p className="mt-5 text-base text-muted-foreground md:text-lg">
+            SphinxAI helps clinics answer patient calls instantly, book appointments, collect patient details,
+            answer common questions, and reduce pressure on reception teams.
+          </p>
+        </div>
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {cards.map((c) => (
+            <div key={c.title} className="rounded-2xl border border-border bg-white p-6 shadow-[0_1px_0_0_rgba(15,23,42,0.03)] transition hover:-translate-y-1 hover:border-brand/30 hover:shadow-premium">
+              <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-soft text-brand">
+                <c.icon className="h-5 w-5" />
+              </div>
+              <h3 className="mt-4 font-display text-lg font-semibold text-ink">{c.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{c.desc}</p>
+            </div>
+          ))}
+        </div>
+        <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <Button asChild variant="hero" size="xl">
+            <Link to="/contact"><HeartPulse className="h-4 w-4" /> Book A Clinic Demo</Link>
+          </Button>
+          <Button asChild variant="outlineBrand" size="xl">
+            <Link to="/live-demo"><PhoneCall className="h-4 w-4" /> See Live Demo</Link>
+          </Button>
         </div>
       </div>
     </section>

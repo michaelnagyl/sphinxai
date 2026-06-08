@@ -18,12 +18,13 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-white/90 shadow-[0_1px_0_0_rgba(15,23,42,0.04)] backdrop-blur supports-[backdrop-filter]:bg-white/75">
       <div className="container-page flex h-20 items-center justify-between md:h-[88px]">
-        <Link to="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
+        <Link to="/" className="flex items-center py-2" onClick={() => setOpen(false)}>
           <img
             src={logoAsset.url}
-            alt="SphinxAI"
-            className="h-10 w-auto md:h-12 lg:h-14"
-            width={200}
+            alt="SphinxAI — AI Voice Agents"
+            className="block h-auto w-[140px] object-contain md:w-[170px] lg:w-[190px]"
+            style={{ objectFit: "contain" }}
+            width={190}
             height={56}
           />
         </Link>
