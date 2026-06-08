@@ -408,68 +408,111 @@ function IndustriesSection() {
 }
 
 function LiveDemoSection() {
-  const bullets = [
-    "Hear a natural Arabic & English voice",
-    "Watch it qualify a real inquiry",
-    "See an appointment booked live",
-    "Experience sub-second response time",
-  ];
   return (
-    <section className="section-pad bg-gradient-to-b from-white via-brand-soft/40 to-white">
+    <section className="relative isolate overflow-hidden bg-[#070B17] py-24 text-white md:py-32">
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,rgba(70,112,168,0.25),transparent_55%)]" />
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_bottom,rgba(253,186,8,0.10),transparent_55%)]" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
+
       <div className="container-page">
         <div className="mx-auto max-w-3xl text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-brand/20 bg-white px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand">
-            <Mic className="h-3.5 w-3.5" /> Live Demo
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-white/90 backdrop-blur">
+            <Mic className="h-3.5 w-3.5 text-[#FDBA08]" /> Live Demo
           </div>
-          <h2 className="mt-5 font-display text-4xl font-bold text-ink md:text-5xl lg:text-6xl">
-            Experience SphinxAI Live
+          <h2 className="mt-6 font-display text-4xl font-bold leading-[1.05] tracking-[-0.03em] text-white md:text-6xl lg:text-7xl">
+            Experience SphinxAI{" "}
+            <span className="bg-gradient-to-r from-[#FDBA08] via-[#FFD66B] to-[#FDBA08] bg-clip-text text-transparent">Live</span>
           </h2>
-          <p className="mt-5 text-lg text-muted-foreground md:text-xl">
-            Talk directly with an AI voice agent. Ask questions, request a booking, or test it in
-            Arabic and English — no signup required.
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
+            Don't read about it — talk to it. Hear how natural, fast, and business-ready our AI
+            voice agent really is, in Arabic or English.
           </p>
         </div>
-        <div className="mt-16 grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
-          <div className="order-2 lg:order-1">
-            <div className="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700 ring-1 ring-emerald-200">
-              <span className="relative inline-flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
-              </span>
-              AI agent online
+
+        {/* AI conversation surface */}
+        <div className="mx-auto mt-16 max-w-3xl">
+          <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-white/[0.02] p-8 backdrop-blur-xl shadow-[0_40px_120px_-30px_rgba(60,84,143,0.6)] md:p-12">
+            {/* Status pill */}
+            <div className="flex items-center justify-between">
+              <div className="inline-flex items-center gap-2 rounded-full bg-emerald-500/15 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-emerald-300 ring-1 ring-emerald-400/30">
+                <span className="relative inline-flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+                </span>
+                AI Agent Online
+              </div>
+              <div className="flex items-center gap-2 text-[11px] font-medium text-white/60">
+                <Volume2 className="h-3.5 w-3.5" /> EG · Arabic & English
+              </div>
             </div>
-            <h3 className="mt-4 font-display text-3xl font-bold text-ink md:text-4xl">
-              Don't read about it. Talk to it.
-            </h3>
-            <p className="mt-5 text-lg text-muted-foreground">
-              In under 30 seconds you'll hear how natural, fast, and business-ready our AI voice
-              agent really is.
-            </p>
-            <ul className="mt-7 space-y-3">
-              {bullets.map((b) => (
-                <li key={b} className="flex items-center gap-3 text-base font-medium text-ink">
-                  <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-emerald-50 text-emerald-600 ring-1 ring-emerald-200">
-                    <CheckCircle2 className="h-4 w-4" />
-                  </span>
-                  {b}
-                </li>
-              ))}
-            </ul>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <Button asChild variant="hero" size="xl">
-                <Link to="/live-demo"><PhoneCall className="h-4 w-4" /> Start Live Conversation</Link>
+
+            {/* Mic + voice wave */}
+            <div className="mt-10 flex flex-col items-center">
+              <div className="relative">
+                <span className="pointer-events-none absolute inset-0 -m-8 rounded-full bg-[#FDBA08]/20 blur-2xl animate-soft-pulse" />
+                <span className="pointer-events-none absolute inset-0 -m-4 rounded-full ring-1 ring-white/15" />
+                <Link
+                  to="/live-demo"
+                  aria-label="Start live conversation"
+                  className="relative grid h-28 w-28 place-items-center rounded-full bg-gradient-to-br from-[#FDBA08] to-[#E59C00] text-[#0B1226] shadow-[0_30px_80px_-20px_rgba(253,186,8,0.7)] transition hover:scale-[1.04] md:h-32 md:w-32"
+                >
+                  <Mic className="h-10 w-10 md:h-12 md:w-12" />
+                </Link>
+              </div>
+              <div className="mt-8 w-full">
+                <VoiceWave dark bars={36} />
+              </div>
+              <div className="mt-2 text-xs font-medium uppercase tracking-[0.25em] text-white/50">
+                Tap to talk · Sub-second response
+              </div>
+            </div>
+
+            {/* Mini transcript */}
+            <div className="mt-10 space-y-3 border-t border-white/10 pt-8">
+              <ChatBubble who="customer" text="مرحبا، حابب أحجز استشارة أسنان." />
+              <ChatBubble who="ai" text="أهلاً بحضرتك! متاح عندنا مواعيد بكرة الساعة 11 صباحاً أو 4 عصراً. أنهي مناسب أكتر؟" />
+              <ChatBubble who="customer" text="The 4pm slot works." />
+              <ChatBubble who="ai" text="Perfect — I've booked you for 4:00 PM tomorrow and sent the confirmation via SMS." done />
+            </div>
+
+            {/* CTAs */}
+            <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <Button asChild variant="gold" size="xl" className="h-14 min-w-[240px] rounded-2xl px-8 text-base font-bold shadow-[0_20px_60px_-12px_rgba(253,186,8,0.6)]">
+                <Link to="/live-demo"><PhoneCall className="h-5 w-5" /> Start Live Conversation</Link>
               </Button>
-              <Button asChild variant="outlineBrand" size="xl">
-                <Link to="/contact"><CalendarCheck className="h-4 w-4" /> Book A Discovery Call</Link>
+              <Button asChild variant="ghost" size="xl" className="h-14 min-w-[200px] rounded-2xl border border-white/20 bg-white/[0.04] text-white hover:bg-white/10 hover:text-white">
+                <Link to="/contact"><CalendarCheck className="h-5 w-5" /> Book Discovery Call</Link>
               </Button>
             </div>
-          </div>
-          <div className="order-1 lg:order-2">
-            <DemoVideo />
           </div>
         </div>
       </div>
     </section>
+  );
+}
+
+function ChatBubble({ who, text, done }: { who: "ai" | "customer"; text: string; done?: boolean }) {
+  const isAI = who === "ai";
+  return (
+    <div className={`flex ${isAI ? "justify-start" : "justify-end"}`}>
+      <div
+        className={`max-w-[78%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed shadow-sm ${
+          isAI
+            ? "rounded-bl-sm bg-white/[0.08] text-white/90 ring-1 ring-white/10"
+            : "rounded-br-sm bg-[#FDBA08] text-[#0B1226] font-medium"
+        }`}
+      >
+        <div className={`mb-1 text-[10px] font-bold uppercase tracking-wider ${isAI ? "text-[#FDBA08]" : "text-[#0B1226]/60"}`}>
+          {isAI ? "SphinxAI" : "Caller"}
+        </div>
+        <div dir="auto">{text}</div>
+        {done && (
+          <div className="mt-1.5 inline-flex items-center gap-1 text-[10px] font-semibold text-emerald-700">
+            <CheckCircle2 className="h-3 w-3" /> Booking confirmed
+          </div>
+        )}
+      </div>
+    </div>
   );
 }
 
