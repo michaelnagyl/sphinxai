@@ -16,16 +16,16 @@ import {
   Clock, Languages, Building2, Rocket, PhoneOff, UserX, MoonStar, MailWarning,
   Timer, Wallet, Bot, CalendarCheck, Users, Headphones, Plug, Route as RouteIcon,
   BarChart3, PhoneCall, ShieldCheck, Globe2, Layers, TrendingUp,
-  ArrowRight, Workflow, Star, CheckCircle2, PlayCircle
+  ArrowRight, Workflow, Star, CheckCircle2, PlayCircle, Stethoscope, HeartPulse
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "SphinxAI — AI Voice Agents That Turn Every Call Into Revenue" },
-      { name: "description", content: "SphinxAI provides human-like AI voice agents that answer calls, qualify leads, book appointments and automate customer communication 24/7 for businesses in Egypt and the Middle East." },
-      { property: "og:title", content: "SphinxAI — AI Voice Platform For Businesses" },
-      { property: "og:description", content: "Human-like AI voice agents that answer every call, qualify leads, and book appointments — 24/7, in Arabic and English." },
+      { title: "SphinxAI | AI Voice Agents & AI Call Center For Businesses" },
+      { name: "description", content: "SphinxAI provides human-like AI voice agents for clinics, real estate, customer service, and sales teams. Automate calls, qualify leads, book appointments, and answer customers 24/7." },
+      { property: "og:title", content: "SphinxAI | AI Voice Agents & AI Call Center For Businesses" },
+      { property: "og:description", content: "Human-like AI voice agents for clinics, medical centers, and businesses. Answer calls, book appointments, qualify leads — 24/7 in Arabic and English." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
     ],
@@ -40,6 +40,7 @@ function Index() {
       <Hero />
       <TrustBar />
       <SeeInAction />
+      <ClinicSection />
       <ProblemSection />
       <SolutionSection />
       <HowItWorks />
