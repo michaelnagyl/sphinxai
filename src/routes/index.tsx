@@ -21,6 +21,7 @@ import {
   BarChart3, PhoneCall, ShieldCheck, Globe2, Layers, TrendingUp,
   ArrowRight, Workflow, CheckCircle2, PlayCircle, Stethoscope, Sparkles,
   Building2, Briefcase, Mic, TrendingDown, Volume2, Zap, Smile,
+  Check, Crown,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -49,6 +50,8 @@ function Index() {
       <HowItWorks />
       <ResultsSection />
       <LiveDemoSection />
+      <DemoVideoSection />
+      <HomePackagesSection />
       <Testimonials />
       <FAQSection />
       <CTASection />
