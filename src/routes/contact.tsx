@@ -122,14 +122,9 @@ function ContactPage() {
                   </div>
                 </div>
 
-                <div className="mt-7 grid gap-3 sm:grid-cols-3">
-                  <Button type="submit" variant="hero" size="xl" disabled={submitting} className="sm:col-span-1">
+                <div className="mt-7 grid gap-3 sm:grid-cols-2">
+                  <Button type="submit" variant="hero" size="xl" disabled={submitting}>
                     <CalendarCheck className="h-4 w-4" /> {submitting ? "Sending…" : "Book Discovery Call"}
-                  </Button>
-                  <Button type="button" variant="outlineBrand" size="xl" asChild>
-                    <a href="https://wa.me/201000000000" target="_blank" rel="noopener noreferrer">
-                      <MessageCircle className="h-4 w-4" /> WhatsApp Us
-                    </a>
                   </Button>
                   <Button type="button" variant="outlineBrand" size="xl" asChild>
                     <Link to="/live-demo"><PhoneCall className="h-4 w-4" /> Request Demo</Link>
