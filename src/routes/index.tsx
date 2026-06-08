@@ -6,12 +6,14 @@ import { SectionHeader } from "@/components/site/SectionHeader";
 import { FeatureCard } from "@/components/site/FeatureCard";
 import { CTASection } from "@/components/site/CTASection";
 import { Soundwave } from "@/components/site/Soundwave";
+import { TrustBar } from "@/components/site/TrustBar";
+import { Testimonials } from "@/components/site/Testimonials";
 import heroImg from "@/assets/hero-voice.jpg";
 import {
   Clock, Languages, Building2, Rocket, PhoneOff, UserX, MoonStar, MailWarning,
   Timer, Wallet, Bot, CalendarCheck, Users, Headphones, Plug, Route as RouteIcon,
   BarChart3, PhoneCall, ShieldCheck, Globe2, Layers, Sparkles, TrendingUp,
-  ArrowRight, PlayCircle, Workflow
+  ArrowRight, PlayCircle, Workflow, Star, CheckCircle2
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -33,10 +35,12 @@ function Index() {
   return (
     <SiteLayout>
       <Hero />
+      <TrustBar />
       <ProblemSection />
       <SolutionSection />
       <HowItWorks />
       <ResultsSection />
+      <Testimonials />
       <WhySphinx />
       <CTASection />
     </SiteLayout>
@@ -52,32 +56,48 @@ function Hero() {
   ];
   return (
     <section className="relative overflow-hidden">
-      <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[600px] bg-[radial-gradient(ellipse_at_top,rgba(60,84,143,0.10),transparent_60%)]" />
-      <div className="container-page grid items-center gap-12 pb-20 pt-16 md:pt-24 lg:grid-cols-[1.05fr_1fr] lg:pb-28">
+      <div className="pointer-events-none absolute inset-0 -z-10 grid-bg opacity-60 [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[700px] bg-[radial-gradient(ellipse_at_top,rgba(60,84,143,0.12),transparent_60%)]" />
+      <div className="container-page grid items-center gap-12 pb-20 pt-12 md:pt-20 lg:grid-cols-[1.05fr_1fr] lg:pb-28">
         <div>
-          <div className="inline-flex items-center gap-2 rounded-full border border-brand/20 bg-brand-soft px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand">
-            <Sparkles className="h-3.5 w-3.5" /> AI Voice Platform For Businesses
+          <div className="inline-flex items-center gap-2 rounded-full border border-brand/20 bg-white/80 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand shadow-sm backdrop-blur">
+            <span className="relative inline-flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+            </span>
+            Now live in Egypt & MENA
           </div>
-          <h1 className="mt-5 font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink md:text-6xl">
-            Turn Every Call <br className="hidden md:block" />
-            Into <span className="brand-gradient-text">Revenue</span>
+          <h1 className="mt-5 font-display text-[2.5rem] font-bold leading-[1.05] tracking-tight text-ink sm:text-5xl md:text-6xl">
+            Never Miss a Call.<br className="hidden md:block" />
+            <span className="brand-gradient-text">Never Miss Revenue.</span>
           </h1>
           <p className="mt-5 max-w-xl text-base text-muted-foreground md:text-lg">
-            SphinxAI helps businesses answer every call instantly using human-like AI voice agents that
-            qualify leads, book appointments, answer questions, and automate customer communication
-            around the clock.
+            SphinxAI deploys human-like AI voice agents that answer every call in under a second,
+            qualify leads, book appointments, and push clean data to your CRM — 24/7, in fluent
+            Arabic and English.
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Button asChild variant="hero" size="xl">
               <Link to="/live-demo"><PhoneCall className="h-4 w-4" /> Talk To AI Now</Link>
             </Button>
             <Button asChild variant="outlineBrand" size="xl">
-              <Link to="/live-demo"><PlayCircle className="h-4 w-4" /> Watch Demo</Link>
+              <Link to="/contact"><CalendarCheck className="h-4 w-4" /> Book A Discovery Call</Link>
             </Button>
+          </div>
+          <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-muted-foreground">
+            <div className="flex items-center gap-1.5">
+              <CheckCircle2 className="h-4 w-4 text-emerald-500" /> No credit card
+            </div>
+            <div className="flex items-center gap-1.5">
+              <CheckCircle2 className="h-4 w-4 text-emerald-500" /> Live in 7 days
+            </div>
+            <div className="flex items-center gap-1.5">
+              <CheckCircle2 className="h-4 w-4 text-emerald-500" /> Cancel anytime
+            </div>
           </div>
           <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
             {trust.map((t) => (
-              <div key={t.label} className="flex items-center gap-2 rounded-lg border border-border bg-white/60 px-3 py-2 text-xs font-medium text-ink">
+              <div key={t.label} className="flex items-center gap-2 rounded-lg border border-border bg-white/70 px-3 py-2 text-xs font-medium text-ink backdrop-blur">
                 <t.icon className="h-4 w-4 text-brand" />
                 {t.label}
               </div>
@@ -86,13 +106,14 @@ function Hero() {
         </div>
         <div className="relative">
           <div className="absolute -inset-6 -z-10 rounded-[2rem] bg-gradient-to-br from-brand/15 via-transparent to-gold/15 blur-2xl" />
-          <div className="overflow-hidden rounded-3xl border border-border bg-white shadow-[0_30px_80px_-30px_rgba(60,84,143,0.45)]">
+          <div className="overflow-hidden rounded-3xl border border-border bg-white shadow-premium">
             <img
               src={heroImg}
               alt="Abstract AI voice communication waves and network"
               width={1536}
               height={1152}
               className="aspect-[4/3] w-full object-cover"
+              loading="eager"
             />
             <div className="border-t border-border p-5">
               <div className="flex items-center justify-between">
@@ -103,11 +124,40 @@ function Hero() {
                 <span className="text-xs text-muted-foreground">00:42</span>
               </div>
               <Soundwave className="mt-3" animate />
+              <div className="mt-4 grid grid-cols-3 gap-3 border-t border-border pt-4 text-center">
+                <Stat k="< 1s" v="Pickup" />
+                <Stat k="100%" v="Answered" />
+                <Stat k="24/7" v="Available" />
+              </div>
+            </div>
+          </div>
+          <div className="absolute -bottom-6 -left-4 hidden rounded-2xl border border-border bg-white p-3 shadow-premium sm:flex sm:items-center sm:gap-3">
+            <div className="flex -space-x-2">
+              {["#3C548F", "#4670A8", "#FDBA08"].map((c) => (
+                <span key={c} className="inline-block h-8 w-8 rounded-full border-2 border-white" style={{ background: c }} />
+              ))}
+            </div>
+            <div className="text-left">
+              <div className="flex items-center gap-1">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} className="h-3 w-3 fill-gold text-gold" />
+                ))}
+              </div>
+              <div className="text-xs font-medium text-ink">Rated 4.9/5 by early customers</div>
             </div>
           </div>
         </div>
       </div>
     </section>
+  );
+}
+
+function Stat({ k, v }: { k: string; v: string }) {
+  return (
+    <div>
+      <div className="font-display text-lg font-bold text-brand">{k}</div>
+      <div className="text-[10px] uppercase tracking-wider text-muted-foreground">{v}</div>
+    </div>
   );
 }
 
