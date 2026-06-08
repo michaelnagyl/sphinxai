@@ -11,8 +11,8 @@ import { DemoVideo } from "@/components/site/DemoVideo";
 
 export const Route = createFileRoute("/live-demo")({
   head: () => pageMeta({
-    title: "Live Demo — Talk To SphinxAI Now",
-    description: "Experience SphinxAI live. Talk directly with our AI Voice Agent and discover how AI can transform customer communication.",
+    title: "Live AI Voice Agent Demo | SphinxAI",
+    description: "Experience SphinxAI live and see how AI voice agents answer calls, qualify leads, and automate customer communication.",
     path: "/live-demo",
   }),
   component: LiveDemoPage,
