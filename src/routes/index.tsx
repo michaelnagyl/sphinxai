@@ -12,6 +12,8 @@ import { Testimonials } from "@/components/site/Testimonials";
 import { VideoModal } from "@/components/site/VideoModal";
 import { DemoVideo } from "@/components/site/DemoVideo";
 import heroImg from "@/assets/hero-voice.jpg";
+import heroVideo from "@/assets/sphinx-demo.mp4.asset.json";
+import heroPoster from "@/assets/demo-poster.jpg.asset.json";
 import {
   Clock, Languages, Building2, Rocket, PhoneOff, UserX, MoonStar, MailWarning,
   Timer, Wallet, Bot, CalendarCheck, Users, Headphones, Plug, Route as RouteIcon,
@@ -55,112 +57,91 @@ function Index() {
 function Hero() {
   const [videoOpen, setVideoOpen] = useState(false);
   const trust = [
-    { icon: Languages, label: "Egyptian Arabic Support" },
     { icon: Clock, label: "24/7 Call Answering" },
+    { icon: Languages, label: "Arabic & English Support" },
     { icon: CalendarCheck, label: "Clinic Booking Automation" },
     { icon: Users, label: "Lead Qualification" },
-    { icon: Bot, label: "Human-Like Voice AI" },
+    { icon: Globe2, label: "Built For Egypt & MENA" },
   ];
   return (
-    <section className="relative overflow-hidden">
-      <div className="pointer-events-none absolute inset-0 -z-10 grid-bg opacity-60 [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
-      <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[700px] bg-[radial-gradient(ellipse_at_top,rgba(60,84,143,0.12),transparent_60%)]" />
-      <div className="container-page grid items-center gap-12 pb-20 pt-14 md:pt-24 lg:grid-cols-[1.1fr_1fr] lg:gap-16 lg:pb-32">
-        <div>
-          <div className="inline-flex items-center gap-2 rounded-full border border-brand/20 bg-white/80 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-brand shadow-sm backdrop-blur">
+    <section className="relative isolate overflow-hidden bg-[#070B17] text-white">
+      {/* Background video */}
+      <video
+        className="absolute inset-0 -z-20 h-full w-full object-cover"
+        src={heroVideo.url}
+        poster={heroPoster.url}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        aria-hidden="true"
+      />
+      {/* Overlays for legibility + brand tone */}
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,rgba(7,11,23,0.55),rgba(7,11,23,0.92))]" />
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-[#070B17]/70 via-[#070B17]/55 to-[#070B17]" />
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(120deg,rgba(60,84,143,0.35),transparent_45%,rgba(253,186,8,0.12))]" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+
+      <div className="container-page relative flex min-h-[92vh] flex-col justify-center pb-20 pt-28 md:pt-32 lg:min-h-screen lg:pb-28">
+        <div className="mx-auto max-w-4xl text-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/85 backdrop-blur">
             <span className="relative inline-flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
             </span>
-            Now live in Egypt & MENA
+            AI Voice Platform For Egypt & MENA
           </div>
-          <h1 className="mt-6 font-display text-[2.75rem] font-bold leading-[1.05] tracking-tight text-ink sm:text-5xl md:text-6xl lg:text-[4.5rem] xl:text-[5rem]">
+          <h1 className="mt-7 font-display text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.25rem]">
             Turn Every Missed Call{" "}
-            <span className="brand-gradient-text">Into Revenue.</span>
+            <span className="bg-gradient-to-r from-[#FDBA08] via-[#FFD66B] to-[#FDBA08] bg-clip-text text-transparent">
+              Into Revenue
+            </span>
           </h1>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-            SphinxAI answers your business calls 24/7 with human-like AI voice agents that qualify
-            leads, book appointments, collect customer details, and support customers in Arabic and
-            English.
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/75 md:text-lg lg:text-xl">
+            SphinxAI provides human-like AI voice agents that answer calls, qualify leads,
+            book appointments, and automate customer communication in Arabic and English — 24/7.
           </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-            <Button asChild variant="hero" size="xl">
+          <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap">
+            <Button asChild variant="gold" size="xl" className="min-w-[200px] shadow-[0_10px_40px_-10px_rgba(253,186,8,0.5)]">
               <Link to="/live-demo"><PhoneCall className="h-4 w-4" /> Talk To AI Now</Link>
             </Button>
-            <Button asChild variant="gold" size="xl">
+            <Button asChild size="xl" className="min-w-[200px] bg-white text-[#0B1226] hover:bg-white/90">
               <Link to="/contact"><CalendarCheck className="h-4 w-4" /> Book Free Demo</Link>
             </Button>
             <Button
               type="button"
-              variant="outlineBrand"
               size="xl"
+              variant="ghost"
               onClick={() => setVideoOpen(true)}
+              className="min-w-[180px] border border-white/20 bg-white/[0.04] text-white hover:bg-white/10 hover:text-white"
             >
               <PlayCircle className="h-5 w-5" /> Watch Demo
             </Button>
           </div>
-          <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-muted-foreground">
+          <div className="mt-7 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-white/60">
             <div className="flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-emerald-500" /> Live in 7 days
+              <CheckCircle2 className="h-4 w-4 text-emerald-400" /> Live in 7 days
             </div>
             <div className="flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-emerald-500" /> No credit card
+              <CheckCircle2 className="h-4 w-4 text-emerald-400" /> No credit card
             </div>
             <div className="flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-emerald-500" /> Cancel anytime
+              <CheckCircle2 className="h-4 w-4 text-emerald-400" /> Cancel anytime
             </div>
-          </div>
-          <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
-            {trust.map((t) => (
-              <div key={t.label} className="flex items-center gap-2 rounded-xl border border-border bg-white/80 px-3 py-2.5 text-xs font-medium text-ink shadow-[0_1px_0_0_rgba(15,23,42,0.03)] backdrop-blur">
-                <t.icon className="h-4 w-4 shrink-0 text-brand" />
-                {t.label}
-              </div>
-            ))}
           </div>
         </div>
-        <div className="relative">
-          <div className="absolute -inset-8 -z-10 rounded-[2.5rem] bg-gradient-to-br from-brand/20 via-transparent to-gold/20 blur-3xl" />
-          <div className="overflow-hidden rounded-[2rem] border border-border bg-white shadow-premium">
-            <img
-              src={heroImg}
-              alt="Friendly AI voice agent answering a business phone call"
-              width={1536}
-              height={1280}
-              className="aspect-[5/4] w-full bg-gradient-to-br from-brand-soft/60 to-white object-cover"
-              loading="eager"
-            />
-            <div className="border-t border-border p-6">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2 text-sm font-semibold text-ink">
-                  <span className="inline-flex h-2 w-2 animate-pulse rounded-full bg-emerald-500" />
-                  Live call with SphinxAI agent
-                </div>
-                <span className="text-xs text-muted-foreground">00:42</span>
-              </div>
-              <Soundwave className="mt-4" animate />
-              <div className="mt-5 grid grid-cols-3 gap-3 border-t border-border pt-5 text-center">
-                <Stat k="< 1s" v="Pickup" />
-                <Stat k="100%" v="Answered" />
-                <Stat k="24/7" v="Available" />
-              </div>
+
+        <div className="mt-14 grid w-full grid-cols-2 gap-2.5 sm:grid-cols-3 md:gap-3 lg:grid-cols-5">
+          {trust.map((t) => (
+            <div
+              key={t.label}
+              className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.05] px-3 py-2.5 text-xs font-medium text-white/85 backdrop-blur transition hover:border-white/20 hover:bg-white/[0.08]"
+            >
+              <t.icon className="h-4 w-4 shrink-0 text-[#FDBA08]" />
+              {t.label}
             </div>
-          </div>
-          <div className="absolute -bottom-6 -left-4 hidden rounded-2xl border border-border bg-white p-3 shadow-premium sm:flex sm:items-center sm:gap-3">
-            <div className="flex -space-x-2">
-              {["#3C548F", "#4670A8", "#FDBA08"].map((c) => (
-                <span key={c} className="inline-block h-8 w-8 rounded-full border-2 border-white" style={{ background: c }} />
-              ))}
-            </div>
-            <div className="text-left">
-              <div className="flex items-center gap-1">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="h-3 w-3 fill-gold text-gold" />
-                ))}
-              </div>
-              <div className="text-xs font-medium text-ink">Rated 4.9/5 by early customers</div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
       <VideoModal open={videoOpen} onClose={() => setVideoOpen(false)} />
