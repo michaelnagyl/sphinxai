@@ -166,7 +166,7 @@ function Hero() {
 function Stat({ k, v }: { k: string; v: string }) {
   return (
     <div>
-      <div className="font-display text-lg font-bold text-brand">{k}</div>
+      <div className="font-display text-xl font-bold text-brand">{k}</div>
       <div className="text-[10px] uppercase tracking-wider text-muted-foreground">{v}</div>
     </div>
   );
