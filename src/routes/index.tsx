@@ -406,8 +406,8 @@ function ClinicSection() {
     },
     {
       icon: Headphones,
-      title: "Patient Follow-up Support",
-      desc: "Reduce repetitive calls and help your reception team focus on important cases with AI follow-up.",
+      title: "Reception Team Support",
+      desc: "Reduce repetitive calls and help your reception team focus on important cases with AI handling routine inquiries and follow-ups.",
     },
     {
       icon: Languages,
