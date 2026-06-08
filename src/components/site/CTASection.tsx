@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
-import { PhoneCall, CalendarCheck, CheckCircle2 } from "lucide-react";
+import { PhoneCall, CalendarCheck, CheckCircle2, MessageCircle } from "lucide-react";
 
 export function CTASection() {
   return (
@@ -15,11 +15,11 @@ export function CTASection() {
                 Ready when you are
               </span>
               <h2 className="mt-4 font-display text-3xl font-bold leading-tight text-white md:text-4xl">
-                Automate every call. Capture every opportunity.
+                Ready To Stop Missing Calls?
               </h2>
               <p className="mt-4 max-w-xl text-white/70">
-                Book a free 20-minute demo or talk to our AI live. Either way, you will see exactly
-                how SphinxAI captures every call and turns it into revenue.
+                Let SphinxAI answer your calls, qualify your leads, book appointments, and automate
+                customer communication 24/7.
               </p>
               <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-xs text-white/80">
                 {["Live in 7 days", "No credit card", "Cancel anytime"].map((b) => (
@@ -31,10 +31,20 @@ export function CTASection() {
             </div>
             <div className="flex flex-col gap-3 md:items-end">
               <Button asChild variant="gold" size="xl" className="w-full md:w-auto">
-                <Link to="/contact"><CalendarCheck className="h-4 w-4" /> Book Free Demo</Link>
+                <Link to="/contact"><CalendarCheck className="h-4 w-4" /> Book A Demo</Link>
               </Button>
               <Button asChild variant="outline" size="xl" className="w-full border-white/30 bg-transparent text-white hover:bg-white hover:text-ink md:w-auto">
                 <Link to="/live-demo"><PhoneCall className="h-4 w-4" /> Talk To AI Now</Link>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                size="xl"
+                className="w-full border-emerald-300/40 bg-emerald-500/10 text-emerald-100 hover:bg-emerald-500 hover:text-white md:w-auto"
+              >
+                <a href="https://wa.me/201000000000" target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="h-4 w-4" /> WhatsApp Us
+                </a>
               </Button>
             </div>
           </div>
