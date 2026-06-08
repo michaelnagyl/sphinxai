@@ -203,3 +203,23 @@
     0 10px 30px -12px rgba(60,84,143,0.18),
     0 30px 80px -30px rgba(60,84,143,0.25);
 }
+
+/* Voice wave bars used in hero + live demo */
+@keyframes vw-bar {
+  0%, 100% { transform: scaleY(0.25); opacity: 0.55; }
+  50%      { transform: scaleY(1);    opacity: 1; }
+}
+@keyframes soft-pulse {
+  0%, 100% { transform: scale(1);    opacity: 0.55; }
+  50%      { transform: scale(1.18); opacity: 0; }
+}
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+@utility animate-soft-pulse {
+  animation: soft-pulse 2.6s ease-out infinite;
+}
+@utility animate-float-y {
+  animation: float-y 6s ease-in-out infinite;
+}

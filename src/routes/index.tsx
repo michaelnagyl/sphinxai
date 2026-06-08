@@ -20,7 +20,7 @@ import {
   Timer, Wallet, Bot, CalendarCheck, Users, Headphones, Plug, Route as RouteIcon,
   BarChart3, PhoneCall, ShieldCheck, Globe2, Layers, TrendingUp,
   ArrowRight, Workflow, CheckCircle2, PlayCircle, Stethoscope, Sparkles,
-  Building2, Briefcase, Mic, Radio, Database, TrendingDown,
+  Building2, Briefcase, Mic, TrendingDown, Volume2, Zap, Smile,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -58,18 +58,11 @@ function Index() {
 
 function Hero() {
   const [videoOpen, setVideoOpen] = useState(false);
-  const trust = [
-    { icon: Clock, label: "24/7 Call Answering" },
-    { icon: Languages, label: "Arabic & English Support" },
-    { icon: CalendarCheck, label: "Clinic Booking Automation" },
-    { icon: Users, label: "Lead Qualification" },
-    { icon: Globe2, label: "Built For Egypt & MENA" },
-  ];
   return (
     <section className="relative isolate overflow-hidden bg-[#070B17] text-white">
       {/* Background video — muted, autoplay, loop, poster fallback */}
       <video
-        className="absolute inset-0 -z-20 h-full w-full object-cover opacity-60 [filter:saturate(0.85)_contrast(1.05)]"
+        className="absolute inset-0 -z-20 h-full w-full object-cover opacity-45 [filter:saturate(0.8)_contrast(1.05)]"
         src={heroVideo.url}
         poster={heroPoster.url}
         autoPlay
@@ -82,44 +75,59 @@ function Hero() {
         tabIndex={-1}
       />
       {/* Layered overlays for legibility and premium brand tone */}
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,rgba(7,11,23,0.65),rgba(7,11,23,0.95))]" />
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-[#070B17]/85 via-[#070B17]/65 to-[#070B17]" />
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(120deg,rgba(60,84,143,0.28),transparent_50%,rgba(253,186,8,0.10))]" />
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,rgba(7,11,23,0.7),rgba(7,11,23,0.97))]" />
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-[#070B17]/90 via-[#070B17]/70 to-[#070B17]" />
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(120deg,rgba(60,84,143,0.30),transparent_50%,rgba(253,186,8,0.10))]" />
+      {/* Floating glow orbs */}
+      <div className="pointer-events-none absolute -left-32 top-1/3 -z-10 h-[420px] w-[420px] rounded-full bg-[radial-gradient(circle,rgba(70,112,168,0.35),transparent_60%)] blur-2xl animate-float-y" />
+      <div className="pointer-events-none absolute -right-24 top-10 -z-10 h-[380px] w-[380px] rounded-full bg-[radial-gradient(circle,rgba(253,186,8,0.18),transparent_60%)] blur-2xl animate-float-y [animation-delay:-3s]" />
       <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
-      <div className="container-page relative flex min-h-[92vh] flex-col items-center justify-center pb-20 pt-28 md:pt-32 lg:min-h-screen lg:pb-28">
-        <div className="mx-auto flex w-full max-w-4xl flex-col items-center text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/85 backdrop-blur">
+      <div className="container-page relative flex min-h-[94vh] flex-col items-center justify-center pb-24 pt-28 md:pt-32 lg:min-h-screen lg:pb-32">
+        <div className="mx-auto flex w-full max-w-5xl flex-col items-center text-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-white/90 backdrop-blur">
             <span className="relative inline-flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
             </span>
-            AI Voice Platform For Egypt & MENA
+            AI Voice Platform · Egypt & MENA
           </div>
-          <h1 className="mt-7 font-display text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.25rem]">
+          <h1 className="mt-8 font-display text-[2.75rem] font-bold leading-[1.02] tracking-[-0.035em] text-white sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[6.5rem]">
             Turn Every Call{" "}
             <span className="bg-gradient-to-r from-[#FDBA08] via-[#FFD66B] to-[#FDBA08] bg-clip-text text-transparent">
               Into Revenue
             </span>
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/75 md:text-lg lg:text-xl">
+          <p className="mx-auto mt-7 max-w-2xl text-base leading-relaxed text-white/75 md:text-lg lg:text-xl">
             SphinxAI helps businesses answer every call instantly using human-like AI voice
             agents available 24/7 — qualifying leads, booking appointments, and automating
             customer communication in Arabic & English.
           </p>
-          <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap">
-            <Button asChild variant="gold" size="xl" className="min-w-[200px] shadow-[0_10px_40px_-10px_rgba(253,186,8,0.5)]">
-              <Link to="/live-demo"><PhoneCall className="h-4 w-4" /> Talk To AI Now</Link>
-            </Button>
-            <Button asChild size="xl" className="min-w-[200px] bg-white text-[#0B1226] hover:bg-white/90">
-              <Link to="/contact"><CalendarCheck className="h-4 w-4" /> Book Free Demo</Link>
-            </Button>
+
+          {/* Voice wave */}
+          <div className="mt-10">
+            <VoiceWave dark />
+          </div>
+
+          {/* Dominant CTA cluster */}
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <div className="relative">
+              <span className="pointer-events-none absolute inset-0 -z-0 rounded-2xl bg-[#FDBA08] opacity-50 blur-2xl animate-soft-pulse" />
+              <Button
+                asChild
+                variant="gold"
+                size="xl"
+                className="relative h-14 min-w-[240px] rounded-2xl px-8 text-base font-bold shadow-[0_20px_60px_-12px_rgba(253,186,8,0.65)] hover:-translate-y-0.5"
+              >
+                <Link to="/live-demo"><PhoneCall className="h-5 w-5" /> Talk To AI Now</Link>
+              </Button>
+            </div>
             <Button
               type="button"
               size="xl"
               variant="ghost"
               onClick={() => setVideoOpen(true)}
-              className="min-w-[180px] border border-white/20 bg-white/[0.04] text-white hover:bg-white/10 hover:text-white"
+              className="h-14 min-w-[180px] rounded-2xl border border-white/20 bg-white/[0.04] px-6 text-white hover:bg-white/10 hover:text-white"
             >
               <PlayCircle className="h-5 w-5" /> Watch Demo
             </Button>
@@ -136,21 +144,31 @@ function Hero() {
             </div>
           </div>
         </div>
-
-        <div className="mt-14 grid w-full grid-cols-2 gap-2.5 sm:grid-cols-3 md:gap-3 lg:grid-cols-5">
-          {trust.map((t) => (
-            <div
-              key={t.label}
-              className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.05] px-3 py-2.5 text-xs font-medium text-white/85 backdrop-blur transition hover:border-white/20 hover:bg-white/[0.08]"
-            >
-              <t.icon className="h-4 w-4 shrink-0 text-[#FDBA08]" />
-              {t.label}
-            </div>
-          ))}
-        </div>
       </div>
       <VideoModal open={videoOpen} onClose={() => setVideoOpen(false)} />
     </section>
+  );
+}
+
+/* Lightweight CSS-only voice wave */
+function VoiceWave({ dark = false, bars = 28 }: { dark?: boolean; bars?: number }) {
+  const heights = [22, 38, 54, 70, 48, 30, 60, 80, 44, 26, 58, 72, 40, 24, 52, 68, 36, 50, 28, 64, 76, 42, 30, 58, 46, 34, 62, 50];
+  return (
+    <div
+      className="flex h-16 items-center justify-center gap-[5px]"
+      aria-hidden="true"
+    >
+      {Array.from({ length: bars }).map((_, i) => (
+        <span
+          key={i}
+          className={`w-[3px] origin-center rounded-full ${dark ? "bg-gradient-to-t from-[#FDBA08] to-white/80" : "bg-gradient-to-t from-brand to-[#FDBA08]"}`}
+          style={{
+            height: `${heights[i % heights.length]}%`,
+            animation: `vw-bar ${0.9 + (i % 5) * 0.15}s ease-in-out ${i * 0.05}s infinite`,
+          }}
+        />
+      ))}
+    </div>
   );
 }
 
@@ -164,13 +182,16 @@ function Stat({ k, v }: { k: string; v: string }) {
 }
 
 function ProblemSection() {
+  const stats = [
+    { icon: PhoneOff, kpi: "1 in 3", label: "business calls go unanswered", tint: "from-rose-50 to-white", accent: "text-rose-600", ring: "ring-rose-100" },
+    { icon: MoonStar, kpi: "62%", label: "of leads call outside working hours", tint: "from-amber-50 to-white", accent: "text-amber-600", ring: "ring-amber-100" },
+    { icon: Timer, kpi: "< 5 min", label: "to lose a hot lead to a competitor", tint: "from-sky-50 to-white", accent: "text-sky-600", ring: "ring-sky-100" },
+    { icon: TrendingDown, kpi: "−38%", label: "revenue lost to slow response", tint: "from-violet-50 to-white", accent: "text-violet-600", ring: "ring-violet-100" },
+  ];
   const items = [
-    { icon: PhoneOff, title: "Unanswered calls", desc: "Every missed ring is a missed customer." },
-    { icon: UserX, title: "Overloaded teams", desc: "Reps can't keep up with peak hours." },
-    { icon: MoonStar, title: "After-hours leads", desc: "Customers call when no one is there." },
-    { icon: MailWarning, title: "No follow-up", desc: "Hot leads go cold within minutes." },
-    { icon: Timer, title: "Slow response", desc: "Time-to-reply kills conversion." },
-    { icon: Wallet, title: "Expensive ops", desc: "Manual communication doesn't scale." },
+    { icon: UserX, title: "Overloaded reception", desc: "Teams can't keep up with peak hours and weekends." },
+    { icon: MailWarning, title: "No follow-up", desc: "Hot leads go cold within minutes when nobody calls back." },
+    { icon: Wallet, title: "Expensive operations", desc: "Manual call handling doesn't scale with demand." },
   ];
   return (
     <section className="section-pad bg-surface">
@@ -178,9 +199,23 @@ function ProblemSection() {
         <SectionHeader
           eyebrow="The problem"
           title="Every missed call is lost revenue"
-          description="Businesses lose opportunities every day because customer communication is manual, slow, and limited by working hours."
+          description="Businesses across Egypt and MENA lose customers every day because phones go unanswered, follow-ups are slow, and reception teams can't scale."
         />
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {stats.map((s) => (
+            <div
+              key={s.label}
+              className={`relative overflow-hidden rounded-2xl border border-border bg-gradient-to-br ${s.tint} p-6 shadow-[0_1px_0_0_rgba(15,23,42,0.03)] transition hover:-translate-y-1 hover:shadow-premium`}
+            >
+              <div className={`inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white ring-1 ${s.ring} ${s.accent}`}>
+                <s.icon className="h-5 w-5" />
+              </div>
+              <div className={`mt-5 font-display text-4xl font-bold tracking-tight ${s.accent}`}>{s.kpi}</div>
+              <div className="mt-2 text-sm font-medium text-ink/80">{s.label}</div>
+            </div>
+          ))}
+        </div>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((i) => (
             <FeatureCard key={i.title} icon={i.icon} title={i.title} description={i.desc} />
           ))}
@@ -252,29 +287,32 @@ function HowItWorks() {
 
 function ResultsSection() {
   const kpis = [
-    { k: "More Revenue", v: "+38%", desc: "Average uplift from captured calls." },
-    { k: "Faster Response", v: "< 1s", desc: "Instant pickup, every time." },
-    { k: "More Bookings", v: "+47%", desc: "Automated appointment scheduling." },
-    { k: "Lower Costs", v: "−62%", desc: "Reduced manual call handling." },
-    { k: "Higher Conversion", v: "+29%", desc: "Better qualification = better leads." },
-    { k: "Customer Experience", v: "5★", desc: "Consistent quality on every call." },
+    { icon: TrendingUp, k: "More Revenue",         v: "+38%", desc: "Average uplift from captured calls.",       hl: "text-emerald-600", soft: "bg-emerald-50" },
+    { icon: CalendarCheck, k: "More Bookings",     v: "+47%", desc: "Automated appointment scheduling.",         hl: "text-brand",        soft: "bg-brand-soft" },
+    { icon: Zap, k: "Higher Conversion",           v: "+29%", desc: "Better qualification, better leads.",       hl: "text-amber-600",    soft: "bg-amber-50" },
+    { icon: Wallet, k: "Lower Costs",              v: "−62%", desc: "Reduced manual call handling.",             hl: "text-violet-600",   soft: "bg-violet-50" },
+    { icon: Smile, k: "Better CX",                 v: "5.0★", desc: "Consistent quality on every call.",         hl: "text-rose-600",     soft: "bg-rose-50" },
   ];
   return (
-    <section className="section-pad">
+    <section className="section-pad bg-white">
       <div className="container-page">
         <SectionHeader
           eyebrow="Results"
-          title="What businesses gain"
-          description="SphinxAI helps businesses capture more opportunities, reduce manual work, and deliver faster customer communication without increasing team size."
+          title="Why businesses choose SphinxAI"
+          description="Capture more opportunities, reduce manual work, and deliver faster customer communication — without adding headcount."
         />
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
           {kpis.map((k) => (
-            <div key={k.k} className="rounded-2xl border border-border bg-gradient-to-br from-white to-brand-soft p-6">
-              <div className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
-                <TrendingUp className="h-4 w-4 text-brand" /> {k.k}
+            <div
+              key={k.k}
+              className="group relative overflow-hidden rounded-2xl border border-border bg-white p-6 shadow-[0_1px_0_0_rgba(15,23,42,0.03)] transition hover:-translate-y-1 hover:border-brand/30 hover:shadow-premium"
+            >
+              <div className={`inline-flex h-10 w-10 items-center justify-center rounded-xl ${k.soft} ${k.hl}`}>
+                <k.icon className="h-5 w-5" />
               </div>
-              <div className="mt-3 font-display text-4xl font-bold text-brand">{k.v}</div>
-              <p className="mt-2 text-sm text-muted-foreground">{k.desc}</p>
+              <div className={`mt-5 font-display text-5xl font-bold tracking-[-0.04em] ${k.hl}`}>{k.v}</div>
+              <div className="mt-2 text-sm font-semibold text-ink">{k.k}</div>
+              <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{k.desc}</p>
             </div>
           ))}
         </div>
@@ -288,32 +326,39 @@ function IndustriesSection() {
     {
       icon: Stethoscope,
       title: "Clinics & Medical Centers",
-      desc: "Answer patient calls 24/7, book appointments, and reduce pressure on reception teams.",
-      points: ["Dental & beauty clinics", "Appointment automation", "Patient FAQ handling"],
+      problem: "Reception teams overwhelmed; patients hang up and book elsewhere.",
+      outcome: "Every patient call answered. Bookings captured 24/7.",
     },
     {
       icon: Building2,
       title: "Real Estate",
-      desc: "Qualify property inquiries instantly, capture buyer intent, and route hot leads to agents.",
-      points: ["Inbound lead capture", "Project & unit Q&A", "Viewing scheduling"],
+      problem: "Hot buyer inquiries lost between agents and after hours.",
+      outcome: "Instant qualification and viewings booked on the spot.",
     },
     {
       icon: Sparkles,
       title: "Beauty Centers",
-      desc: "Explain treatments, answer pricing questions, and book consultations around the clock.",
-      points: ["Service explanations", "Consultation booking", "After-hours coverage"],
+      problem: "Constant pricing & treatment questions tie up the front desk.",
+      outcome: "Consultations booked while your team focuses on clients.",
     },
     {
       icon: Headphones,
       title: "Customer Service",
-      desc: "Resolve repetitive inquiries instantly and escalate complex cases to human agents.",
-      points: ["Tier-1 deflection", "Order & account lookups", "Smart escalation"],
+      problem: "Repetitive questions drown high-value support requests.",
+      outcome: "Tier-1 inquiries resolved instantly, humans handle the rest.",
     },
     {
       icon: Briefcase,
       title: "Sales Teams",
-      desc: "Qualify inbound leads, book discovery calls, and push clean data straight to your CRM.",
-      points: ["Lead qualification", "Calendar booking", "CRM sync"],
+      problem: "Reps waste hours on unqualified leads and admin work.",
+      outcome: "Only serious buyers reach your team, with CRM pre-filled.",
+    },
+    {
+      icon: Globe2,
+      title: "Service Businesses",
+      desc: "And more — restaurants, agencies, and any team that lives on the phone.",
+      problem: "Calls outside hours = lost jobs and lost revenue.",
+      outcome: "24/7 coverage in Arabic & English with zero hires.",
     },
   ];
   return (
@@ -322,23 +367,33 @@ function IndustriesSection() {
         <SectionHeader
           eyebrow="Industries"
           title="Built for the businesses that live on the phone"
-          description="SphinxAI is tuned for the real workflows of clinics, real estate, beauty centers, customer service, and sales teams across Egypt and MENA."
+          description="Tuned to the real workflows of clinics, real estate, beauty centers, customer service, and sales teams across Egypt and MENA."
         />
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {industries.map((i) => (
-            <div key={i.title} className="group flex flex-col rounded-2xl border border-border bg-white p-7 shadow-[0_1px_0_0_rgba(15,23,42,0.03)] transition hover:-translate-y-1 hover:border-brand/30 hover:shadow-premium">
-              <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-brand-soft text-brand transition group-hover:bg-brand group-hover:text-brand-foreground">
+            <div
+              key={i.title}
+              className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-white p-7 shadow-[0_1px_0_0_rgba(15,23,42,0.03)] transition hover:-translate-y-1 hover:border-brand/30 hover:shadow-premium"
+            >
+              <div className="pointer-events-none absolute -right-12 -top-12 h-32 w-32 rounded-full bg-brand-soft opacity-0 blur-2xl transition group-hover:opacity-100" />
+              <div className="relative inline-flex h-12 w-12 items-center justify-center rounded-xl bg-brand-soft text-brand transition group-hover:bg-brand group-hover:text-brand-foreground">
                 <i.icon className="h-5 w-5" />
               </div>
-              <h3 className="mt-5 font-display text-lg font-semibold text-ink">{i.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{i.desc}</p>
-              <ul className="mt-5 space-y-2 border-t border-border pt-4">
-                {i.points.map((p) => (
-                  <li key={p} className="flex items-center gap-2 text-xs font-medium text-ink/80">
-                    <CheckCircle2 className="h-3.5 w-3.5 text-brand" /> {p}
-                  </li>
-                ))}
-              </ul>
+              <h3 className="relative mt-5 font-display text-xl font-semibold text-ink">{i.title}</h3>
+              <div className="relative mt-5 space-y-4 border-t border-border pt-5">
+                <div>
+                  <div className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-rose-600">
+                    <TrendingDown className="h-3 w-3" /> Problem
+                  </div>
+                  <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{i.problem}</p>
+                </div>
+                <div>
+                  <div className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-emerald-600">
+                    <TrendingUp className="h-3 w-3" /> Outcome
+                  </div>
+                  <p className="mt-1.5 text-sm font-medium leading-relaxed text-ink">{i.outcome}</p>
+                </div>
+              </div>
             </div>
           ))}
         </div>
@@ -353,68 +408,111 @@ function IndustriesSection() {
 }
 
 function LiveDemoSection() {
-  const bullets = [
-    "Hear a natural Arabic & English voice",
-    "Watch it qualify a real inquiry",
-    "See an appointment booked live",
-    "Experience sub-second response time",
-  ];
   return (
-    <section className="section-pad bg-gradient-to-b from-white via-brand-soft/40 to-white">
+    <section className="relative isolate overflow-hidden bg-[#070B17] py-24 text-white md:py-32">
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,rgba(70,112,168,0.25),transparent_55%)]" />
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_bottom,rgba(253,186,8,0.10),transparent_55%)]" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
+
       <div className="container-page">
         <div className="mx-auto max-w-3xl text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-brand/20 bg-white px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand">
-            <Mic className="h-3.5 w-3.5" /> Live Demo
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-white/90 backdrop-blur">
+            <Mic className="h-3.5 w-3.5 text-[#FDBA08]" /> Live Demo
           </div>
-          <h2 className="mt-5 font-display text-4xl font-bold text-ink md:text-5xl lg:text-6xl">
-            Experience SphinxAI Live
+          <h2 className="mt-6 font-display text-4xl font-bold leading-[1.05] tracking-[-0.03em] text-white md:text-6xl lg:text-7xl">
+            Experience SphinxAI{" "}
+            <span className="bg-gradient-to-r from-[#FDBA08] via-[#FFD66B] to-[#FDBA08] bg-clip-text text-transparent">Live</span>
           </h2>
-          <p className="mt-5 text-lg text-muted-foreground md:text-xl">
-            Talk directly with an AI voice agent. Ask questions, request a booking, or test it in
-            Arabic and English — no signup required.
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
+            Don't read about it — talk to it. Hear how natural, fast, and business-ready our AI
+            voice agent really is, in Arabic or English.
           </p>
         </div>
-        <div className="mt-16 grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
-          <div className="order-2 lg:order-1">
-            <div className="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700 ring-1 ring-emerald-200">
-              <span className="relative inline-flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
-              </span>
-              AI agent online
+
+        {/* AI conversation surface */}
+        <div className="mx-auto mt-16 max-w-3xl">
+          <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-white/[0.02] p-8 backdrop-blur-xl shadow-[0_40px_120px_-30px_rgba(60,84,143,0.6)] md:p-12">
+            {/* Status pill */}
+            <div className="flex items-center justify-between">
+              <div className="inline-flex items-center gap-2 rounded-full bg-emerald-500/15 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-emerald-300 ring-1 ring-emerald-400/30">
+                <span className="relative inline-flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+                </span>
+                AI Agent Online
+              </div>
+              <div className="flex items-center gap-2 text-[11px] font-medium text-white/60">
+                <Volume2 className="h-3.5 w-3.5" /> EG · Arabic & English
+              </div>
             </div>
-            <h3 className="mt-4 font-display text-3xl font-bold text-ink md:text-4xl">
-              Don't read about it. Talk to it.
-            </h3>
-            <p className="mt-5 text-lg text-muted-foreground">
-              In under 30 seconds you'll hear how natural, fast, and business-ready our AI voice
-              agent really is.
-            </p>
-            <ul className="mt-7 space-y-3">
-              {bullets.map((b) => (
-                <li key={b} className="flex items-center gap-3 text-base font-medium text-ink">
-                  <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-emerald-50 text-emerald-600 ring-1 ring-emerald-200">
-                    <CheckCircle2 className="h-4 w-4" />
-                  </span>
-                  {b}
-                </li>
-              ))}
-            </ul>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <Button asChild variant="hero" size="xl">
-                <Link to="/live-demo"><PhoneCall className="h-4 w-4" /> Start Live Conversation</Link>
+
+            {/* Mic + voice wave */}
+            <div className="mt-10 flex flex-col items-center">
+              <div className="relative">
+                <span className="pointer-events-none absolute inset-0 -m-8 rounded-full bg-[#FDBA08]/20 blur-2xl animate-soft-pulse" />
+                <span className="pointer-events-none absolute inset-0 -m-4 rounded-full ring-1 ring-white/15" />
+                <Link
+                  to="/live-demo"
+                  aria-label="Start live conversation"
+                  className="relative grid h-28 w-28 place-items-center rounded-full bg-gradient-to-br from-[#FDBA08] to-[#E59C00] text-[#0B1226] shadow-[0_30px_80px_-20px_rgba(253,186,8,0.7)] transition hover:scale-[1.04] md:h-32 md:w-32"
+                >
+                  <Mic className="h-10 w-10 md:h-12 md:w-12" />
+                </Link>
+              </div>
+              <div className="mt-8 w-full">
+                <VoiceWave dark bars={36} />
+              </div>
+              <div className="mt-2 text-xs font-medium uppercase tracking-[0.25em] text-white/50">
+                Tap to talk · Sub-second response
+              </div>
+            </div>
+
+            {/* Mini transcript */}
+            <div className="mt-10 space-y-3 border-t border-white/10 pt-8">
+              <ChatBubble who="customer" text="مرحبا، حابب أحجز استشارة أسنان." />
+              <ChatBubble who="ai" text="أهلاً بحضرتك! متاح عندنا مواعيد بكرة الساعة 11 صباحاً أو 4 عصراً. أنهي مناسب أكتر؟" />
+              <ChatBubble who="customer" text="The 4pm slot works." />
+              <ChatBubble who="ai" text="Perfect — I've booked you for 4:00 PM tomorrow and sent the confirmation via SMS." done />
+            </div>
+
+            {/* CTAs */}
+            <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <Button asChild variant="gold" size="xl" className="h-14 min-w-[240px] rounded-2xl px-8 text-base font-bold shadow-[0_20px_60px_-12px_rgba(253,186,8,0.6)]">
+                <Link to="/live-demo"><PhoneCall className="h-5 w-5" /> Start Live Conversation</Link>
               </Button>
-              <Button asChild variant="outlineBrand" size="xl">
-                <Link to="/contact"><CalendarCheck className="h-4 w-4" /> Book A Discovery Call</Link>
+              <Button asChild variant="ghost" size="xl" className="h-14 min-w-[200px] rounded-2xl border border-white/20 bg-white/[0.04] text-white hover:bg-white/10 hover:text-white">
+                <Link to="/contact"><CalendarCheck className="h-5 w-5" /> Book Discovery Call</Link>
               </Button>
             </div>
-          </div>
-          <div className="order-1 lg:order-2">
-            <DemoVideo />
           </div>
         </div>
       </div>
     </section>
+  );
+}
+
+function ChatBubble({ who, text, done }: { who: "ai" | "customer"; text: string; done?: boolean }) {
+  const isAI = who === "ai";
+  return (
+    <div className={`flex ${isAI ? "justify-start" : "justify-end"}`}>
+      <div
+        className={`max-w-[78%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed shadow-sm ${
+          isAI
+            ? "rounded-bl-sm bg-white/[0.08] text-white/90 ring-1 ring-white/10"
+            : "rounded-br-sm bg-[#FDBA08] text-[#0B1226] font-medium"
+        }`}
+      >
+        <div className={`mb-1 text-[10px] font-bold uppercase tracking-wider ${isAI ? "text-[#FDBA08]" : "text-[#0B1226]/60"}`}>
+          {isAI ? "SphinxAI" : "Caller"}
+        </div>
+        <div dir="auto">{text}</div>
+        {done && (
+          <div className="mt-1.5 inline-flex items-center gap-1 text-[10px] font-semibold text-emerald-700">
+            <CheckCircle2 className="h-3 w-3" /> Booking confirmed
+          </div>
+        )}
+      </div>
+    </div>
   );
 }
 
