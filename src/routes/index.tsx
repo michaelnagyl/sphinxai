@@ -520,7 +520,6 @@ function ChatBubble({ who, text, done }: { who: "ai" | "customer"; text: string;
 }
 
 function FAQSection() {
-  // placeholder anchor
   const faqs = [
     {
       q: "How does SphinxAI work?",
