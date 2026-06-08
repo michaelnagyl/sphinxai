@@ -22,7 +22,7 @@ export function Navbar() {
           <img
             src={logoAsset.url}
             alt="SphinxAI"
-            className="h-9 w-auto md:h-10"
+            className="h-8 w-auto md:h-10"
             width={180}
             height={40}
           />

@@ -54,12 +54,15 @@ function LiveDemoPage() {
             Live Voice AI — free to try
           </div>
           <h1 className="mt-4 font-display text-4xl font-bold leading-tight text-ink md:text-6xl">
-            Hear it for yourself.<br className="hidden md:block" />
-            <span className="brand-gradient-text">Talk to SphinxAI now.</span>
+            Experience SphinxAI <br className="hidden md:block" />
+            <span className="brand-gradient-text">Live.</span>
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-base text-muted-foreground md:text-lg">
-            No forms. No setup. One tap and you are on a live call with our AI voice agent —
-            the same one that could be answering your business calls next week.
+            Talk directly with our AI Voice Agent and see how AI can transform your
+            business communication.
+          </p>
+          <p className="mx-auto mt-3 max-w-xl text-xs text-muted-foreground/80">
+            Live voice integration is ready for future connection with Vapi, ElevenLabs, or custom voice APIs.
           </p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs text-muted-foreground">
             <div className="flex items-center gap-1.5"><CheckCircle2 className="h-4 w-4 text-emerald-500" /> 30-second demo</div>

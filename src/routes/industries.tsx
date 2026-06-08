@@ -4,7 +4,10 @@ import { CTASection } from "@/components/site/CTASection";
 import { InlineLeadCTA } from "@/components/site/InlineLeadCTA";
 import { Button } from "@/components/ui/button";
 import { pageMeta } from "@/lib/site-meta";
-import { Stethoscope, Home, Sparkles, Headphones, TrendingUp, ArrowRight } from "lucide-react";
+import {
+  Stethoscope, Home, Sparkles, Headphones, TrendingUp, UtensilsCrossed, ArrowRight,
+  AlertCircle, Bot, CheckCircle2,
+} from "lucide-react";
 
 export const Route = createFileRoute("/industries")({
   head: () => pageMeta({
@@ -20,31 +23,49 @@ const industries = [
     icon: Stethoscope,
     name: "Clinics & Medical Centers",
     headline: "Never miss a patient.",
-    useCase: "Answer patient calls, collect patient information, book appointments, answer clinic questions, and route urgent cases.",
+    pain: "Missed patient calls and manual booking.",
+    solution: "AI answers patient calls and books appointments instantly.",
+    outcome: "More bookings and faster patient response.",
   },
   {
     icon: Home,
     name: "Real Estate",
     headline: "Capture every lead instantly.",
-    useCase: "Qualify buyers and sellers, collect property requirements, schedule calls, and send lead data to the sales team.",
+    pain: "Hot buyer leads go cold before agents call back.",
+    solution: "AI qualifies buyers, captures property needs, and routes leads to your sales team.",
+    outcome: "Higher lead-to-meeting conversion and zero lost opportunities.",
   },
   {
     icon: Sparkles,
     name: "Beauty Clinics & Aesthetic Centers",
     headline: "Increase bookings automatically.",
-    useCase: "Answer service inquiries, book consultations, explain available services, and follow up with potential clients.",
+    pain: "Receptionists overwhelmed by service questions and DMs.",
+    solution: "AI explains services, books consultations, and follows up with prospects.",
+    outcome: "Fuller calendars and happier clients with zero added staff.",
   },
   {
     icon: Headphones,
     name: "Customer Service Teams",
     headline: "Handle inquiries at scale.",
-    useCase: "Answer repeated questions, reduce pressure on support agents, and improve response speed.",
+    pain: "Agents drown in repeated questions and long queues.",
+    solution: "AI handles tier-1 inquiries and escalates only what needs a human.",
+    outcome: "Faster resolution, lower cost per ticket, better CSAT.",
   },
   {
     icon: TrendingUp,
     name: "Sales Teams",
     headline: "Convert more prospects.",
-    useCase: "Qualify prospects, follow up automatically, collect customer needs, and route hot leads to sales representatives.",
+    pain: "Reps waste hours on unqualified leads.",
+    solution: "AI qualifies every prospect and routes only hot leads to reps.",
+    outcome: "More pipeline, more closed deals, less wasted rep time.",
+  },
+  {
+    icon: UtensilsCrossed,
+    name: "Restaurants",
+    headline: "Never miss a reservation.",
+    pain: "Phones ring during the rush — bookings get lost.",
+    solution: "AI takes reservations, answers menu questions, and confirms bookings 24/7.",
+    outcome: "More covers, fewer no-shows, and a calmer floor team.",
   },
 ];
 
@@ -72,10 +93,14 @@ function IndustriesPage() {
                   <ind.icon className="h-5 w-5" />
                 </div>
                 <h3 className="font-display text-xl font-semibold text-ink">{ind.name}</h3>
-                <p className="mt-2 font-display text-sm font-semibold text-brand">{ind.headline}</p>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{ind.useCase}</p>
+                <p className="mt-1 font-display text-sm font-semibold text-brand">{ind.headline}</p>
+                <dl className="mt-5 flex-1 space-y-3 text-sm">
+                  <Row icon={AlertCircle} tone="red" label="Pain">{ind.pain}</Row>
+                  <Row icon={Bot} tone="brand" label="SphinxAI">{ind.solution}</Row>
+                  <Row icon={CheckCircle2} tone="emerald" label="Outcome">{ind.outcome}</Row>
+                </dl>
                 <Button asChild variant="ghostBrand" className="mt-6 w-fit -ml-3">
-                  <Link to="/solutions">Explore Solution <ArrowRight className="h-4 w-4" /></Link>
+                  <Link to="/contact">Get this for my business <ArrowRight className="h-4 w-4" /></Link>
                 </Button>
               </div>
             ))}
@@ -91,5 +116,30 @@ function IndustriesPage() {
 
       <CTASection />
     </SiteLayout>
+  );
+}
+
+function Row({
+  icon: Icon, tone, label, children,
+}: {
+  icon: React.ComponentType<{ className?: string }>;
+  tone: "red" | "brand" | "emerald";
+  label: string;
+  children: React.ReactNode;
+}) {
+  const toneCls =
+    tone === "red" ? "bg-red-50 text-red-500"
+    : tone === "brand" ? "bg-brand-soft text-brand"
+    : "bg-emerald-50 text-emerald-600";
+  return (
+    <div className="flex items-start gap-3">
+      <span className={`mt-0.5 inline-flex h-6 w-6 flex-none items-center justify-center rounded-md ${toneCls}`}>
+        <Icon className="h-3.5 w-3.5" />
+      </span>
+      <div>
+        <div className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">{label}</div>
+        <div className="text-sm leading-snug text-ink">{children}</div>
+      </div>
+    </div>
   );
 }

@@ -4,7 +4,7 @@ import { SectionHeader } from "@/components/site/SectionHeader";
 import { CTASection } from "@/components/site/CTASection";
 import { InlineLeadCTA } from "@/components/site/InlineLeadCTA";
 import { pageMeta } from "@/lib/site-meta";
-import { Bot, PhoneCall, Workflow, Users, CalendarCheck, Plug, BarChart3, Check, X } from "lucide-react";
+import { Bot, PhoneCall, Workflow, Users, CalendarCheck, Plug, BarChart3, MessageCircle, Check, X } from "lucide-react";
 
 export const Route = createFileRoute("/solutions")({
   head: () => pageMeta({
@@ -18,25 +18,25 @@ export const Route = createFileRoute("/solutions")({
 const solutions = [
   { icon: Bot, title: "AI Voice Agents", desc: "Human-like AI agents that answer phone calls and speak naturally with customers." },
   { icon: PhoneCall, title: "AI Call Center", desc: "Automate inbound and outbound customer communication at scale." },
-  { icon: Workflow, title: "Business Automation", desc: "Connect conversations to workflows, sheets, CRM systems, and internal tools." },
+  { icon: CalendarCheck, title: "Appointment Booking Automation", desc: "Book appointments, confirm availability, and sync calendars with zero manual work." },
   { icon: Users, title: "Lead Qualification", desc: "Ask the right questions, understand customer intent, and identify serious leads." },
-  { icon: CalendarCheck, title: "Appointment Booking", desc: "Book appointments, collect customer details, confirm availability, and reduce manual scheduling." },
-  { icon: Plug, title: "CRM Integration", desc: "Send structured customer data to CRM systems, Google Sheets, or business dashboards." },
+  { icon: Plug, title: "CRM & Google Sheets Integration", desc: "Push structured customer data to your CRM, Google Sheets, or business dashboards." },
   { icon: BarChart3, title: "Conversation Analytics", desc: "Track call outcomes, customer intent, conversion rates, missed opportunities, and business insights." },
+  { icon: MessageCircle, title: "WhatsApp & Workflow Automation Ready", desc: "Connect calls to WhatsApp, n8n, Zapier, and your internal workflows out of the box." },
 ];
 
 const compareLeft = [
-  "Limited working hours",
   "Missed calls",
+  "Limited working hours",
   "Manual follow-up",
-  "High team workload",
   "Slow response",
+  "High team workload",
 ];
 const compareRight = [
-  "24/7 availability",
-  "Instant response",
-  "Automated follow-up",
-  "Lower workload",
+  "24/7 response",
+  "Instant call answering",
+  "Automated qualification",
+  "Organized lead data",
   "Faster conversion",
 ];
 

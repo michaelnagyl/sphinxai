@@ -28,7 +28,7 @@ const schema = z.object({
   email: z.string().trim().email("Invalid email").max(255),
   phone: z.string().trim().min(4, "Phone required").max(30),
   industry: z.string().trim().min(1, "Industry required").max(80),
-  volume: z.string().trim().min(1).max(40),
+  contact_method: z.string().trim().min(1).max(40),
   goal: z.string().trim().min(1, "Tell us your goal").max(200),
   message: z.string().trim().max(1000).optional(),
 });
@@ -63,12 +63,12 @@ function ContactPage() {
             <Sparkles className="h-3.5 w-3.5" /> Free 20-minute demo
           </div>
           <h1 className="mt-4 font-display text-4xl font-bold leading-tight text-ink md:text-6xl">
-            See SphinxAI handle <br className="hidden md:block" />
-            <span className="brand-gradient-text">your business calls.</span>
+            Let's Build Your <br className="hidden md:block" />
+            <span className="brand-gradient-text">AI Voice Agent.</span>
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-base text-muted-foreground md:text-lg">
-            Tell us about your business and we will give you a live, customized demo —
-            built around your real call flows, your industry, and your CRM.
+            We usually reply quickly and help you choose the best AI automation setup
+            for your business.
           </p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs text-muted-foreground">
             <div className="flex items-center gap-1.5"><CheckCircle2 className="h-4 w-4 text-emerald-500" /> Response within 24h</div>
@@ -104,30 +104,35 @@ function ContactPage() {
                 <div className="mt-6 grid gap-5 md:grid-cols-2">
                   <Field label="Full Name" name="name" placeholder="Your name" />
                   <Field label="Business Name" name="business" placeholder="Company" />
-                  <Field label="Work Email" name="email" placeholder="you@company.com" type="email" />
-                  <Field label="Phone / WhatsApp" name="phone" placeholder="+20 ..." type="tel" />
+                  <Field label="Phone Number" name="phone" placeholder="+20 ..." type="tel" />
+                  <Field label="Email Address" name="email" placeholder="you@company.com" type="email" />
                   <SelectField label="Industry" name="industry" options={[
-                    "Real Estate", "Medical / Clinic", "Beauty / Aesthetics",
-                    "E-commerce", "Customer Service", "Sales / SaaS", "Other",
+                    "Clinic / Medical", "Real Estate", "Beauty / Aesthetics",
+                    "Restaurant", "Customer Service", "Sales / SaaS", "E-commerce", "Other",
                   ]} />
-                  <SelectField label="Monthly Call Volume" name="volume" options={[
-                    "Under 500", "500 – 2,000", "2,000 – 10,000", "10,000+",
+                  <SelectField label="Preferred Contact Method" name="contact_method" options={[
+                    "WhatsApp", "Phone Call", "Email", "Any",
                   ]} />
                   <div className="md:col-span-2">
                     <Field label="What do you want to automate?" name="goal" placeholder="e.g. After-hours bookings, lead qualification, support tickets" />
                   </div>
                   <div className="md:col-span-2">
-                    <Label htmlFor="message" className="text-sm font-medium text-ink">Anything else? (optional)</Label>
+                    <Label htmlFor="message" className="text-sm font-medium text-ink">Message (optional)</Label>
                     <Textarea id="message" name="message" rows={3} placeholder="Goals, current tools, timing…" className="mt-2" />
                   </div>
                 </div>
 
-                <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-                  <Button type="submit" variant="hero" size="xl" disabled={submitting} className="sm:flex-1">
-                    <CalendarCheck className="h-4 w-4" /> {submitting ? "Sending…" : "Book Free Demo"}
+                <div className="mt-7 grid gap-3 sm:grid-cols-3">
+                  <Button type="submit" variant="hero" size="xl" disabled={submitting} className="sm:col-span-1">
+                    <CalendarCheck className="h-4 w-4" /> {submitting ? "Sending…" : "Book Discovery Call"}
                   </Button>
                   <Button type="button" variant="outlineBrand" size="xl" asChild>
-                    <Link to="/live-demo"><PhoneCall className="h-4 w-4" /> Talk To AI Now</Link>
+                    <a href="https://wa.me/201000000000" target="_blank" rel="noopener noreferrer">
+                      <MessageCircle className="h-4 w-4" /> WhatsApp Us
+                    </a>
+                  </Button>
+                  <Button type="button" variant="outlineBrand" size="xl" asChild>
+                    <Link to="/live-demo"><PhoneCall className="h-4 w-4" /> Request Demo</Link>
                   </Button>
                 </div>
                 <p className="mt-4 text-xs text-muted-foreground">
