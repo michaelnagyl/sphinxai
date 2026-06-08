@@ -111,7 +111,7 @@ function ContactPage() {
                     "Restaurant", "Customer Service", "Sales / SaaS", "E-commerce", "Other",
                   ]} />
                   <SelectField label="Preferred Contact Method" name="contact_method" options={[
-                    "WhatsApp", "Phone Call", "Email", "Any",
+                    "Phone Call", "Email", "Any",
                   ]} />
                   <div className="md:col-span-2">
                     <Field label="What do you want to automate?" name="goal" placeholder="e.g. After-hours bookings, lead qualification, support tickets" />
