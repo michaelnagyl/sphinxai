@@ -64,20 +64,20 @@ function Hero() {
     <section className="relative overflow-hidden">
       <div className="pointer-events-none absolute inset-0 -z-10 grid-bg opacity-60 [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
       <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[700px] bg-[radial-gradient(ellipse_at_top,rgba(60,84,143,0.12),transparent_60%)]" />
-      <div className="container-page grid items-center gap-12 pb-20 pt-12 md:pt-20 lg:grid-cols-[1.05fr_1fr] lg:pb-28">
+      <div className="container-page grid items-center gap-12 pb-20 pt-14 md:pt-24 lg:grid-cols-[1.1fr_1fr] lg:gap-16 lg:pb-32">
         <div>
-          <div className="inline-flex items-center gap-2 rounded-full border border-brand/20 bg-white/80 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand shadow-sm backdrop-blur">
+          <div className="inline-flex items-center gap-2 rounded-full border border-brand/20 bg-white/80 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-brand shadow-sm backdrop-blur">
             <span className="relative inline-flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
             </span>
             Now live in Egypt & MENA
           </div>
-          <h1 className="mt-5 font-display text-[2.5rem] font-bold leading-[1.05] tracking-tight text-ink sm:text-5xl md:text-6xl">
-            Turn Every Missed Call <br className="hidden md:block" />
+          <h1 className="mt-6 font-display text-[2.75rem] font-bold leading-[1.05] tracking-tight text-ink sm:text-5xl md:text-6xl lg:text-[4.5rem] xl:text-[5rem]">
+            Turn Every Missed Call{" "}
             <span className="brand-gradient-text">Into Revenue.</span>
           </h1>
-          <p className="mt-5 max-w-xl text-base text-muted-foreground md:text-lg">
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground md:text-xl">
             SphinxAI gives your business a human-like AI voice agent that answers calls instantly,
             qualifies leads, books appointments, answers customer questions, and works 24/7.
           </p>
@@ -105,27 +105,27 @@ function Hero() {
               <CheckCircle2 className="h-4 w-4 text-emerald-500" /> Cancel anytime
             </div>
           </div>
-          <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+          <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
             {trust.map((t) => (
-              <div key={t.label} className="flex items-center gap-2 rounded-lg border border-border bg-white/70 px-3 py-2 text-xs font-medium text-ink backdrop-blur">
-                <t.icon className="h-4 w-4 text-brand" />
+              <div key={t.label} className="flex items-center gap-2 rounded-xl border border-border bg-white/80 px-3 py-2.5 text-xs font-medium text-ink shadow-[0_1px_0_0_rgba(15,23,42,0.03)] backdrop-blur">
+                <t.icon className="h-4 w-4 shrink-0 text-brand" />
                 {t.label}
               </div>
             ))}
           </div>
         </div>
         <div className="relative">
-          <div className="absolute -inset-6 -z-10 rounded-[2rem] bg-gradient-to-br from-brand/15 via-transparent to-gold/15 blur-2xl" />
-          <div className="overflow-hidden rounded-3xl border border-border bg-white shadow-premium">
+          <div className="absolute -inset-8 -z-10 rounded-[2.5rem] bg-gradient-to-br from-brand/20 via-transparent to-gold/20 blur-3xl" />
+          <div className="overflow-hidden rounded-[2rem] border border-border bg-white shadow-premium">
             <img
               src={heroImg}
               alt="Abstract AI voice communication waves and network"
               width={1536}
               height={1152}
-              className="aspect-[4/3] w-full object-cover"
+              className="aspect-[5/4] w-full object-cover"
               loading="eager"
             />
-            <div className="border-t border-border p-5">
+            <div className="border-t border-border p-6">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2 text-sm font-semibold text-ink">
                   <span className="inline-flex h-2 w-2 animate-pulse rounded-full bg-emerald-500" />
@@ -133,8 +133,8 @@ function Hero() {
                 </div>
                 <span className="text-xs text-muted-foreground">00:42</span>
               </div>
-              <Soundwave className="mt-3" animate />
-              <div className="mt-4 grid grid-cols-3 gap-3 border-t border-border pt-4 text-center">
+              <Soundwave className="mt-4" animate />
+              <div className="mt-5 grid grid-cols-3 gap-3 border-t border-border pt-5 text-center">
                 <Stat k="< 1s" v="Pickup" />
                 <Stat k="100%" v="Answered" />
                 <Stat k="24/7" v="Available" />
@@ -166,7 +166,7 @@ function Hero() {
 function Stat({ k, v }: { k: string; v: string }) {
   return (
     <div>
-      <div className="font-display text-lg font-bold text-brand">{k}</div>
+      <div className="font-display text-xl font-bold text-brand">{k}</div>
       <div className="text-[10px] uppercase tracking-wider text-muted-foreground">{v}</div>
     </div>
   );
@@ -317,52 +317,52 @@ function WhySphinx() {
 }
 
 function SeeInAction() {
-  const badges = [
-    "24/7 AI Call Handling",
-    "Arabic & English Support",
-    "Lead Qualification",
-    "Appointment Booking",
-    "Business Automation Ready",
+  const bullets = [
+    "Answers calls instantly",
+    "Qualifies serious leads",
+    "Books appointments",
+    "Collects customer data",
+    "Works after business hours",
   ];
   return (
-    <section className="section-pad">
+    <section className="section-pad bg-gradient-to-b from-white via-brand-soft/30 to-white">
       <div className="container-page">
-        <div className="mx-auto max-w-2xl text-center">
+        <div className="mx-auto max-w-3xl text-center">
           <div className="inline-flex items-center rounded-full border border-brand/20 bg-brand-soft px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand">
             Watch the demo
           </div>
-          <h2 className="mt-4 font-display text-3xl font-bold text-ink md:text-5xl">
+          <h2 className="mt-5 font-display text-4xl font-bold text-ink md:text-5xl lg:text-6xl">
             See SphinxAI In Action
           </h2>
-          <p className="mt-4 text-base text-muted-foreground md:text-lg">
+          <p className="mt-5 text-lg text-muted-foreground md:text-xl">
             Watch how an AI Voice Agent can answer calls, understand customers, collect information,
-            and help your business respond instantly.
+            qualify leads, and help your business respond instantly.
           </p>
         </div>
-        <div className="mt-14 grid items-center gap-12 lg:grid-cols-[1fr_1.1fr]">
+        <div className="mt-16 grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
           <div className="order-2 lg:order-1">
-            <h3 className="font-display text-2xl font-bold text-ink md:text-3xl">
+            <h3 className="font-display text-3xl font-bold text-ink md:text-4xl">
               Real conversations. Real business outcomes.
             </h3>
-            <p className="mt-4 text-muted-foreground">
+            <p className="mt-5 text-lg text-muted-foreground">
               See how SphinxAI can answer calls, qualify leads, collect customer details, and help
               your business respond instantly — even outside working hours.
             </p>
-            <ul className="mt-6 flex flex-wrap gap-2">
-              {badges.map((b) => (
-                <li
-                  key={b}
-                  className="inline-flex items-center gap-1.5 rounded-full border border-border bg-white px-3 py-1.5 text-xs font-medium text-ink"
-                >
-                  <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500" /> {b}
+            <ul className="mt-7 space-y-3">
+              {bullets.map((b) => (
+                <li key={b} className="flex items-center gap-3 text-base font-medium text-ink">
+                  <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-emerald-50 text-emerald-600 ring-1 ring-emerald-200">
+                    <CheckCircle2 className="h-4 w-4" />
+                  </span>
+                  {b}
                 </li>
               ))}
             </ul>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <Button asChild variant="hero" size="lg">
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <Button asChild variant="hero" size="xl">
                 <Link to="/contact"><CalendarCheck className="h-4 w-4" /> Book A Business Demo</Link>
               </Button>
-              <Button asChild variant="outlineBrand" size="lg">
+              <Button asChild variant="outlineBrand" size="xl">
                 <Link to="/live-demo"><PhoneCall className="h-4 w-4" /> Start Live Conversation</Link>
               </Button>
             </div>
