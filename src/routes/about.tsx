@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { CTASection } from "@/components/site/CTASection";
+import { InlineLeadCTA } from "@/components/site/InlineLeadCTA";
 import { pageMeta } from "@/lib/site-meta";
 import { Target, Eye, Heart, Globe2 } from "lucide-react";
 
@@ -76,6 +77,12 @@ function AboutPage() {
           </div>
         </div>
       </section>
+
+      <InlineLeadCTA
+        eyebrow="Work with us"
+        title="Be one of the first businesses to deploy SphinxAI in MENA"
+        description="Get a free demo and a tailored rollout plan for your team."
+      />
 
       <CTASection />
     </SiteLayout>

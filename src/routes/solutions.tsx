@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import { CTASection } from "@/components/site/CTASection";
+import { InlineLeadCTA } from "@/components/site/InlineLeadCTA";
 import { pageMeta } from "@/lib/site-meta";
 import { Bot, PhoneCall, Workflow, Users, CalendarCheck, Plug, BarChart3, Check, X } from "lucide-react";
 
@@ -104,6 +105,8 @@ function SolutionsPage() {
           </div>
         </div>
       </section>
+
+      <InlineLeadCTA />
 
       <CTASection />
     </SiteLayout>
