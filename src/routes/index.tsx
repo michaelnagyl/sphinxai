@@ -317,52 +317,52 @@ function WhySphinx() {
 }
 
 function SeeInAction() {
-  const badges = [
-    "24/7 AI Call Handling",
-    "Arabic & English Support",
-    "Lead Qualification",
-    "Appointment Booking",
-    "Business Automation Ready",
+  const bullets = [
+    "Answers calls instantly",
+    "Qualifies serious leads",
+    "Books appointments",
+    "Collects customer data",
+    "Works after business hours",
   ];
   return (
-    <section className="section-pad">
+    <section className="section-pad bg-gradient-to-b from-white via-brand-soft/30 to-white">
       <div className="container-page">
-        <div className="mx-auto max-w-2xl text-center">
+        <div className="mx-auto max-w-3xl text-center">
           <div className="inline-flex items-center rounded-full border border-brand/20 bg-brand-soft px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand">
             Watch the demo
           </div>
-          <h2 className="mt-4 font-display text-3xl font-bold text-ink md:text-5xl">
+          <h2 className="mt-5 font-display text-4xl font-bold text-ink md:text-5xl lg:text-6xl">
             See SphinxAI In Action
           </h2>
-          <p className="mt-4 text-base text-muted-foreground md:text-lg">
+          <p className="mt-5 text-lg text-muted-foreground md:text-xl">
             Watch how an AI Voice Agent can answer calls, understand customers, collect information,
-            and help your business respond instantly.
+            qualify leads, and help your business respond instantly.
           </p>
         </div>
-        <div className="mt-14 grid items-center gap-12 lg:grid-cols-[1fr_1.1fr]">
+        <div className="mt-16 grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
           <div className="order-2 lg:order-1">
-            <h3 className="font-display text-2xl font-bold text-ink md:text-3xl">
+            <h3 className="font-display text-3xl font-bold text-ink md:text-4xl">
               Real conversations. Real business outcomes.
             </h3>
-            <p className="mt-4 text-muted-foreground">
+            <p className="mt-5 text-lg text-muted-foreground">
               See how SphinxAI can answer calls, qualify leads, collect customer details, and help
               your business respond instantly — even outside working hours.
             </p>
-            <ul className="mt-6 flex flex-wrap gap-2">
-              {badges.map((b) => (
-                <li
-                  key={b}
-                  className="inline-flex items-center gap-1.5 rounded-full border border-border bg-white px-3 py-1.5 text-xs font-medium text-ink"
-                >
-                  <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500" /> {b}
+            <ul className="mt-7 space-y-3">
+              {bullets.map((b) => (
+                <li key={b} className="flex items-center gap-3 text-base font-medium text-ink">
+                  <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-emerald-50 text-emerald-600 ring-1 ring-emerald-200">
+                    <CheckCircle2 className="h-4 w-4" />
+                  </span>
+                  {b}
                 </li>
               ))}
             </ul>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <Button asChild variant="hero" size="lg">
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <Button asChild variant="hero" size="xl">
                 <Link to="/contact"><CalendarCheck className="h-4 w-4" /> Book A Business Demo</Link>
               </Button>
-              <Button asChild variant="outlineBrand" size="lg">
+              <Button asChild variant="outlineBrand" size="xl">
                 <Link to="/live-demo"><PhoneCall className="h-4 w-4" /> Start Live Conversation</Link>
               </Button>
             </div>
