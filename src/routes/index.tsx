@@ -315,3 +315,63 @@ function WhySphinx() {
     </section>
   );
 }
+
+function SeeInAction() {
+  const badges = [
+    "24/7 AI Call Handling",
+    "Arabic & English Support",
+    "Lead Qualification",
+    "Appointment Booking",
+    "Business Automation Ready",
+  ];
+  return (
+    <section className="section-pad">
+      <div className="container-page">
+        <div className="mx-auto max-w-2xl text-center">
+          <div className="inline-flex items-center rounded-full border border-brand/20 bg-brand-soft px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand">
+            Watch the demo
+          </div>
+          <h2 className="mt-4 font-display text-3xl font-bold text-ink md:text-5xl">
+            See SphinxAI In Action
+          </h2>
+          <p className="mt-4 text-base text-muted-foreground md:text-lg">
+            Watch how an AI Voice Agent can answer calls, understand customers, collect information,
+            and help your business respond instantly.
+          </p>
+        </div>
+        <div className="mt-14 grid items-center gap-12 lg:grid-cols-[1fr_1.1fr]">
+          <div className="order-2 lg:order-1">
+            <h3 className="font-display text-2xl font-bold text-ink md:text-3xl">
+              Real conversations. Real business outcomes.
+            </h3>
+            <p className="mt-4 text-muted-foreground">
+              See how SphinxAI can answer calls, qualify leads, collect customer details, and help
+              your business respond instantly — even outside working hours.
+            </p>
+            <ul className="mt-6 flex flex-wrap gap-2">
+              {badges.map((b) => (
+                <li
+                  key={b}
+                  className="inline-flex items-center gap-1.5 rounded-full border border-border bg-white px-3 py-1.5 text-xs font-medium text-ink"
+                >
+                  <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500" /> {b}
+                </li>
+              ))}
+            </ul>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <Button asChild variant="hero" size="lg">
+                <Link to="/contact"><CalendarCheck className="h-4 w-4" /> Book A Business Demo</Link>
+              </Button>
+              <Button asChild variant="outlineBrand" size="lg">
+                <Link to="/live-demo"><PhoneCall className="h-4 w-4" /> Start Live Conversation</Link>
+              </Button>
+            </div>
+          </div>
+          <div className="order-1 lg:order-2">
+            <DemoVideo />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
