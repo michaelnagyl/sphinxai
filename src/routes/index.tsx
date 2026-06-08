@@ -287,29 +287,32 @@ function HowItWorks() {
 
 function ResultsSection() {
   const kpis = [
-    { k: "More Revenue", v: "+38%", desc: "Average uplift from captured calls." },
-    { k: "Faster Response", v: "< 1s", desc: "Instant pickup, every time." },
-    { k: "More Bookings", v: "+47%", desc: "Automated appointment scheduling." },
-    { k: "Lower Costs", v: "−62%", desc: "Reduced manual call handling." },
-    { k: "Higher Conversion", v: "+29%", desc: "Better qualification = better leads." },
-    { k: "Customer Experience", v: "5★", desc: "Consistent quality on every call." },
+    { icon: TrendingUp, k: "More Revenue",         v: "+38%", desc: "Average uplift from captured calls.",       hl: "text-emerald-600", soft: "bg-emerald-50" },
+    { icon: CalendarCheck, k: "More Bookings",     v: "+47%", desc: "Automated appointment scheduling.",         hl: "text-brand",        soft: "bg-brand-soft" },
+    { icon: Zap, k: "Higher Conversion",           v: "+29%", desc: "Better qualification, better leads.",       hl: "text-amber-600",    soft: "bg-amber-50" },
+    { icon: Wallet, k: "Lower Costs",              v: "−62%", desc: "Reduced manual call handling.",             hl: "text-violet-600",   soft: "bg-violet-50" },
+    { icon: Smile, k: "Better CX",                 v: "5.0★", desc: "Consistent quality on every call.",         hl: "text-rose-600",     soft: "bg-rose-50" },
   ];
   return (
-    <section className="section-pad">
+    <section className="section-pad bg-white">
       <div className="container-page">
         <SectionHeader
           eyebrow="Results"
-          title="What businesses gain"
-          description="SphinxAI helps businesses capture more opportunities, reduce manual work, and deliver faster customer communication without increasing team size."
+          title="Why businesses choose SphinxAI"
+          description="Capture more opportunities, reduce manual work, and deliver faster customer communication — without adding headcount."
         />
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
           {kpis.map((k) => (
-            <div key={k.k} className="rounded-2xl border border-border bg-gradient-to-br from-white to-brand-soft p-6">
-              <div className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
-                <TrendingUp className="h-4 w-4 text-brand" /> {k.k}
+            <div
+              key={k.k}
+              className="group relative overflow-hidden rounded-2xl border border-border bg-white p-6 shadow-[0_1px_0_0_rgba(15,23,42,0.03)] transition hover:-translate-y-1 hover:border-brand/30 hover:shadow-premium"
+            >
+              <div className={`inline-flex h-10 w-10 items-center justify-center rounded-xl ${k.soft} ${k.hl}`}>
+                <k.icon className="h-5 w-5" />
               </div>
-              <div className="mt-3 font-display text-4xl font-bold text-brand">{k.v}</div>
-              <p className="mt-2 text-sm text-muted-foreground">{k.desc}</p>
+              <div className={`mt-5 font-display text-5xl font-bold tracking-[-0.04em] ${k.hl}`}>{k.v}</div>
+              <div className="mt-2 text-sm font-semibold text-ink">{k.k}</div>
+              <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{k.desc}</p>
             </div>
           ))}
         </div>
