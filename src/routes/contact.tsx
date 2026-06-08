@@ -9,7 +9,7 @@ import { toast } from "sonner";
 import { pageMeta } from "@/lib/site-meta";
 import {
   CalendarCheck, PhoneCall, Mail, MapPin,
-  CheckCircle2, Star, Clock, ShieldCheck, Sparkles, ArrowRight,
+  CheckCircle2, Star, Clock, ShieldCheck, Sparkles,
 } from "lucide-react";
 import { z } from "zod";
 
