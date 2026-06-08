@@ -283,7 +283,6 @@ function ResultsSection() {
   );
 }
 
-function WhySphinx() {
 function IndustriesSection() {
   const industries = [
     {
