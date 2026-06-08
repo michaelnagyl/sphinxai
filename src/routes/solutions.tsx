@@ -4,7 +4,7 @@ import { SectionHeader } from "@/components/site/SectionHeader";
 import { CTASection } from "@/components/site/CTASection";
 import { InlineLeadCTA } from "@/components/site/InlineLeadCTA";
 import { pageMeta } from "@/lib/site-meta";
-import { Bot, PhoneCall, Users, CalendarCheck, Plug, BarChart3, Check, X, Stethoscope, HeartPulse } from "lucide-react";
+import { Bot, PhoneCall, Users, CalendarCheck, Plug, BarChart3, Check, X, Stethoscope, HeartPulse, Languages } from "lucide-react";
 
 export const Route = createFileRoute("/solutions")({
   head: () => pageMeta({
@@ -17,11 +17,13 @@ export const Route = createFileRoute("/solutions")({
 
 const solutions = [
   { icon: Bot, title: "AI Voice Agents", desc: "Human-like AI agents that answer phone calls and speak naturally with customers." },
+  { icon: Stethoscope, title: "AI Receptionist For Clinics", desc: "Automate patient calls, appointment requests, branch questions, service inquiries, and follow-up communication." },
   { icon: PhoneCall, title: "AI Call Center", desc: "Automate inbound and outbound customer communication at scale." },
   { icon: CalendarCheck, title: "Appointment Booking Automation", desc: "Book appointments, confirm availability, and sync calendars with zero manual work." },
   { icon: Users, title: "Lead Qualification", desc: "Ask the right questions, understand customer intent, and identify serious leads." },
   { icon: Plug, title: "CRM & Google Sheets Integration", desc: "Push structured customer data to your CRM, Google Sheets, or business dashboards." },
   { icon: BarChart3, title: "Conversation Analytics", desc: "Track call outcomes, customer intent, conversion rates, missed opportunities, and business insights." },
+  { icon: Languages, title: "Arabic & English Support", desc: "Support customers naturally in Arabic and English for Egypt and MENA businesses." },
 ];
 
 const clinicSolutions = [
