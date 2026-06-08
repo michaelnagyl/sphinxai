@@ -167,14 +167,6 @@ function ContactPage() {
               <ContactInfo icon={Mail} label="Email" value="hello@sphinxai.example" />
               <ContactInfo icon={MapPin} label="Based in" value="Cairo, Egypt" />
             </div>
-
-            <a
-              href="#"
-              className="flex items-center justify-between rounded-2xl border border-emerald-200 bg-emerald-50 p-4 text-sm font-semibold text-emerald-700 transition-colors hover:bg-emerald-100"
-            >
-              <span className="flex items-center gap-2"><MessageCircle className="h-4 w-4" /> Chat on WhatsApp instead</span>
-              <ArrowRight className="h-4 w-4" />
-            </a>
           </aside>
         </div>
       </section>
