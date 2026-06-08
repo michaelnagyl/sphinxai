@@ -22,10 +22,10 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "SphinxAI | AI Voice Agents & AI Call Center For Businesses" },
-      { name: "description", content: "SphinxAI provides human-like AI voice agents for clinics, real estate, customer service, and sales teams. Automate calls, qualify leads, book appointments, and answer customers 24/7." },
-      { property: "og:title", content: "SphinxAI | AI Voice Agents & AI Call Center For Businesses" },
-      { property: "og:description", content: "Human-like AI voice agents for clinics, medical centers, and businesses. Answer calls, book appointments, qualify leads — 24/7 in Arabic and English." },
+      { title: "SphinxAI | AI Voice Agents & AI Call Center For Businesses In Egypt" },
+      { name: "description", content: "SphinxAI provides human-like AI voice agents for clinics, real estate, customer service, and sales teams. Automate calls, qualify leads, book appointments, and answer customers 24/7 in Arabic and English." },
+      { property: "og:title", content: "SphinxAI | AI Voice Agents & AI Call Center For Businesses In Egypt" },
+      { property: "og:description", content: "Human-like AI voice agents for clinics, real estate, and service businesses in Egypt. Answer calls, book appointments, and qualify leads — 24/7 in Arabic and English." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
     ],
@@ -55,11 +55,11 @@ function Index() {
 function Hero() {
   const [videoOpen, setVideoOpen] = useState(false);
   const trust = [
-    { icon: Clock, label: "24/7 AI Call Handling" },
-    { icon: Languages, label: "Arabic & English" },
+    { icon: Languages, label: "Egyptian Arabic Support" },
+    { icon: Clock, label: "24/7 Call Answering" },
+    { icon: CalendarCheck, label: "Clinic Booking Automation" },
     { icon: Users, label: "Lead Qualification" },
-    { icon: CalendarCheck, label: "Appointment Booking" },
-    { icon: Building2, label: "Built For MENA Businesses" },
+    { icon: Bot, label: "Human-Like Voice AI" },
   ];
   return (
     <section className="relative overflow-hidden">
@@ -79,12 +79,16 @@ function Hero() {
             <span className="brand-gradient-text">Into Revenue.</span>
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-            SphinxAI gives your business a human-like AI voice agent that answers calls instantly,
-            qualifies leads, books appointments, answers customer questions, and works 24/7.
+            SphinxAI answers your business calls 24/7 with human-like AI voice agents that qualify
+            leads, book appointments, collect customer details, and support customers in Arabic and
+            English.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Button asChild variant="hero" size="xl">
               <Link to="/live-demo"><PhoneCall className="h-4 w-4" /> Talk To AI Now</Link>
+            </Button>
+            <Button asChild variant="gold" size="xl">
+              <Link to="/contact"><CalendarCheck className="h-4 w-4" /> Book Free Demo</Link>
             </Button>
             <Button
               type="button"
