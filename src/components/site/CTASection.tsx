@@ -14,8 +14,8 @@ export function CTASection() {
               <span className="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-medium uppercase tracking-wider text-gold">
                 Ready when you are
               </span>
-              <h2 className="mt-4 font-display text-3xl font-bold leading-tight text-white md:text-4xl">
-                Ready To Stop Missing Calls?
+              <h2 className="mt-4 font-display text-3xl font-bold leading-tight text-white md:text-5xl">
+                Ready To Turn Every Call Into Revenue?
               </h2>
               <p className="mt-4 max-w-xl text-white/70">
                 Let SphinxAI answer your calls, qualify your leads, book appointments, and automate
@@ -31,13 +31,10 @@ export function CTASection() {
             </div>
             <div className="flex flex-col gap-3 md:items-end">
               <Button asChild variant="gold" size="xl" className="w-full md:w-auto">
-                <Link to="/contact"><CalendarCheck className="h-4 w-4" /> Book Free Demo</Link>
-              </Button>
-              <Button asChild variant="outline" size="xl" className="w-full border-white/30 bg-transparent text-white hover:bg-white hover:text-ink md:w-auto">
                 <Link to="/live-demo"><PhoneCall className="h-4 w-4" /> Talk To AI Now</Link>
               </Button>
-              <Button asChild variant="ghost" size="xl" className="w-full text-white/90 hover:bg-white/10 hover:text-white md:w-auto">
-                <Link to="/live-demo"><PlayCircle className="h-4 w-4" /> See Live Demo</Link>
+              <Button asChild variant="outline" size="xl" className="w-full border-white/30 bg-transparent text-white hover:bg-white hover:text-ink md:w-auto">
+                <Link to="/contact"><CalendarCheck className="h-4 w-4" /> Book Discovery Call</Link>
               </Button>
             </div>
           </div>
