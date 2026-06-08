@@ -180,7 +180,7 @@ function LiveDemoPage() {
             {[
               { q: "How long does it take to deploy?", a: "Most businesses go live within 5–7 business days, including voice training, CRM integration, and call-flow customization." },
               { q: "Does it really sound human?", a: "Yes. We use enterprise-grade voice models tuned for Arabic and English with natural pacing, pauses, and emotion." },
-              { q: "Can it integrate with my CRM and calendar?", a: "SphinxAI connects to HubSpot, Salesforce, Google Calendar, WhatsApp Business, Google Sheets, and most modern APIs." },
+              { q: "Can it integrate with my CRM and calendar?", a: "SphinxAI connects to HubSpot, Salesforce, Google Calendar, Google Sheets, and most modern APIs." },
               { q: "Is my data secure?", a: "Calls and transcripts are encrypted in transit and at rest. We follow enterprise security best practices and are GDPR-ready." },
               { q: "What if the AI cannot answer something?", a: "It instantly escalates to a human teammate or schedules a callback — you never lose a lead." },
             ].map((f) => (
