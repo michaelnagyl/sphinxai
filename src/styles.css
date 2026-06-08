@@ -56,6 +56,8 @@
   --color-brand-soft: var(--brand-soft);
   --color-gold: var(--gold);
   --color-gold-foreground: var(--gold-foreground);
+  --color-gold-soft: var(--gold-soft);
+  --color-navy: var(--navy);
   --color-ink: var(--ink);
   --color-surface: var(--surface);
   --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
@@ -68,8 +70,11 @@
   --brand: #3C548F;
   --brand-foreground: #ffffff;
   --brand-soft: #EEF2FA;
+  --brand-secondary: #4670A8;
   --gold: #FDBA08;
   --gold-foreground: #1A2238;
+  --gold-soft: #DCCB5A;
+  --navy: #0B1020;
   --ink: #0F172A;
   --surface: #F7F7F7;
 

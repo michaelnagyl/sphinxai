@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Linkedin, Facebook, Instagram } from "lucide-react";
+import { Facebook, Instagram } from "lucide-react";
 import logoFullAsset from "@/assets/sphinx-logo-full.png.asset.json";
 
 export function Footer() {
@@ -20,6 +20,9 @@ export function Footer() {
             </div>
             <p className="mt-4 text-sm text-white/70">
               AI Voice Platform For Businesses.
+            </p>
+            <p className="mt-2 font-display text-base font-semibold text-gold">
+              No missed calls. No missed business.
             </p>
             <p className="mt-4 max-w-sm text-sm text-white/60">
               SphinxAI helps businesses automate calls, qualify leads, book appointments, and improve
@@ -47,10 +50,8 @@ export function Footer() {
             <div>
               <div className="text-sm font-semibold text-white">Follow</div>
               <div className="mt-4 flex gap-3">
-                <a href="https://www.linkedin.com/company/sphinxai" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" className="grid h-9 w-9 place-items-center rounded-md bg-white/10 hover:bg-gold hover:text-ink"><Linkedin className="h-4 w-4" /></a>
+                <a href="https://www.instagram.com/sphinxflow.ai?igsh=YTNqZjVlOTVpd3Z3" aria-label="Instagram" target="_blank" rel="noopener noreferrer" className="grid h-9 w-9 place-items-center rounded-md bg-white/10 hover:bg-gold hover:text-ink"><Instagram className="h-4 w-4" /></a>
                 <a href="https://www.facebook.com/profile.php?id=100066607550479&sk=about" aria-label="Facebook" target="_blank" rel="noopener noreferrer" className="grid h-9 w-9 place-items-center rounded-md bg-white/10 hover:bg-gold hover:text-ink"><Facebook className="h-4 w-4" /></a>
-                <a href="#" aria-label="Instagram" className="grid h-9 w-9 place-items-center rounded-md bg-white/10 hover:bg-gold hover:text-ink"><Instagram className="h-4 w-4" /></a>
-                <a href="#" aria-label="TikTok" className="grid h-9 w-9 place-items-center rounded-md bg-white/10 text-xs font-bold hover:bg-gold hover:text-ink">TT</a>
               </div>
             </div>
           </div>

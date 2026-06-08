@@ -10,7 +10,7 @@ import { pageMeta } from "@/lib/site-meta";
 import {
   CalendarCheck, PhoneCall, Mail, MapPin,
   CheckCircle2, Star, Clock, ShieldCheck, Sparkles,
-  Linkedin, Facebook, Instagram, Building2, Bot,
+  Facebook, Instagram, Building2, Bot,
 } from "lucide-react";
 import { z } from "zod";
 
@@ -109,9 +109,8 @@ function ContactPage() {
             <div className="mt-8 flex items-center gap-3">
               <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Follow</span>
               <div className="flex gap-2">
-                <Social href="https://www.linkedin.com/company/sphinxai" label="LinkedIn"><Linkedin className="h-4 w-4" /></Social>
+                <Social href="https://www.instagram.com/sphinxflow.ai?igsh=YTNqZjVlOTVpd3Z3" label="Instagram"><Instagram className="h-4 w-4" /></Social>
                 <Social href="https://www.facebook.com/profile.php?id=100066607550479&sk=about" label="Facebook"><Facebook className="h-4 w-4" /></Social>
-                <Social href="#" label="Instagram"><Instagram className="h-4 w-4" /></Social>
               </div>
             </div>
 
