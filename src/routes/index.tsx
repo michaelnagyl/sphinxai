@@ -10,13 +10,17 @@ import { TrustBar } from "@/components/site/TrustBar";
 import { Testimonials } from "@/components/site/Testimonials";
 import { VideoModal } from "@/components/site/VideoModal";
 import { DemoVideo } from "@/components/site/DemoVideo";
+import {
+  Accordion, AccordionItem, AccordionTrigger, AccordionContent,
+} from "@/components/ui/accordion";
 import heroVideo from "@/assets/sphinx-demo.mp4.asset.json";
 import heroPoster from "@/assets/demo-poster.jpg.asset.json";
 import {
   Clock, Languages, Rocket, PhoneOff, UserX, MoonStar, MailWarning,
   Timer, Wallet, Bot, CalendarCheck, Users, Headphones, Plug, Route as RouteIcon,
   BarChart3, PhoneCall, ShieldCheck, Globe2, Layers, TrendingUp,
-  ArrowRight, Workflow, CheckCircle2, PlayCircle, Stethoscope, HeartPulse
+  ArrowRight, Workflow, CheckCircle2, PlayCircle, Stethoscope, Sparkles,
+  Building2, Briefcase, Mic, Radio, Database, TrendingDown,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -39,14 +43,14 @@ function Index() {
     <SiteLayout>
       <Hero />
       <TrustBar />
-      <SeeInAction />
-      <ClinicSection />
       <ProblemSection />
       <SolutionSection />
+      <IndustriesSection />
       <HowItWorks />
       <ResultsSection />
+      <LiveDemoSection />
       <Testimonials />
-      <WhySphinx />
+      <FAQSection />
       <CTASection />
     </SiteLayout>
   );
