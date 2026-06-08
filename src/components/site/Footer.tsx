@@ -8,13 +8,16 @@ export function Footer() {
       <div className="container-page py-16">
         <div className="grid gap-12 md:grid-cols-3">
           <div className="md:col-span-1">
-            <img
-              src={logoFullAsset.url}
-              alt="SphinxAI — No Missed Calls. No Missed Business."
-              className="h-20 w-auto brightness-0 invert"
-              width={260}
-              height={80}
-            />
+            <div className="py-2">
+              <img
+                src={logoFullAsset.url}
+                alt="SphinxAI — No Missed Calls. No Missed Business."
+                className="block h-auto w-[240px] max-w-full object-contain brightness-0 invert md:w-[260px]"
+                style={{ objectFit: "contain" }}
+                width={260}
+                height={120}
+              />
+            </div>
             <p className="mt-4 text-sm text-white/70">
               AI Voice Platform For Businesses.
             </p>
