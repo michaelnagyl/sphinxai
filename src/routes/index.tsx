@@ -126,10 +126,10 @@ function Hero() {
           <div className="overflow-hidden rounded-[2rem] border border-border bg-white shadow-premium">
             <img
               src={heroImg}
-              alt="Abstract AI voice communication waves and network"
+              alt="Friendly AI voice agent answering a business phone call"
               width={1536}
-              height={1152}
-              className="aspect-[5/4] w-full object-cover"
+              height={1280}
+              className="aspect-[5/4] w-full bg-gradient-to-br from-brand-soft/60 to-white object-contain"
               loading="eager"
             />
             <div className="border-t border-border p-6">
