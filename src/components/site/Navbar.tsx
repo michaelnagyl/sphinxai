@@ -40,7 +40,10 @@ export function Navbar() {
           ))}
         </nav>
 
-        <div className="hidden lg:block">
+        <div className="hidden items-center gap-2 lg:flex">
+          <Button asChild variant="ghostBrand" size="default">
+            <Link to="/contact">Book Demo</Link>
+          </Button>
           <Button asChild variant="hero" size="default">
             <Link to="/live-demo">Talk To AI Now</Link>
           </Button>

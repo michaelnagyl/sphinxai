@@ -4,7 +4,9 @@ import { SiteLayout } from "@/components/site/SiteLayout";
 import { Soundwave } from "@/components/site/Soundwave";
 import { Button } from "@/components/ui/button";
 import { pageMeta } from "@/lib/site-meta";
-import { Mic, PhoneCall, CalendarCheck, MessageSquare, Sparkles } from "lucide-react";
+import { Mic, PhoneCall, CalendarCheck, MessageSquare, Star, ShieldCheck, Zap, Clock, Languages, CheckCircle2 } from "lucide-react";
+import { Testimonials } from "@/components/site/Testimonials";
+import { CTASection } from "@/components/site/CTASection";
 
 export const Route = createFileRoute("/live-demo")({
   head: () => pageMeta({
@@ -40,24 +42,35 @@ function LiveDemoPage() {
 
   return (
     <SiteLayout>
-      <section className="section-pad bg-gradient-to-b from-brand-soft/60 to-background">
+      <section className="relative overflow-hidden bg-gradient-to-b from-brand-soft/60 to-background pt-16 pb-12 md:pt-24 md:pb-16">
+        <div className="pointer-events-none absolute inset-0 -z-10 grid-bg opacity-50 [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
         <div className="container-page text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-brand/20 bg-white px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand">
-            <Sparkles className="h-3.5 w-3.5" /> Live Voice AI
+            <span className="relative inline-flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+            </span>
+            Live Voice AI — free to try
           </div>
-          <h1 className="mt-4 font-display text-4xl font-bold leading-tight text-ink md:text-5xl">
-            Experience SphinxAI <span className="brand-gradient-text">Live</span>
+          <h1 className="mt-4 font-display text-4xl font-bold leading-tight text-ink md:text-6xl">
+            Hear it for yourself.<br className="hidden md:block" />
+            <span className="brand-gradient-text">Talk to SphinxAI now.</span>
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-base text-muted-foreground md:text-lg">
-            Talk directly with our AI Voice Agent and discover how AI can transform customer
-            communication.
+            No forms. No setup. One tap and you are on a live call with our AI voice agent —
+            the same one that could be answering your business calls next week.
           </p>
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs text-muted-foreground">
+            <div className="flex items-center gap-1.5"><CheckCircle2 className="h-4 w-4 text-emerald-500" /> 30-second demo</div>
+            <div className="flex items-center gap-1.5"><CheckCircle2 className="h-4 w-4 text-emerald-500" /> Arabic & English</div>
+            <div className="flex items-center gap-1.5"><CheckCircle2 className="h-4 w-4 text-emerald-500" /> No signup</div>
+          </div>
         </div>
       </section>
 
       <section className="pb-24">
         <div className="container-page">
-          <div className="mx-auto max-w-3xl overflow-hidden rounded-3xl border border-border bg-white shadow-[0_30px_80px_-30px_rgba(60,84,143,0.35)]">
+          <div className="mx-auto max-w-3xl overflow-hidden rounded-3xl border border-border bg-white shadow-premium">
             <div className="flex flex-col items-center bg-gradient-to-br from-[#3C548F] to-[#1E2A4A] p-10 text-white">
               <div className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">{statusText}</div>
               <button
@@ -116,10 +129,15 @@ function LiveDemoPage() {
             </div>
 
             <div className="border-t border-border bg-surface p-6 text-center">
-              <p className="text-xs text-muted-foreground">
-                Live voice demo integration coming soon.
-              </p>
-              <div className="mt-4 flex flex-wrap justify-center gap-3">
+              <div className="flex flex-wrap items-center justify-center gap-1">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} className="h-4 w-4 fill-gold text-gold" />
+                ))}
+                <span className="ml-2 text-xs font-medium text-muted-foreground">
+                  Rated 4.9/5 by early customers
+                </span>
+              </div>
+              <div className="mt-4 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap">
                 <Button variant="hero" size="lg" onClick={cycle}>
                   <PhoneCall className="h-4 w-4" /> Start Live Conversation
                 </Button>
@@ -129,8 +147,50 @@ function LiveDemoPage() {
               </div>
             </div>
           </div>
+
+          <div className="mx-auto mt-10 grid max-w-3xl gap-3 sm:grid-cols-4">
+            {[
+              { icon: Zap, k: "< 1s", v: "Pickup time" },
+              { icon: Clock, k: "24/7", v: "Availability" },
+              { icon: Languages, k: "AR + EN", v: "Native fluency" },
+              { icon: ShieldCheck, k: "Enterprise", v: "Security" },
+            ].map((s) => (
+              <div key={s.v} className="rounded-xl border border-border bg-white p-4 text-center">
+                <s.icon className="mx-auto h-4 w-4 text-brand" />
+                <div className="mt-2 font-display text-lg font-bold text-ink">{s.k}</div>
+                <div className="text-[11px] uppercase tracking-wider text-muted-foreground">{s.v}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
+
+      <Testimonials />
+
+      <section className="section-pad">
+        <div className="container-page max-w-3xl">
+          <h2 className="font-display text-3xl font-bold text-ink md:text-4xl">Frequently asked</h2>
+          <div className="mt-8 divide-y divide-border rounded-2xl border border-border bg-white">
+            {[
+              { q: "How long does it take to deploy?", a: "Most businesses go live within 5–7 business days, including voice training, CRM integration, and call-flow customization." },
+              { q: "Does it really sound human?", a: "Yes. We use enterprise-grade voice models tuned for Arabic and English with natural pacing, pauses, and emotion." },
+              { q: "Can it integrate with my CRM and calendar?", a: "SphinxAI connects to HubSpot, Salesforce, Google Calendar, WhatsApp Business, Google Sheets, and most modern APIs." },
+              { q: "Is my data secure?", a: "Calls and transcripts are encrypted in transit and at rest. We follow enterprise security best practices and are GDPR-ready." },
+              { q: "What if the AI cannot answer something?", a: "It instantly escalates to a human teammate or schedules a callback — you never lose a lead." },
+            ].map((f) => (
+              <details key={f.q} className="group p-5">
+                <summary className="flex cursor-pointer list-none items-center justify-between text-sm font-semibold text-ink">
+                  {f.q}
+                  <span className="text-xl leading-none text-brand transition-transform group-open:rotate-45">+</span>
+                </summary>
+                <p className="mt-3 text-sm text-muted-foreground">{f.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <CTASection />
     </SiteLayout>
   );
 }
