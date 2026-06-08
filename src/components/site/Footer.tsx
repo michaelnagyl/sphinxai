@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { Sparkles, Linkedin, Facebook, Instagram } from "lucide-react";
+import { Linkedin, Facebook, Instagram } from "lucide-react";
+import logoFullAsset from "@/assets/sphinx-logo-full.png.asset.json";
 
 export function Footer() {
   return (
@@ -7,14 +8,13 @@ export function Footer() {
       <div className="container-page py-16">
         <div className="grid gap-12 md:grid-cols-3">
           <div className="md:col-span-1">
-            <div className="flex items-center gap-2">
-              <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-brand">
-                <Sparkles className="h-4 w-4" />
-              </span>
-              <span className="font-display text-lg font-bold tracking-tight">
-                Sphinx<span className="text-gold">AI</span>
-              </span>
-            </div>
+            <img
+              src={logoFullAsset.url}
+              alt="SphinxAI — No Missed Calls. No Missed Business."
+              className="h-20 w-auto brightness-0 invert"
+              width={260}
+              height={80}
+            />
             <p className="mt-4 text-sm text-white/70">
               AI Voice Platform For Businesses.
             </p>

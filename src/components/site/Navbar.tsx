@@ -1,7 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { Menu, X, Sparkles } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logoAsset from "@/assets/sphinx-logo.png.asset.json";
 
 const links = [
   { to: "/", label: "Home" },
@@ -18,12 +19,13 @@ export function Navbar() {
     <header className="sticky top-0 z-50 border-b border-border/60 bg-white/85 backdrop-blur supports-[backdrop-filter]:bg-white/70">
       <div className="container-page flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
-          <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-brand text-brand-foreground">
-            <Sparkles className="h-4 w-4" />
-          </span>
-          <span className="font-display text-lg font-bold tracking-tight text-ink">
-            Sphinx<span className="text-brand">AI</span>
-          </span>
+          <img
+            src={logoAsset.url}
+            alt="SphinxAI"
+            className="h-9 w-auto md:h-10"
+            width={180}
+            height={40}
+          />
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex">
