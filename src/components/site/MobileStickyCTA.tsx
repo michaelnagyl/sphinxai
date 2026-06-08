@@ -6,16 +6,16 @@ export function MobileStickyCTA() {
     <div className="fixed inset-x-0 bottom-0 z-40 border-t border-border bg-white/95 p-3 backdrop-blur md:hidden">
       <div className="container-page flex gap-2 px-0">
         <Link
-          to="/live-demo"
+          to="/contact"
           className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-brand px-4 py-3 text-sm font-semibold text-brand-foreground shadow-[0_10px_30px_-12px_rgba(60,84,143,0.55)]"
         >
-          <PhoneCall className="h-4 w-4" /> Talk To AI
+          <CalendarCheck className="h-4 w-4" /> Book Demo
         </Link>
         <Link
-          to="/contact"
+          to="/live-demo"
           className="flex flex-1 items-center justify-center gap-2 rounded-xl border border-brand/20 bg-white px-4 py-3 text-sm font-semibold text-brand"
         >
-          <CalendarCheck className="h-4 w-4" /> Book Demo
+          <PhoneCall className="h-4 w-4" /> Talk To AI
         </Link>
       </div>
     </div>
