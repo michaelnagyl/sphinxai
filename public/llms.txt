@@ -1,0 +1,17 @@
+# SphinxAI
+
+> Human-like AI voice agents for clinics, real estate, customer service, and sales teams in Egypt and MENA. Answer calls, qualify leads, and book appointments 24/7 in Arabic and English.
+
+## Pages
+
+- [Home](/): Overview of SphinxAI's AI voice agent platform.
+- [Industries](/industries): Use cases for clinics, dental, beauty, real estate, customer service, and sales teams.
+- [Solutions](/solutions): AI call center, AI receptionist, appointment booking, lead qualification, CRM integrations.
+- [Packages](/packages): Sphinx Lite, Pro, and Elite plans.
+- [Presentation](/presentation): Interactive sales presentation for clinics and hospitals.
+- [About](/about): Company mission, vision, and values.
+- [Contact](/contact): Book a demo.
+
+## Optional
+
+- [Live Demo](/live-demo): Try the voice agent live.

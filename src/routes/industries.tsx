@@ -3,17 +3,35 @@ import { SiteLayout } from "@/components/site/SiteLayout";
 import { CTASection } from "@/components/site/CTASection";
 import { InlineLeadCTA } from "@/components/site/InlineLeadCTA";
 import { Button } from "@/components/ui/button";
-import { pageMeta } from "@/lib/site-meta";
 import {
   Stethoscope, Home, Sparkles, Headphones, TrendingUp, UtensilsCrossed, ArrowRight,
   AlertCircle, Bot, CheckCircle2, HeartPulse, Smile,
 } from "lucide-react";
 
 export const Route = createFileRoute("/industries")({
-  head: () => pageMeta({
-    title: "AI Voice Agents For Clinics, Real Estate & Customer Service | SphinxAI",
-    description: "Discover how SphinxAI helps clinics, medical centers, real estate companies, sales teams, and customer service teams automate calls, bookings, and lead qualification.",
-    path: "/industries",
+  head: () => ({
+    meta: [
+      { title: "AI Voice Agents For Clinics & Businesses | SphinxAI" },
+      { name: "description", content: "See how SphinxAI helps clinics, real estate, sales, and customer service teams automate calls, bookings, and lead qualification." },
+      { property: "og:title", content: "AI Voice Agents For Clinics & Businesses | SphinxAI" },
+      { property: "og:description", content: "See how SphinxAI automates calls, bookings, and lead qualification across clinics, real estate, sales, and customer service." },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "/industries" },
+    ],
+    links: [{ rel: "canonical", href: "/industries" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          serviceType: "AI Voice Agents by Industry",
+          provider: { "@type": "Organization", name: "SphinxAI" },
+          areaServed: "MENA",
+          description: "Industry-specific AI voice agents for clinics, dental, beauty centers, real estate, customer service, sales teams, and restaurants.",
+        }),
+      },
+    ],
   }),
   component: IndustriesPage,
 });

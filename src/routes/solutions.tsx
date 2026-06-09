@@ -3,14 +3,32 @@ import { SiteLayout } from "@/components/site/SiteLayout";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import { CTASection } from "@/components/site/CTASection";
 import { InlineLeadCTA } from "@/components/site/InlineLeadCTA";
-import { pageMeta } from "@/lib/site-meta";
 import { Bot, PhoneCall, Users, CalendarCheck, Plug, BarChart3, Check, X, Stethoscope, HeartPulse, Languages } from "lucide-react";
 
 export const Route = createFileRoute("/solutions")({
-  head: () => pageMeta({
-    title: "AI Call Center, AI Receptionist & Appointment Booking Automation | SphinxAI",
-    description: "Automate call answering, appointment booking, lead qualification, CRM workflows, and conversation analytics with SphinxAI voice agents — built for Egyptian businesses.",
-    path: "/solutions",
+  head: () => ({
+    meta: [
+      { title: "AI Call Center & Receptionist Automation | SphinxAI" },
+      { name: "description", content: "Automate call answering, appointment booking, lead qualification, and CRM workflows with SphinxAI voice agents for Egyptian businesses." },
+      { property: "og:title", content: "AI Call Center & Receptionist Automation | SphinxAI" },
+      { property: "og:description", content: "Automate call answering, appointment booking, lead qualification, and CRM workflows with SphinxAI voice agents." },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "/solutions" },
+    ],
+    links: [{ rel: "canonical", href: "/solutions" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          serviceType: "AI Voice Agent & Call Center Automation",
+          provider: { "@type": "Organization", name: "SphinxAI" },
+          areaServed: "MENA",
+          description: "AI voice agents that automate call answering, appointment booking, lead qualification, CRM workflows, and conversation analytics.",
+        }),
+      },
+    ],
   }),
   component: SolutionsPage,
 });
