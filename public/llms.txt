@@ -11,6 +11,7 @@
 - [Presentation](/presentation): Interactive sales presentation for clinics and hospitals.
 - [About](/about): Company mission, vision, and values.
 - [Contact](/contact): Book a demo.
+- [AI vs Virtual Receptionist](/comparison-ai-vs-virtual-receptionist): Comparison of AI answering service vs human virtual receptionist.
 
 ## Optional
 

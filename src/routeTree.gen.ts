@@ -16,6 +16,7 @@ import { Route as PackagesRouteImport } from './routes/packages'
 import { Route as LiveDemoRouteImport } from './routes/live-demo'
 import { Route as IndustriesRouteImport } from './routes/industries'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as ComparisonAiVsVirtualReceptionistRouteImport } from './routes/comparison-ai-vs-virtual-receptionist'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -54,6 +55,12 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ComparisonAiVsVirtualReceptionistRoute =
+  ComparisonAiVsVirtualReceptionistRouteImport.update({
+    id: '/comparison-ai-vs-virtual-receptionist',
+    path: '/comparison-ai-vs-virtual-receptionist',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
@@ -68,6 +75,7 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/comparison-ai-vs-virtual-receptionist': typeof ComparisonAiVsVirtualReceptionistRoute
   '/contact': typeof ContactRoute
   '/industries': typeof IndustriesRoute
   '/live-demo': typeof LiveDemoRoute
@@ -79,6 +87,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/comparison-ai-vs-virtual-receptionist': typeof ComparisonAiVsVirtualReceptionistRoute
   '/contact': typeof ContactRoute
   '/industries': typeof IndustriesRoute
   '/live-demo': typeof LiveDemoRoute
@@ -91,6 +100,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/comparison-ai-vs-virtual-receptionist': typeof ComparisonAiVsVirtualReceptionistRoute
   '/contact': typeof ContactRoute
   '/industries': typeof IndustriesRoute
   '/live-demo': typeof LiveDemoRoute
@@ -104,6 +114,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/comparison-ai-vs-virtual-receptionist'
     | '/contact'
     | '/industries'
     | '/live-demo'
@@ -115,6 +126,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/comparison-ai-vs-virtual-receptionist'
     | '/contact'
     | '/industries'
     | '/live-demo'
@@ -126,6 +138,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/comparison-ai-vs-virtual-receptionist'
     | '/contact'
     | '/industries'
     | '/live-demo'
@@ -138,6 +151,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  ComparisonAiVsVirtualReceptionistRoute: typeof ComparisonAiVsVirtualReceptionistRoute
   ContactRoute: typeof ContactRoute
   IndustriesRoute: typeof IndustriesRoute
   LiveDemoRoute: typeof LiveDemoRoute
@@ -198,6 +212,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/comparison-ai-vs-virtual-receptionist': {
+      id: '/comparison-ai-vs-virtual-receptionist'
+      path: '/comparison-ai-vs-virtual-receptionist'
+      fullPath: '/comparison-ai-vs-virtual-receptionist'
+      preLoaderRoute: typeof ComparisonAiVsVirtualReceptionistRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about': {
       id: '/about'
       path: '/about'
@@ -218,6 +239,8 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  ComparisonAiVsVirtualReceptionistRoute:
+    ComparisonAiVsVirtualReceptionistRoute,
   ContactRoute: ContactRoute,
   IndustriesRoute: IndustriesRoute,
   LiveDemoRoute: LiveDemoRoute,
