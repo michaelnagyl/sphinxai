@@ -27,14 +27,31 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "SphinxAI | AI Voice Agents & AI Call Center For Businesses In Egypt" },
-      { name: "description", content: "SphinxAI provides human-like AI voice agents for clinics, real estate, customer service, and sales teams. Automate calls, qualify leads, book appointments, and answer customers 24/7 in Arabic and English." },
-      { property: "og:title", content: "SphinxAI | AI Voice Agents & AI Call Center For Businesses In Egypt" },
-      { property: "og:description", content: "Human-like AI voice agents for clinics, real estate, and service businesses in Egypt. Answer calls, book appointments, and qualify leads — 24/7 in Arabic and English." },
+      { title: "SphinxAI | AI Voice Agents For Egyptian Businesses" },
+      { name: "description", content: "Human-like AI voice agents for clinics, real estate, and sales teams. Answer calls, qualify leads, and book appointments 24/7 in Arabic and English." },
+      { property: "og:title", content: "SphinxAI | AI Voice Agents For Egyptian Businesses" },
+      { property: "og:description", content: "Human-like AI voice agents for clinics, real estate, and sales teams. Answer calls, qualify leads, and book appointments 24/7." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
     ],
     links: [{ rel: "canonical", href: "/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: [
+            { "@type": "Question", name: "How does SphinxAI work?", acceptedAnswer: { "@type": "Answer", text: "SphinxAI connects to your phone line, website, or messaging channels. When a customer calls, our AI voice agent answers instantly, understands the request, and either completes the task — booking, qualification, FAQ — or routes the call to your team with full context." } },
+            { "@type": "Question", name: "Can it speak Egyptian Arabic?", acceptedAnswer: { "@type": "Answer", text: "Yes. SphinxAI is built for MENA and speaks natural Egyptian Arabic as well as Modern Standard Arabic and English, switching languages mid-conversation when needed." } },
+            { "@type": "Question", name: "Can it book appointments?", acceptedAnswer: { "@type": "Answer", text: "Yes. The AI can check availability, collect customer details, confirm the slot, and write the booking directly into your calendar or clinic management system." } },
+            { "@type": "Question", name: "Can it qualify leads?", acceptedAnswer: { "@type": "Answer", text: "Yes. You define the qualification questions and disqualification rules. SphinxAI asks them naturally, scores the lead, and only escalates serious buyers to your sales team." } },
+            { "@type": "Question", name: "Can it integrate with CRM systems?", acceptedAnswer: { "@type": "Answer", text: "Yes. SphinxAI integrates with major CRMs, calendars, and helpdesks via native connectors and webhooks, so transcripts and structured data land where your team already works." } },
+            { "@type": "Question", name: "How is pricing calculated?", acceptedAnswer: { "@type": "Answer", text: "Pricing is based on call minutes and the features you enable. Most businesses start with a tailored plan after a short discovery call — book a demo and we'll size it to your volume." } },
+          ],
+        }),
+      },
+    ],
   }),
   component: Index,
 });

@@ -15,10 +15,30 @@ import {
 import { z } from "zod";
 
 export const Route = createFileRoute("/contact")({
-  head: () => pageMeta({
-    title: "Contact SphinxAI | Book An AI Voice Agent Demo",
-    description: "Contact SphinxAI to build an AI voice agent for your clinic, business, call center, or sales team. Book a demo and automate customer communication.",
-    path: "/contact",
+  head: () => ({
+    meta: [
+      { title: "Contact SphinxAI | Book An AI Voice Agent Demo" },
+      { name: "description", content: "Contact SphinxAI to build an AI voice agent for your clinic, business, or sales team. Book a demo and automate customer communication." },
+      { property: "og:title", content: "Contact SphinxAI | Book An AI Voice Agent Demo" },
+      { property: "og:description", content: "Book a SphinxAI demo and automate calls, bookings, and lead qualification for your business." },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "/contact" },
+    ],
+    links: [{ rel: "canonical", href: "/contact" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          name: "SphinxAI",
+          description: "AI voice agents for clinics, real estate, customer service, and sales teams in Egypt and MENA.",
+          address: { "@type": "PostalAddress", addressLocality: "Cairo", addressCountry: "EG" },
+          areaServed: "MENA",
+          url: "/contact",
+        }),
+      },
+    ],
   }),
   component: ContactPage,
 });

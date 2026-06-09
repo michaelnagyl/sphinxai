@@ -9,18 +9,10 @@ import {
 export const Route = createFileRoute("/packages")({
   head: () => ({
     meta: [
-      { title: "SphinxAI Packages | AI Voice Agent Plans For Clinics & Businesses" },
-      {
-        name: "description",
-        content:
-          "Explore SphinxAI AI voice agent packages for clinics, medical centers, real estate companies, sales teams, customer service teams, appointment booking, lead qualification, and AI call center automation in Arabic and English.",
-      },
-      { property: "og:title", content: "SphinxAI Packages | AI Voice Agent Plans For Clinics & Businesses" },
-      {
-        property: "og:description",
-        content:
-          "Flexible AI voice agent packages — Sphinx Lite, Sphinx Pro, and Sphinx Elite — for clinics, real estate, sales, and customer service teams across Egypt and MENA.",
-      },
+      { title: "SphinxAI Packages | AI Voice Agent Plans & Pricing" },
+      { name: "description", content: "Compare Sphinx Lite, Pro, and Elite — AI voice agent plans for clinics, real estate, sales, and customer service teams in Arabic and English." },
+      { property: "og:title", content: "SphinxAI Packages | AI Voice Agent Plans & Pricing" },
+      { property: "og:description", content: "Compare Sphinx Lite, Pro, and Elite AI voice agent plans for clinics, real estate, sales, and customer service teams." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/packages" },
     ],

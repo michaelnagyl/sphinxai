@@ -15,12 +15,8 @@ import sphinxBg from "@/assets/sphinx-bg.jpg.asset.json";
 export const Route = createFileRoute("/presentation")({
   head: () => ({
     meta: [
-      { title: "SphinxAI Sales Presentation | AI Voice Agents For Clinics & Hospitals" },
-      {
-        name: "description",
-        content:
-          "Interactive SphinxAI sales presentation for clinics and hospitals — problem, ROI calculator, solution, patient journey, AI features, architecture, implementation, and live demo. Exportable as PDF.",
-      },
+      { title: "SphinxAI Sales Presentation | AI For Clinics" },
+      { name: "description", content: "Interactive SphinxAI presentation for clinics and hospitals — problem, ROI calculator, solution, AI features, architecture, and live demo." },
       { property: "og:title", content: "SphinxAI Sales Presentation" },
       { property: "og:description", content: "Interactive presentation for healthcare decision-makers." },
       { property: "og:type", content: "website" },
