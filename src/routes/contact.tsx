@@ -7,9 +7,20 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
 import {
-  CalendarCheck, PhoneCall, Mail, MapPin,
-  CheckCircle2, Star, Clock, ShieldCheck, Sparkles,
-  Facebook, Instagram, Building2, Bot, MessageCircle,
+  CalendarCheck,
+  PhoneCall,
+  Mail,
+  MapPin,
+  CheckCircle2,
+  Star,
+  Clock,
+  ShieldCheck,
+  Sparkles,
+  Facebook,
+  Instagram,
+  Building2,
+  Bot,
+  MessageCircle,
 } from "lucide-react";
 import { z } from "zod";
 
@@ -17,9 +28,16 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact SphinxAI | Book An AI Voice Agent Demo" },
-      { name: "description", content: "Contact SphinxAI to build an AI voice agent for your clinic, business, or sales team. Book a demo and automate customer communication." },
+      {
+        name: "description",
+        content:
+          "Contact SphinxAI to build an AI voice agent for your clinic, business, or sales team. Book a demo and automate customer communication.",
+      },
       { property: "og:title", content: "Contact SphinxAI | Book An AI Voice Agent Demo" },
-      { property: "og:description", content: "Book a SphinxAI demo and automate calls, bookings, and lead qualification for your business." },
+      {
+        property: "og:description",
+        content: "Book a SphinxAI demo and automate calls, bookings, and lead qualification for your business.",
+      },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/contact" },
     ],
@@ -90,19 +108,39 @@ function ContactPage() {
               <span className="brand-gradient-text">AI Voice Agent</span>
             </h1>
             <p className="mt-5 max-w-xl text-base text-muted-foreground md:text-lg">
-              Tell us about your business and we'll show you how SphinxAI can automate calls,
-              bookings, lead qualification, and customer communication.
+              Tell us about your business and we'll show you how SphinxAI can automate calls, bookings, lead
+              qualification, and customer communication.
             </p>
             <p className="mt-3 max-w-xl text-sm text-muted-foreground">
-              We help businesses choose the right AI voice setup for their calls, bookings, leads,
-              and customer communication workflows.
+              We help businesses choose the right AI voice setup for their calls, bookings, leads, and customer
+              communication workflows.
             </p>
 
             <div className="mt-8 grid gap-3 sm:grid-cols-2">
-              <InfoCard icon={CalendarCheck} title="Book Free Demo" desc="Call Sales: 01286590009" href="tel:+201286590009" />
-              <InfoCard icon={PhoneCall} title="Talk To AI Now" desc="Call AI Demo: 01039799207" href="tel:+201039799207" />
-              <InfoCard icon={MessageCircle} title="WhatsApp AI Demo" desc="Chat with us on WhatsApp." href="https://wa.me/201039799207?text=Hi%20SphinxAI%2C%20I%27d%20like%20to%20try%20the%20AI%20demo" />
-              <InfoCard icon={Facebook} title="Facebook Page" desc="Message us on Facebook for quick replies." href="https://www.facebook.com/profile.php?id=100066607550479&sk=about" />
+              <InfoCard
+                icon={CalendarCheck}
+                title="Book Free Demo"
+                desc="Speak with our sales team"
+                href="tel:+201286590009"
+              />
+              <InfoCard
+                icon={PhoneCall}
+                title="Talk To AI Now"
+                desc="Call the AI demo experience"
+                href="tel:+201039799207"
+              />
+              <InfoCard
+                icon={MessageCircle}
+                title="WhatsApp AI Demo"
+                desc="Chat with us on WhatsApp."
+                href="https://wa.me/201039799207?text=Hi%20SphinxAI%2C%20I%27d%20like%20to%20try%20the%20AI%20demo"
+              />
+              <InfoCard
+                icon={Facebook}
+                title="Facebook Page"
+                desc="Message us on Facebook for quick replies."
+                href="https://www.facebook.com/profile.php?id=100066607550479&sk=about"
+              />
             </div>
 
             <div className="mt-8 rounded-2xl border border-border bg-white p-6 shadow-[0_1px_0_0_rgba(15,23,42,0.03)]">
@@ -126,15 +164,25 @@ function ContactPage() {
             <div className="mt-8 flex items-center gap-3">
               <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Follow</span>
               <div className="flex gap-2">
-                <Social href="https://www.instagram.com/sphinxflow.ai?igsh=YTNqZjVlOTVpd3Z3" label="Instagram"><Instagram className="h-4 w-4" /></Social>
-                <Social href="https://www.facebook.com/profile.php?id=100066607550479&sk=about" label="Facebook"><Facebook className="h-4 w-4" /></Social>
+                <Social href="https://www.instagram.com/sphinxflow.ai?igsh=YTNqZjVlOTVpd3Z3" label="Instagram">
+                  <Instagram className="h-4 w-4" />
+                </Social>
+                <Social href="https://www.facebook.com/profile.php?id=100066607550479&sk=about" label="Facebook">
+                  <Facebook className="h-4 w-4" />
+                </Social>
               </div>
             </div>
 
             <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-muted-foreground">
-              <div className="flex items-center gap-1.5"><CheckCircle2 className="h-4 w-4 text-emerald-500" /> Response within 24h</div>
-              <div className="flex items-center gap-1.5"><CheckCircle2 className="h-4 w-4 text-emerald-500" /> No commitment</div>
-              <div className="flex items-center gap-1.5"><CheckCircle2 className="h-4 w-4 text-emerald-500" /> ROI estimate included</div>
+              <div className="flex items-center gap-1.5">
+                <CheckCircle2 className="h-4 w-4 text-emerald-500" /> Response within 24h
+              </div>
+              <div className="flex items-center gap-1.5">
+                <CheckCircle2 className="h-4 w-4 text-emerald-500" /> No commitment
+              </div>
+              <div className="flex items-center gap-1.5">
+                <CheckCircle2 className="h-4 w-4 text-emerald-500" /> ROI estimate included
+              </div>
             </div>
           </div>
 
@@ -143,13 +191,24 @@ function ContactPage() {
             <div className="mb-6 rounded-2xl border border-brand/20 bg-brand-soft/60 p-4">
               <div className="text-sm font-semibold text-ink">For immediate response, call or WhatsApp us.</div>
               <div className="mt-3 grid gap-2 sm:grid-cols-3">
-                <a href="tel:+201039799207" className="inline-flex items-center justify-center gap-2 rounded-lg bg-brand px-3 py-2 text-xs font-semibold text-brand-foreground hover:bg-[#2f447a]">
+                <a
+                  href="tel:+201039799207"
+                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-brand px-3 py-2 text-xs font-semibold text-brand-foreground hover:bg-[#2f447a]"
+                >
                   <PhoneCall className="h-3.5 w-3.5" /> AI Demo
                 </a>
-                <a href="tel:+201286590009" className="inline-flex items-center justify-center gap-2 rounded-lg bg-gold px-3 py-2 text-xs font-semibold text-gold-foreground hover:brightness-95">
+                <a
+                  href="tel:+201286590009"
+                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-gold px-3 py-2 text-xs font-semibold text-gold-foreground hover:brightness-95"
+                >
                   <CalendarCheck className="h-3.5 w-3.5" /> Sales
                 </a>
-                <a href="https://wa.me/201039799207?text=Hi%20SphinxAI%2C%20I%27d%20like%20to%20try%20the%20AI%20demo" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-lg border border-brand/30 bg-white px-3 py-2 text-xs font-semibold text-brand hover:bg-brand-soft">
+                <a
+                  href="https://wa.me/201039799207?text=Hi%20SphinxAI%2C%20I%27d%20like%20to%20try%20the%20AI%20demo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-lg border border-brand/30 bg-white px-3 py-2 text-xs font-semibold text-brand hover:bg-brand-soft"
+                >
                   <MessageCircle className="h-3.5 w-3.5" /> WhatsApp
                 </a>
               </div>
@@ -159,12 +218,15 @@ function ContactPage() {
               <p className="mt-2 text-sm text-muted-foreground">
                 Submit your details and we'll route you straight to Sales.
               </p>
-                <div className="mt-6 grid gap-5 md:grid-cols-2">
-                  <Field label="Full Name" name="name" placeholder="Your name" />
-                  <Field label="Business Name" name="business" placeholder="Company" />
-                  <Field label="Phone Number" name="phone" placeholder="+20 ..." type="tel" />
-                  <Field label="Email Address" name="email" placeholder="you@company.com" type="email" />
-                  <SelectField label="Industry" name="industry" options={[
+              <div className="mt-6 grid gap-5 md:grid-cols-2">
+                <Field label="Full Name" name="name" placeholder="Your name" />
+                <Field label="Business Name" name="business" placeholder="Company" />
+                <Field label="Phone Number" name="phone" placeholder="+20 ..." type="tel" />
+                <Field label="Email Address" name="email" placeholder="you@company.com" type="email" />
+                <SelectField
+                  label="Industry"
+                  name="industry"
+                  options={[
                     "Clinic / Medical Center",
                     "Dental Clinic",
                     "Beauty Clinic / Aesthetic Center",
@@ -173,39 +235,60 @@ function ContactPage() {
                     "Customer Service",
                     "Sales Team",
                     "Other",
-                  ]} />
-                  <SelectField label="Business Type" name="business_type" options={[
+                  ]}
+                />
+                <SelectField
+                  label="Business Type"
+                  name="business_type"
+                  options={[
                     "Small Business",
                     "Growing Company",
                     "Enterprise",
                     "Startup",
                     "Clinic Branch",
                     "Multi-branch Business",
-                  ]} />
-                  <div className="md:col-span-2">
-                    <Field label="What do you want to automate?" name="goal" placeholder="e.g. After-hours patient bookings, lead qualification, support" />
-                  </div>
-                  <SelectField label="Preferred Contact Method" name="contact_method" options={[
-                    "Phone Call", "WhatsApp", "Email", "Facebook",
-                  ]} />
-                  <div className="md:col-span-2">
-                    <Label htmlFor="message" className="text-sm font-medium text-ink">Message (optional)</Label>
-                    <Textarea id="message" name="message" rows={3} placeholder="Goals, current tools, timing…" className="mt-2" />
-                  </div>
+                  ]}
+                />
+                <div className="md:col-span-2">
+                  <Field
+                    label="What do you want to automate?"
+                    name="goal"
+                    placeholder="e.g. After-hours patient bookings, lead qualification, support"
+                  />
                 </div>
+                <SelectField
+                  label="Preferred Contact Method"
+                  name="contact_method"
+                  options={["Phone Call", "WhatsApp", "Email", "Facebook"]}
+                />
+                <div className="md:col-span-2">
+                  <Label htmlFor="message" className="text-sm font-medium text-ink">
+                    Message (optional)
+                  </Label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    rows={3}
+                    placeholder="Goals, current tools, timing…"
+                    className="mt-2"
+                  />
+                </div>
+              </div>
 
-                <div className="mt-7 grid gap-3 sm:grid-cols-2">
-                  <Button type="submit" variant="hero" size="xl" disabled={submitting}>
-                    <CalendarCheck className="h-4 w-4" /> {submitting ? "Calling…" : "Submit & Call Sales"}
-                  </Button>
-                  <Button type="button" variant="outlineBrand" size="xl" asChild>
-                    <a href="tel:+201039799207"><PhoneCall className="h-4 w-4" /> Talk To AI Now</a>
-                  </Button>
-                </div>
-                <p className="mt-4 text-xs text-muted-foreground">
-                  Submitting opens a call to Sales (01286590009). For immediate response, use the buttons above.
-                </p>
-              </form>
+              <div className="mt-7 grid gap-3 sm:grid-cols-2">
+                <Button type="submit" variant="hero" size="xl" disabled={submitting}>
+                  <CalendarCheck className="h-4 w-4" /> {submitting ? "Calling…" : "Submit & Call Sales"}
+                </Button>
+                <Button type="button" variant="outlineBrand" size="xl" asChild>
+                  <a href="tel:+201039799207">
+                    <PhoneCall className="h-4 w-4" /> Talk To AI Now
+                  </a>
+                </Button>
+              </div>
+              <p className="mt-4 text-xs text-muted-foreground">
+                Submitting opens a call to Sales (01286590009). For immediate response, use the buttons above.
+              </p>
+            </form>
           </div>
         </div>
       </section>
@@ -220,8 +303,8 @@ function ContactPage() {
               <span className="ml-2 text-xs text-white/80">Rated 4.9/5 by early customers</span>
             </div>
             <blockquote className="mt-4 text-sm text-white/90">
-              "We booked our first 18 appointments in the first week — fully automated.
-              The team noticed the difference immediately."
+              "We booked our first 18 appointments in the first week — fully automated. The team noticed the difference
+              immediately."
             </blockquote>
             <div className="mt-3 text-xs text-white/70">— Salma El-Sayed, COO at Nile Real Estate</div>
           </div>
@@ -249,7 +332,17 @@ function ContactPage() {
   );
 }
 
-function InfoCard({ icon: Icon, title, desc, href }: { icon: React.ComponentType<{ className?: string }>; title: string; desc: string; href?: string }) {
+function InfoCard({
+  icon: Icon,
+  title,
+  desc,
+  href,
+}: {
+  icon: React.ComponentType<{ className?: string }>;
+  title: string;
+  desc: string;
+  href?: string;
+}) {
   const inner = (
     <div className="flex h-full items-start gap-3 rounded-2xl border border-border bg-white p-4 transition hover:-translate-y-0.5 hover:border-brand/30 hover:shadow-premium">
       <span className="grid h-10 w-10 flex-none place-items-center rounded-xl bg-brand-soft text-brand">
@@ -262,7 +355,11 @@ function InfoCard({ icon: Icon, title, desc, href }: { icon: React.ComponentType
     </div>
   );
   if (href) {
-    return <a href={href} target="_blank" rel="noopener noreferrer" className="block">{inner}</a>;
+    return (
+      <a href={href} target="_blank" rel="noopener noreferrer" className="block">
+        {inner}
+      </a>
+    );
   }
   return inner;
 }
@@ -281,10 +378,22 @@ function Social({ href, label, children }: { href: string; label: string; childr
   );
 }
 
-function Field({ label, name, placeholder, type = "text" }: { label: string; name: string; placeholder?: string; type?: string }) {
+function Field({
+  label,
+  name,
+  placeholder,
+  type = "text",
+}: {
+  label: string;
+  name: string;
+  placeholder?: string;
+  type?: string;
+}) {
   return (
     <div>
-      <Label htmlFor={name} className="text-sm font-medium text-ink">{label}</Label>
+      <Label htmlFor={name} className="text-sm font-medium text-ink">
+        {label}
+      </Label>
       <Input id={name} name={name} type={type} placeholder={placeholder} className="mt-2" />
     </div>
   );
@@ -293,16 +402,22 @@ function Field({ label, name, placeholder, type = "text" }: { label: string; nam
 function SelectField({ label, name, options }: { label: string; name: string; options: string[] }) {
   return (
     <div>
-      <Label htmlFor={name} className="text-sm font-medium text-ink">{label}</Label>
+      <Label htmlFor={name} className="text-sm font-medium text-ink">
+        {label}
+      </Label>
       <select
         id={name}
         name={name}
         defaultValue=""
         className="mt-2 flex h-9 w-full rounded-md border border-input bg-background px-3 py-1 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
       >
-        <option value="" disabled>Select…</option>
+        <option value="" disabled>
+          Select…
+        </option>
         {options.map((o) => (
-          <option key={o} value={o}>{o}</option>
+          <option key={o} value={o}>
+            {o}
+          </option>
         ))}
       </select>
     </div>
@@ -312,7 +427,9 @@ function SelectField({ label, name, options }: { label: string; name: string; op
 function Step({ n, title, desc }: { n: string; title: string; desc: string }) {
   return (
     <li className="flex gap-3">
-      <span className="grid h-7 w-7 flex-none place-items-center rounded-full bg-brand-soft font-display text-xs font-bold text-brand">{n}</span>
+      <span className="grid h-7 w-7 flex-none place-items-center rounded-full bg-brand-soft font-display text-xs font-bold text-brand">
+        {n}
+      </span>
       <div>
         <div className="font-semibold text-ink">{title}</div>
         <div className="text-muted-foreground">{desc}</div>
@@ -329,7 +446,15 @@ function Trust({ icon: Icon, label }: { icon: React.ComponentType<{ className?: 
   );
 }
 
-function ContactInfo({ icon: Icon, label, value }: { icon: React.ComponentType<{ className?: string }>; label: string; value: string }) {
+function ContactInfo({
+  icon: Icon,
+  label,
+  value,
+}: {
+  icon: React.ComponentType<{ className?: string }>;
+  label: string;
+  value: string;
+}) {
   return (
     <div className="flex items-start gap-2 rounded-xl border border-border bg-white p-3">
       <Icon className="mt-0.5 h-4 w-4 text-brand" />
