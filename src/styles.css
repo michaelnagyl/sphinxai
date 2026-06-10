@@ -164,6 +164,11 @@
     letter-spacing: -0.02em;
     color: var(--ink);
   }
+
+  html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
 }
 
 @utility container-page {

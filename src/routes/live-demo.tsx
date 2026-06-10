@@ -141,11 +141,11 @@ function LiveDemoPage() {
                 </span>
               </div>
               <div className="mt-4 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap">
-                <Button variant="hero" size="lg" onClick={cycle}>
-                  <PhoneCall className="h-4 w-4" /> Start Live Conversation
+                <Button asChild variant="hero" size="lg">
+                  <a href="tel:+201039799207"><PhoneCall className="h-4 w-4" /> Talk To AI Now</a>
                 </Button>
                 <Button asChild variant="outlineBrand" size="lg">
-                  <Link to="/contact"><CalendarCheck className="h-4 w-4" /> Book A Business Demo</Link>
+                  <a href="tel:+201286590009"><CalendarCheck className="h-4 w-4" /> Book Free Demo</a>
                 </Button>
               </div>
             </div>
@@ -245,10 +245,10 @@ function SeeInAction() {
             </ul>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Button asChild variant="hero" size="lg">
-                <Link to="/contact"><CalendarCheck className="h-4 w-4" /> Book A Business Demo</Link>
+                <a href="tel:+201286590009"><CalendarCheck className="h-4 w-4" /> Book Free Demo</a>
               </Button>
               <Button asChild variant="outlineBrand" size="lg">
-                <a href="#top"><PhoneCall className="h-4 w-4" /> Start Live Conversation</a>
+                <a href="tel:+201039799207"><PhoneCall className="h-4 w-4" /> Talk To AI Now</a>
               </Button>
             </div>
           </div>

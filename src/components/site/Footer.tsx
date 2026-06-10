@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Facebook, Instagram } from "lucide-react";
+import { Facebook, Instagram, PhoneCall, MessageCircle } from "lucide-react";
 import logoFullAsset from "@/assets/sphinx-logo-full.png.asset.json";
 
 export function Footer() {
@@ -22,12 +22,28 @@ export function Footer() {
               AI Voice Platform For Businesses.
             </p>
             <p className="mt-2 font-display text-base font-semibold text-gold">
-              No missed calls. No missed business.
+              No Missed Calls. No Missed Business.
             </p>
             <p className="mt-4 max-w-sm text-sm text-white/60">
               SphinxAI helps businesses automate calls, qualify leads, book appointments, and improve
               customer communication using human-like AI voice agents.
             </p>
+            <div className="mt-5 flex flex-col gap-2 text-sm">
+              <a href="tel:+201039799207" className="inline-flex items-center gap-2 text-white/85 hover:text-gold">
+                <PhoneCall className="h-4 w-4 text-gold" /> AI Demo: 01039799207
+              </a>
+              <a href="tel:+201286590009" className="inline-flex items-center gap-2 text-white/85 hover:text-gold">
+                <PhoneCall className="h-4 w-4 text-gold" /> Sales: 01286590009
+              </a>
+              <a
+                href="https://wa.me/201039799207?text=Hi%20SphinxAI%2C%20I%27d%20like%20to%20try%20the%20AI%20demo"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-white/85 hover:text-gold"
+              >
+                <MessageCircle className="h-4 w-4 text-gold" /> WhatsApp AI Demo
+              </a>
+            </div>
           </div>
 
           <div className="grid grid-cols-2 gap-8 md:col-span-2 md:grid-cols-3">

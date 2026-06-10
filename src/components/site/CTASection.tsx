@@ -1,4 +1,3 @@
-import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { PhoneCall, CalendarCheck, CheckCircle2 } from "lucide-react";
 import sphinxBg from "@/assets/sphinx-bg.jpg.asset.json";
@@ -25,14 +24,14 @@ export function CTASection() {
                 Ready when you are
               </span>
               <h2 className="mt-4 font-display text-3xl font-bold leading-tight text-white md:text-5xl">
-                Ready To Turn Every Call Into Revenue?
+                Ready to Stop Missing Customer Calls?
               </h2>
               <p className="mt-4 max-w-xl text-white/70">
-                Let SphinxAI answer your calls, qualify your leads, book appointments, and automate
-                customer communication 24/7.
+                Book a personalized SphinxAI demo and see how your business can automate calls,
+                bookings, follow-ups, and customer communication.
               </p>
               <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-xs text-white/80">
-                {["Live in 7 days", "No credit card", "Cancel anytime"].map((b) => (
+                {["Free consultation", "No commitment", "Custom setup plan"].map((b) => (
                   <li key={b} className="flex items-center gap-1.5">
                     <CheckCircle2 className="h-4 w-4 text-gold" /> {b}
                   </li>
@@ -41,10 +40,10 @@ export function CTASection() {
             </div>
             <div className="flex flex-col gap-3 md:items-end">
               <Button asChild variant="gold" size="xl" className="w-full md:w-auto">
-                <Link to="/live-demo"><PhoneCall className="h-4 w-4" /> Talk To AI Now</Link>
+                <a href="tel:+201039799207"><PhoneCall className="h-4 w-4" /> Talk To AI Now</a>
               </Button>
               <Button asChild variant="outline" size="xl" className="w-full border-white/30 bg-transparent text-white hover:bg-white hover:text-ink md:w-auto">
-                <Link to="/contact"><CalendarCheck className="h-4 w-4" /> Book Discovery Call</Link>
+                <a href="tel:+201286590009"><CalendarCheck className="h-4 w-4" /> Book Free Demo</a>
               </Button>
             </div>
           </div>

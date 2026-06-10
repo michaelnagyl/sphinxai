@@ -28,8 +28,8 @@ type Plan = {
   description: string;
   features: string[];
   bestFor: string;
-  cta: { label: string; to: string };
-  secondary: { label: string; to: string };
+  cta: { label: string; href: string };
+  secondary: { label: string; href: string };
   highlighted?: boolean;
   badge?: string;
 };
@@ -55,8 +55,8 @@ const PLANS: Plan[] = [
     ],
     bestFor:
       "Small businesses, clinics, solo practices, and customer support teams starting with AI call automation.",
-    cta: { label: "Book Lite Demo", to: "/contact" },
-    secondary: { label: "Talk To Sales", to: "/contact" },
+    cta: { label: "Book Lite Demo", href: "tel:+201286590009" },
+    secondary: { label: "Contact Sales", href: "tel:+201286590009" },
   },
   {
     name: "Sphinx Pro",
@@ -82,8 +82,8 @@ const PLANS: Plan[] = [
     ],
     bestFor:
       "Clinics, dental clinics, beauty clinics, real estate companies, sales teams, and growing businesses that want to automate bookings and lead handling.",
-    cta: { label: "Book Pro Demo", to: "/contact" },
-    secondary: { label: "Talk To Sales", to: "/contact" },
+    cta: { label: "Book Pro Demo", href: "tel:+201286590009" },
+    secondary: { label: "Contact Sales", href: "tel:+201286590009" },
   },
   {
     name: "Sphinx Elite",
@@ -109,8 +109,8 @@ const PLANS: Plan[] = [
     ],
     bestFor:
       "Large clinics, medical centers, multi-branch businesses, enterprise sales teams, call centers, and high-volume customer service operations.",
-    cta: { label: "Book Elite Demo", to: "/contact" },
-    secondary: { label: "Contact Sales", to: "/contact" },
+    cta: { label: "Book Elite Demo", href: "tel:+201286590009" },
+    secondary: { label: "Contact Sales", href: "tel:+201286590009" },
   },
 ];
 
@@ -163,10 +163,10 @@ function PackagesPage() {
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Button asChild variant="gold" size="xl" className="h-14 min-w-[220px] rounded-2xl px-7 text-base font-bold shadow-[0_20px_60px_-12px_rgba(253,186,8,0.5)]">
-                <Link to="/live-demo"><PhoneCall className="h-5 w-5" /> Talk To AI Now</Link>
+                <a href="tel:+201039799207"><PhoneCall className="h-5 w-5" /> Talk To AI Now</a>
               </Button>
               <Button asChild variant="ghost" size="xl" className="h-14 min-w-[200px] rounded-2xl border border-white/20 bg-white/[0.04] text-white hover:bg-white/10 hover:text-white">
-                <Link to="/contact"><CalendarCheck className="h-5 w-5" /> Book Free Demo</Link>
+                <a href="tel:+201286590009"><CalendarCheck className="h-5 w-5" /> Book Free Demo</a>
               </Button>
             </div>
           </div>
@@ -249,9 +249,9 @@ function PlanCard({ plan }: { plan: Plan }) {
               : "h-12 rounded-xl bg-white text-sm font-semibold text-[#0B1226] hover:bg-white/90"
           }
         >
-          <Link to={plan.cta.to}>
+          <a href={plan.cta.href}>
             <CalendarCheck className="h-4 w-4" /> {plan.cta.label}
-          </Link>
+          </a>
         </Button>
         <Button
           asChild
@@ -259,9 +259,9 @@ function PlanCard({ plan }: { plan: Plan }) {
           variant="ghost"
           className="h-12 rounded-xl border border-white/15 bg-white/[0.04] text-sm font-semibold text-white hover:bg-white/10 hover:text-white"
         >
-          <Link to={plan.secondary.to}>
+          <a href={plan.secondary.href}>
             {plan.secondary.label} <ArrowRight className="h-4 w-4" />
-          </Link>
+          </a>
         </Button>
       </div>
     </div>

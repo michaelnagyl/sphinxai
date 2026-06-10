@@ -47,10 +47,10 @@ export function Navbar() {
 
         <div className="hidden items-center gap-3 lg:flex">
           <Button asChild variant="ghostBrand" size="lg">
-            <Link to="/live-demo">Talk To AI</Link>
+            <a href="tel:+201039799207">Talk To AI Now</a>
           </Button>
           <Button asChild variant="hero" size="lg">
-            <Link to="/contact">Book Free Demo</Link>
+            <a href="tel:+201286590009">Book Free Demo</a>
           </Button>
         </div>
 
@@ -79,10 +79,10 @@ export function Navbar() {
               </Link>
             ))}
             <Button asChild variant="hero" size="lg" className="mt-2">
-              <Link to="/contact" onClick={() => setOpen(false)}>Book Free Demo</Link>
+              <a href="tel:+201286590009" onClick={() => setOpen(false)}>Book Free Demo</a>
             </Button>
             <Button asChild variant="outlineBrand" size="lg">
-              <Link to="/live-demo" onClick={() => setOpen(false)}>Talk To AI Now</Link>
+              <a href="tel:+201039799207" onClick={() => setOpen(false)}>Talk To AI Now</a>
             </Button>
           </div>
         </div>
