@@ -20,11 +20,11 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-white/90 shadow-[0_1px_0_0_rgba(15,23,42,0.04)] backdrop-blur supports-[backdrop-filter]:bg-white/75">
       <div className="container-page flex h-24 items-center justify-between md:h-[100px]">
-        <Link to="/" className="flex items-center py-2" onClick={() => setOpen(false)}>
+        <Link to="/" className="flex shrink-0 min-w-[260px] items-center py-2" onClick={() => setOpen(false)}>
           <img
             src={logoAsset.url}
             alt="SphinxAI — AI Voice Agents"
-            className="block h-auto w-[230px] object-contain md:w-[280px] lg:w-[320px]"
+            className="block h-auto w-[230px] shrink-0 max-w-none object-contain md:w-[280px] lg:w-[320px]"
             style={{ objectFit: "contain" }}
             width={320}
             height={95}
