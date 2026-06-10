@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { Button } from "@/components/ui/button";
@@ -9,7 +9,7 @@ import { toast } from "sonner";
 import {
   CalendarCheck, PhoneCall, Mail, MapPin,
   CheckCircle2, Star, Clock, ShieldCheck, Sparkles,
-  Facebook, Instagram, Building2, Bot,
+  Facebook, Instagram, Building2, Bot, MessageCircle,
 } from "lucide-react";
 import { z } from "zod";
 
@@ -56,7 +56,6 @@ const schema = z.object({
 
 function ContactPage() {
   const [submitting, setSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -67,12 +66,11 @@ function ContactPage() {
       return;
     }
     setSubmitting(true);
+    toast.success("Calling Sales — if it doesn't dial, use the WhatsApp button above.");
     setTimeout(() => {
       setSubmitting(false);
-      setSubmitted(true);
-      (e.target as HTMLFormElement).reset();
-      toast.success("Demo request received. We will reach out within 24 hours.");
-    }, 700);
+      window.location.href = "tel:+201286590009";
+    }, 400);
   };
 
   return (
@@ -101,10 +99,10 @@ function ContactPage() {
             </p>
 
             <div className="mt-8 grid gap-3 sm:grid-cols-2">
-              <InfoCard icon={CalendarCheck} title="Book Free Demo" desc="20-minute custom walkthrough on your call flows." />
-              <InfoCard icon={PhoneCall} title="Talk To AI" desc="Call our live AI agent and try it yourself." />
+              <InfoCard icon={CalendarCheck} title="Book Free Demo" desc="Call Sales: 01286590009" href="tel:+201286590009" />
+              <InfoCard icon={PhoneCall} title="Talk To AI Now" desc="Call AI Demo: 01039799207" href="tel:+201039799207" />
+              <InfoCard icon={MessageCircle} title="WhatsApp AI Demo" desc="Chat with us on WhatsApp." href="https://wa.me/201039799207?text=Hi%20SphinxAI%2C%20I%27d%20like%20to%20try%20the%20AI%20demo" />
               <InfoCard icon={Facebook} title="Facebook Page" desc="Message us on Facebook for quick replies." href="https://www.facebook.com/profile.php?id=100066607550479&sk=about" />
-              <InfoCard icon={Building2} title="Business Inquiry" desc="hello@sphinxai.example · Cairo, Egypt" />
             </div>
 
             <div className="mt-8 rounded-2xl border border-border bg-white p-6 shadow-[0_1px_0_0_rgba(15,23,42,0.03)]">
@@ -142,26 +140,25 @@ function ContactPage() {
 
           {/* RIGHT: form card */}
           <div className="rounded-3xl border border-border bg-card p-8 shadow-premium md:p-10">
-            {submitted ? (
-              <div className="flex h-full flex-col items-center justify-center py-12 text-center">
-                <div className="grid h-16 w-16 place-items-center rounded-full bg-emerald-50 text-emerald-600">
-                  <CheckCircle2 className="h-8 w-8" />
-                </div>
-                <h2 className="mt-5 font-display text-2xl font-bold text-ink">Demo request received</h2>
-                <p className="mt-3 max-w-md text-sm text-muted-foreground">
-                  Our team will reach out within 24 hours to schedule your custom walkthrough.
-                  In the meantime, you can try the live AI demo.
-                </p>
-                <Button asChild variant="hero" size="xl" className="mt-6">
-                  <Link to="/live-demo"><PhoneCall className="h-4 w-4" /> Talk To AI Now</Link>
-                </Button>
+            <div className="mb-6 rounded-2xl border border-brand/20 bg-brand-soft/60 p-4">
+              <div className="text-sm font-semibold text-ink">For immediate response, call or WhatsApp us.</div>
+              <div className="mt-3 grid gap-2 sm:grid-cols-3">
+                <a href="tel:+201039799207" className="inline-flex items-center justify-center gap-2 rounded-lg bg-brand px-3 py-2 text-xs font-semibold text-brand-foreground hover:bg-[#2f447a]">
+                  <PhoneCall className="h-3.5 w-3.5" /> AI Demo
+                </a>
+                <a href="tel:+201286590009" className="inline-flex items-center justify-center gap-2 rounded-lg bg-gold px-3 py-2 text-xs font-semibold text-gold-foreground hover:brightness-95">
+                  <CalendarCheck className="h-3.5 w-3.5" /> Sales
+                </a>
+                <a href="https://wa.me/201039799207?text=Hi%20SphinxAI%2C%20I%27d%20like%20to%20try%20the%20AI%20demo" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-lg border border-brand/30 bg-white px-3 py-2 text-xs font-semibold text-brand hover:bg-brand-soft">
+                  <MessageCircle className="h-3.5 w-3.5" /> WhatsApp
+                </a>
               </div>
-            ) : (
-              <form onSubmit={onSubmit}>
-                <h2 className="font-display text-2xl font-bold text-ink">Book your free demo</h2>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  Takes 60 seconds. We will follow up within 24 hours.
-                </p>
+            </div>
+            <form onSubmit={onSubmit}>
+              <h2 className="font-display text-2xl font-bold text-ink">Request a free demo</h2>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Submit your details and we'll route you straight to Sales.
+              </p>
                 <div className="mt-6 grid gap-5 md:grid-cols-2">
                   <Field label="Full Name" name="name" placeholder="Your name" />
                   <Field label="Business Name" name="business" placeholder="Company" />
@@ -189,7 +186,7 @@ function ContactPage() {
                     <Field label="What do you want to automate?" name="goal" placeholder="e.g. After-hours patient bookings, lead qualification, support" />
                   </div>
                   <SelectField label="Preferred Contact Method" name="contact_method" options={[
-                    "Phone Call", "Email", "Facebook", "LinkedIn",
+                    "Phone Call", "WhatsApp", "Email", "Facebook",
                   ]} />
                   <div className="md:col-span-2">
                     <Label htmlFor="message" className="text-sm font-medium text-ink">Message (optional)</Label>
@@ -199,17 +196,16 @@ function ContactPage() {
 
                 <div className="mt-7 grid gap-3 sm:grid-cols-2">
                   <Button type="submit" variant="hero" size="xl" disabled={submitting}>
-                    <CalendarCheck className="h-4 w-4" /> {submitting ? "Sending…" : "Book Free Demo"}
+                    <CalendarCheck className="h-4 w-4" /> {submitting ? "Calling…" : "Submit & Call Sales"}
                   </Button>
                   <Button type="button" variant="outlineBrand" size="xl" asChild>
-                    <Link to="/live-demo"><PhoneCall className="h-4 w-4" /> Talk To AI</Link>
+                    <a href="tel:+201039799207"><PhoneCall className="h-4 w-4" /> Talk To AI Now</a>
                   </Button>
                 </div>
                 <p className="mt-4 text-xs text-muted-foreground">
-                  By submitting, you agree to be contacted by SphinxAI about your demo.
+                  Submitting opens a call to Sales (01286590009). For immediate response, use the buttons above.
                 </p>
               </form>
-            )}
           </div>
         </div>
       </section>
