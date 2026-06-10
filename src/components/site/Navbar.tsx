@@ -22,20 +22,20 @@ export function Navbar() {
       <div className="container-page flex h-24 items-center justify-between md:h-[100px]">
         <Link
           to="/"
-          className="flex shrink-0 min-w-[175px] -ml-3 md:-ml-5 lg:-ml-6 items-center py-2"
+          className="flex shrink-0 min-w-[160px] -ml-3 md:-ml-5 lg:-ml-6 items-center py-2"
           onClick={() => setOpen(false)}
         >
           <img
             src={logoAsset.url}
-            alt="SphinxAI — AI Voice Agents"
-            className="block h-auto w-[175px] shrink-0 max-w-none object-contain md:w-[205px] lg:w-[225px] xl:w-[240px]"
+            alt="SphinxAI - AI Voice Agents"
+            className="block h-auto w-[160px] shrink-0 max-w-none object-contain md:w-[190px] lg:w-[210px] xl:w-[225px]"
             style={{ objectFit: "contain" }}
-            width={240}
-            height={75}
+            width={225}
+            height={70}
           />
         </Link>
 
-        <nav className="hidden items-center gap-2 lg:flex">
+        <nav className="hidden items-center gap-1 xl:gap-2 lg:flex">
           {links.map((l) => (
             <Link
               key={l.to}
