@@ -8,7 +8,7 @@ export function MobileStickyCTA() {
           href="tel:+201039799207"
           className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-brand px-4 py-3 text-sm font-semibold text-brand-foreground shadow-[0_10px_30px_-12px_rgba(60,84,143,0.55)]"
         >
-          <PhoneCall className="h-4 w-4" /> Talk To AI
+          <PhoneCall className="h-4 w-4" /> Talk To AI Now
         </a>
         <a
           href="tel:+201286590009"

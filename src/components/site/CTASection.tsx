@@ -1,4 +1,3 @@
-import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { PhoneCall, CalendarCheck, CheckCircle2 } from "lucide-react";
 import sphinxBg from "@/assets/sphinx-bg.jpg.asset.json";

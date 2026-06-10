@@ -47,7 +47,7 @@ export function Navbar() {
 
         <div className="hidden items-center gap-3 lg:flex">
           <Button asChild variant="ghostBrand" size="lg">
-            <a href="tel:+201039799207">Talk To AI</a>
+            <a href="tel:+201039799207">Talk To AI Now</a>
           </Button>
           <Button asChild variant="hero" size="lg">
             <a href="tel:+201286590009">Book Free Demo</a>
