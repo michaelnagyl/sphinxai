@@ -27,10 +27,11 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "SphinxAI | AI Voice Agents For Egyptian Businesses" },
-      { name: "description", content: "Human-like AI voice agents for clinics, real estate, and sales teams. Answer calls, qualify leads, and book appointments 24/7 in Arabic and English." },
-      { property: "og:title", content: "SphinxAI | AI Voice Agents For Egyptian Businesses" },
-      { property: "og:description", content: "Human-like AI voice agents for clinics, real estate, and sales teams. Answer calls, qualify leads, and book appointments 24/7." },
+      { title: "SphinxAI | AI Voice Agents for Calls, Leads & Appointments" },
+      { name: "description", content: "SphinxAI helps businesses answer calls instantly, qualify leads, book appointments, and automate customer communication in Arabic and English." },
+      { name: "keywords", content: "AI Voice Agent Egypt, AI Call Center Egypt, AI Receptionist for Clinics, Clinic Call Automation, Dental Clinic AI Assistant, Arabic AI Voice Agent, Appointment Booking AI, Medical Call Answering AI, Business Automation Egypt, AI Voice Platform MENA" },
+      { property: "og:title", content: "SphinxAI | AI Voice Agents for Calls, Leads & Appointments" },
+      { property: "og:description", content: "SphinxAI helps businesses answer calls instantly, qualify leads, book appointments, and automate customer communication in Arabic and English." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
     ],
@@ -112,7 +113,7 @@ function Hero() {
             AI Voice Platform · Egypt & MENA
           </div>
           <h1 className="mt-8 font-display text-[2.75rem] font-bold leading-[1.02] tracking-[-0.035em] text-white sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[6.5rem]">
-            Turn Every Call{" "}
+            Turn Every Missed Call{" "}
             <span className="bg-gradient-to-r from-[#FDBA08] via-[#FFD66B] to-[#FDBA08] bg-clip-text text-transparent">
               Into Revenue
             </span>
@@ -138,14 +139,18 @@ function Hero() {
                 size="xl"
                 className="relative h-14 min-w-[240px] rounded-2xl px-8 text-base font-bold shadow-[0_20px_60px_-12px_rgba(253,186,8,0.65)] hover:-translate-y-0.5"
               >
-                <Link to="/live-demo"><PhoneCall className="h-5 w-5" /> Talk To AI Now</Link>
+                <a href="tel:+201039799207"><PhoneCall className="h-5 w-5" /> Talk To AI Now</a>
               </Button>
             </div>
             <Button
               type="button"
               size="xl"
               variant="ghost"
-              onClick={() => setVideoOpen(true)}
+              onClick={() => {
+                const el = document.getElementById("demo");
+                if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+                else setVideoOpen(true);
+              }}
               className="h-14 min-w-[180px] rounded-2xl border border-white/20 bg-white/[0.04] px-6 text-white hover:bg-white/10 hover:text-white"
             >
               <PlayCircle className="h-5 w-5" /> Watch Demo
@@ -153,13 +158,13 @@ function Hero() {
           </div>
           <div className="mt-7 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-white/60">
             <div className="flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-emerald-400" /> Live in 7 days
+              <CheckCircle2 className="h-4 w-4 text-emerald-400" /> Free consultation
             </div>
             <div className="flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-emerald-400" /> No credit card
+              <CheckCircle2 className="h-4 w-4 text-emerald-400" /> No commitment
             </div>
             <div className="flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-emerald-400" /> Cancel anytime
+              <CheckCircle2 className="h-4 w-4 text-emerald-400" /> Custom setup plan
             </div>
           </div>
         </div>
@@ -306,11 +311,11 @@ function HowItWorks() {
 
 function ResultsSection() {
   const kpis = [
-    { icon: TrendingUp, k: "More Revenue",         v: "+38%", desc: "Average uplift from captured calls.",       hl: "text-emerald-600", soft: "bg-emerald-50" },
-    { icon: CalendarCheck, k: "More Bookings",     v: "+47%", desc: "Automated appointment scheduling.",         hl: "text-brand",        soft: "bg-brand-soft" },
-    { icon: Zap, k: "Higher Conversion",           v: "+29%", desc: "Better qualification, better leads.",       hl: "text-amber-600",    soft: "bg-amber-50" },
-    { icon: Wallet, k: "Lower Costs",              v: "−62%", desc: "Reduced manual call handling.",             hl: "text-violet-600",   soft: "bg-violet-50" },
-    { icon: Smile, k: "Better CX",                 v: "5.0★", desc: "Consistent quality on every call.",         hl: "text-rose-600",     soft: "bg-rose-50" },
+    { icon: TrendingUp, k: "More Revenue",     v: "Potential uplift",  desc: "Capture revenue from previously missed calls.",        hl: "text-emerald-600", soft: "bg-emerald-50" },
+    { icon: CalendarCheck, k: "More Bookings", v: "Higher rate",        desc: "Automated appointment scheduling, 24/7.",              hl: "text-brand",        soft: "bg-brand-soft" },
+    { icon: Zap, k: "Higher Conversion",       v: "Better leads",       desc: "Smarter qualification on every call.",                 hl: "text-amber-600",    soft: "bg-amber-50" },
+    { icon: Wallet, k: "Lower Costs",          v: "Lower workload",     desc: "Reduce front-desk workload and missed-call losses.",   hl: "text-violet-600",   soft: "bg-violet-50" },
+    { icon: Smile, k: "Better CX",             v: "Consistent quality", desc: "The same warm service on every call.",                 hl: "text-rose-600",     soft: "bg-rose-50" },
   ];
   return (
     <section className="section-pad bg-white">
@@ -329,12 +334,15 @@ function ResultsSection() {
               <div className={`inline-flex h-10 w-10 items-center justify-center rounded-xl ${k.soft} ${k.hl}`}>
                 <k.icon className="h-5 w-5" />
               </div>
-              <div className={`mt-5 font-display text-5xl font-bold tracking-[-0.04em] ${k.hl}`}>{k.v}</div>
+              <div className={`mt-5 font-display text-2xl font-bold tracking-tight md:text-3xl ${k.hl}`}>{k.v}</div>
               <div className="mt-2 text-sm font-semibold text-ink">{k.k}</div>
               <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{k.desc}</p>
             </div>
           ))}
         </div>
+        <p className="mt-6 text-center text-xs text-muted-foreground">
+          Estimates vary based on call volume, missed-call rate, and consultation value.
+        </p>
       </div>
     </section>
   );
@@ -482,7 +490,7 @@ function FAQSection() {
 
 function DemoVideoSection() {
   return (
-    <section className="section-pad bg-white">
+    <section id="demo" className="section-pad bg-white scroll-mt-24">
       <div className="container-page">
         <SectionHeader
           eyebrow="See it in action"
@@ -519,10 +527,10 @@ function DemoVideoSection() {
             </ul>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button asChild variant="gold" size="xl">
-                <Link to="/contact"><CalendarCheck className="h-5 w-5" /> Book A Business Demo</Link>
+                <a href="tel:+201286590009"><CalendarCheck className="h-5 w-5" /> Book Free Demo</a>
               </Button>
               <Button asChild variant="outlineBrand" size="xl">
-                <Link to="/live-demo"><PhoneCall className="h-5 w-5" /> Start Live Conversation</Link>
+                <a href="tel:+201039799207"><PhoneCall className="h-5 w-5" /> Talk To AI Now</a>
               </Button>
             </div>
           </div>
@@ -542,7 +550,7 @@ type HomePlan = {
   description: string;
   features: string[];
   bestFor: string;
-  cta: { label: string; to: string };
+  cta: { label: string; href: string };
   highlighted?: boolean;
   badge?: string;
 };
@@ -563,7 +571,7 @@ const HOME_PLANS: HomePlan[] = [
       "Basic lead capture",
     ],
     bestFor: "Small businesses, solo clinics, and support teams starting with AI call automation.",
-    cta: { label: "Book Lite Demo", to: "/contact" },
+    cta: { label: "Book Lite Demo", href: "tel:+201286590009" },
   },
   {
     name: "Sphinx Pro",
@@ -583,7 +591,7 @@ const HOME_PLANS: HomePlan[] = [
       "Better analytics & reporting",
     ],
     bestFor: "Clinics, dental & beauty centers, real estate, and growing sales teams.",
-    cta: { label: "Book Pro Demo", to: "/contact" },
+    cta: { label: "Book Pro Demo", href: "tel:+201286590009" },
   },
   {
     name: "Sphinx Elite",
@@ -601,7 +609,7 @@ const HOME_PLANS: HomePlan[] = [
       "Priority technical support",
     ],
     bestFor: "Large clinics, medical centers, multi-branch businesses, and enterprise call centers.",
-    cta: { label: "Book Elite Demo", to: "/contact" },
+    cta: { label: "Book Elite Demo", href: "tel:+201286590009" },
   },
 ];
 
@@ -649,7 +657,7 @@ function HomePackagesSection() {
               <Link to="/packages"><Layers className="h-5 w-5" /> View All Packages</Link>
             </Button>
             <Button asChild variant="ghost" size="xl" className="h-14 min-w-[200px] rounded-2xl border border-white/20 bg-white/[0.04] text-white hover:bg-white/10 hover:text-white">
-              <Link to="/contact"><CalendarCheck className="h-5 w-5" /> Book Free Demo</Link>
+              <a href="tel:+201286590009"><CalendarCheck className="h-5 w-5" /> Book Free Demo</a>
             </Button>
           </div>
         </div>
@@ -729,9 +737,9 @@ function HomePlanCard({ plan }: { plan: HomePlan }) {
               : "h-12 w-full rounded-xl bg-white text-sm font-semibold text-[#0B1226] hover:bg-white/90"
           }
         >
-          <Link to={plan.cta.to}>
+          <a href={plan.cta.href}>
             <CalendarCheck className="h-4 w-4" /> {plan.cta.label}
-          </Link>
+          </a>
         </Button>
       </div>
     </div>
