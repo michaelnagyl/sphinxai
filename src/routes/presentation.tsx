@@ -100,23 +100,24 @@ function SlideSection({
 }
 
 function Calculator() {
-  const [calls, setCalls] = useState(180);
+  const [calls, setCalls] = useState(1800);
   const [missed, setMissed] = useState(30);
-  const [value, setValue] = useState(450);
+  const [value, setValue] = useState(800);
 
-  const monthly = useMemo(() => {
-    const missedCalls = calls * (missed / 100) * 30;
+  const result = useMemo(() => {
+    const lost = calls * (missed / 100);
+    const monthly = lost * value;
     return {
-      missedCalls: Math.round(missedCalls),
-      lost: Math.round(missedCalls * value),
-      recovered: Math.round(missedCalls * value * 0.7),
+      lost: Math.round(lost),
+      monthly: Math.round(monthly),
+      annual: Math.round(monthly * 12),
     };
   }, [calls, missed, value]);
 
   const fields = [
-    { label: "Daily inbound calls", val: calls, set: setCalls, min: 20, max: 800, step: 10, suffix: " calls" },
-    { label: "Missed-call rate", val: missed, set: setMissed, min: 5, max: 70, step: 1, suffix: "%" },
-    { label: "Average revenue per patient", val: value, set: setValue, min: 100, max: 3000, step: 50, suffix: " EGP" },
+    { label: "Monthly Calls", val: calls, set: setCalls, min: 100, max: 20000, step: 50, prefix: "", suffix: " calls", help: "" },
+    { label: "Missed Call %", val: missed, set: setMissed, min: 5, max: 70, step: 1, prefix: "", suffix: "%", help: "" },
+    { label: "Avg Consultation Fee", val: value, set: setValue, min: 100, max: 5000, step: 50, prefix: "EGP ", suffix: "", help: "Set this based on the doctor's consultation fee or average visit value." },
   ];
 
   return (
@@ -131,13 +132,14 @@ function Calculator() {
             <div key={f.label}>
               <div className="flex items-center justify-between text-sm">
                 <span className="font-medium text-ink">{f.label}</span>
-                <span className="font-semibold text-brand">{f.val.toLocaleString()}{f.suffix}</span>
+                <span className="font-semibold text-brand">{f.prefix}{f.val.toLocaleString()}{f.suffix}</span>
               </div>
               <input
                 type="range" min={f.min} max={f.max} step={f.step} value={f.val}
                 onChange={(e) => f.set(Number(e.target.value))}
                 className="mt-2 w-full accent-[color:var(--brand)]"
               />
+              {f.help && <p className="mt-1.5 text-xs text-muted-foreground">{f.help}</p>}
             </div>
           ))}
         </div>
@@ -148,22 +150,25 @@ function Calculator() {
         <div className="text-xs uppercase tracking-[0.18em] text-gold">Estimated monthly impact</div>
         <div className="mt-3 grid gap-4">
           <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-            <div className="text-sm text-white/70">Missed calls / month</div>
-            <div className="mt-1 font-display text-4xl font-bold">{monthly.missedCalls.toLocaleString()}</div>
+            <div className="text-sm text-white/70">Lost Patients / Month</div>
+            <div className="mt-1 font-display text-4xl font-bold">{result.lost.toLocaleString()}</div>
           </div>
           <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-            <div className="text-sm text-white/70">Revenue lost / month</div>
+            <div className="text-sm text-white/70">Monthly Revenue Loss</div>
             <div className="mt-1 font-display text-4xl font-bold text-white">
-              {monthly.lost.toLocaleString()} <span className="text-base font-medium text-white/70">EGP</span>
+              EGP {result.monthly.toLocaleString()} <span className="text-base font-medium text-white/70">/ month</span>
             </div>
           </div>
           <div className="rounded-2xl border border-gold/40 bg-gold/10 p-5">
-            <div className="text-sm text-gold">Recoverable with SphinxAI (≈70%)</div>
+            <div className="text-sm text-gold">Annual Revenue Loss</div>
             <div className="mt-1 font-display text-4xl font-bold text-white">
-              {monthly.recovered.toLocaleString()} <span className="text-base font-medium text-white/70">EGP</span>
+              EGP {result.annual.toLocaleString()} <span className="text-base font-medium text-white/70">/ year</span>
             </div>
           </div>
         </div>
+        <p className="mt-4 text-[11px] text-white/60">
+          Estimates vary based on call volume, missed-call rate, and consultation value.
+        </p>
       </div>
     </div>
   );
@@ -244,10 +249,10 @@ function PresentationPage() {
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
               <Button asChild variant="gold" size="xl">
-                <Link to="/live-demo"><PhoneCall className="h-4 w-4" /> Talk To AI Now</Link>
+                <a href="tel:+201039799207"><PhoneCall className="h-4 w-4" /> Talk To AI Now</a>
               </Button>
               <Button asChild variant="outline" size="xl" className="border-white/30 bg-transparent text-white hover:bg-white hover:text-ink">
-                <Link to="/contact"><CalendarCheck className="h-4 w-4" /> Book Discovery Call</Link>
+                <a href="tel:+201286590009"><CalendarCheck className="h-4 w-4" /> Book Free Demo</a>
               </Button>
             </div>
           </div>
@@ -361,7 +366,7 @@ function PresentationPage() {
             { i: Mic2, t: "Human-like voice", d: "Natural pacing, empathy, and accent control." },
             { i: Languages, t: "Bilingual native", d: "Switches Arabic ↔ English mid-sentence." },
             { i: Calendar, t: "Smart scheduling", d: "Reads doctor availability and books in real time." },
-            { i: ShieldCheck, t: "HIPAA-style privacy", d: "Encrypted, role-based, audit-logged." },
+            { i: ShieldCheck, t: "Secure data handling", d: "Encrypted, role-based, audit-logged." },
             { i: Workflow, t: "CRM & EMR sync", d: "Pushes structured data to your stack." },
             { i: TrendingUp, t: "Analytics dashboard", d: "Calls, intents, bookings, recovery rate." },
           ].map(({ i: Icon, t, d }) => (
@@ -482,10 +487,10 @@ function PresentationPage() {
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Button asChild variant="hero" size="xl">
-                <Link to="/live-demo"><PhoneCall className="h-4 w-4" /> Start Live Conversation</Link>
+                <a href="tel:+201039799207"><PhoneCall className="h-4 w-4" /> Talk To AI Now</a>
               </Button>
               <Button asChild variant="outlineBrand" size="xl">
-                <Link to="/contact"><CalendarCheck className="h-4 w-4" /> Book Business Demo</Link>
+                <a href="tel:+201286590009"><CalendarCheck className="h-4 w-4" /> Book Free Demo</a>
               </Button>
             </div>
           </div>
@@ -509,17 +514,17 @@ function PresentationPage() {
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Button asChild variant="gold" size="xl">
-              <Link to="/contact"><CalendarCheck className="h-4 w-4" /> Book Discovery Call</Link>
+              <a href="tel:+201286590009"><CalendarCheck className="h-4 w-4" /> Book Free Demo</a>
             </Button>
             <Button asChild variant="outline" size="xl" className="border-white/30 bg-transparent text-white hover:bg-white hover:text-ink">
-              <Link to="/live-demo"><PhoneCall className="h-4 w-4" /> Talk To AI Now</Link>
+              <a href="tel:+201039799207"><PhoneCall className="h-4 w-4" /> Talk To AI Now</a>
             </Button>
             <Button variant="ghost" size="xl" onClick={print} className="text-white hover:bg-white/10 hover:text-white">
               <Printer className="h-4 w-4" /> Export as PDF
             </Button>
           </div>
           <p className="mt-6 text-xs uppercase tracking-[0.18em] text-gold">
-            No missed calls. No missed business.
+            No Missed Calls. No Missed Business.
           </p>
         </div>
       </SlideSection>
