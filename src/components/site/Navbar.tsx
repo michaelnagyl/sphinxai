@@ -22,20 +22,20 @@ export function Navbar() {
       <div className="container-page flex h-24 items-center justify-between md:h-[100px]">
         <Link
           to="/"
-          className="flex shrink-0 min-w-[160px] -ml-3 md:-ml-5 lg:-ml-6 items-center py-2"
+          className="flex shrink-0 min-w-[145px] -ml-4 md:-ml-6 lg:-ml-8 items-center py-2"
           onClick={() => setOpen(false)}
         >
           <img
             src={logoAsset.url}
             alt="SphinxAI - AI Voice Agents"
-            className="block h-auto w-[160px] shrink-0 max-w-none object-contain md:w-[190px] lg:w-[210px] xl:w-[225px]"
+            className="block h-auto w-[145px] shrink-0 max-w-none object-contain md:w-[170px] lg:w-[185px] xl:w-[200px]"
             style={{ objectFit: "contain" }}
-            width={225}
-            height={70}
+            width={200}
+            height={62}
           />
         </Link>
 
-        <nav className="hidden items-center gap-1 xl:gap-2 lg:flex">
+        <nav className="hidden items-center gap-0.5 xl:gap-1 lg:flex">
           {links.map((l) => (
             <Link
               key={l.to}
@@ -49,11 +49,11 @@ export function Navbar() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
-          <Button asChild variant="ghostBrand" size="lg">
-            <a href="tel:+201039799207">Talk To AI Now</a>
+        <div className="hidden items-center gap-2 lg:flex">
+          <Button asChild variant="ghostBrand" size="sm" className="shrink-0 px-3 text-sm">
+            <a href="tel:+201039799207">Talk To AI</a>
           </Button>
-          <Button asChild variant="hero" size="lg">
+          <Button asChild variant="hero" size="sm" className="shrink-0 px-4 text-sm">
             <a href="tel:+201286590009">Book Free Demo</a>
           </Button>
         </div>
