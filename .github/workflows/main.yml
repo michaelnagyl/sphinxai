@@ -33,6 +33,11 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: List build output
+        run: |
+          ls
+          find . -maxdepth 3 -type f -name "index.html"
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
