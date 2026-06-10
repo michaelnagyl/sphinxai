@@ -1,4 +1,3 @@
-import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { PhoneCall, CalendarCheck, CheckCircle2 } from "lucide-react";
 
@@ -36,10 +35,10 @@ export function InlineLeadCTA({
             </div>
             <div className="flex flex-col gap-3 md:items-end">
               <Button asChild variant="hero" size="xl" className="w-full md:w-auto">
-                <Link to="/contact"><CalendarCheck className="h-4 w-4" /> Book Free Demo</Link>
+                <a href="tel:+201286590009"><CalendarCheck className="h-4 w-4" /> Book Free Demo</a>
               </Button>
               <Button asChild variant="outlineBrand" size="xl" className="w-full md:w-auto">
-                <Link to="/live-demo"><PhoneCall className="h-4 w-4" /> Talk To AI Now</Link>
+                <a href="tel:+201039799207"><PhoneCall className="h-4 w-4" /> Talk To AI Now</a>
               </Button>
             </div>
           </div>
