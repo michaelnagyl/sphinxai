@@ -24,10 +24,10 @@ export function Navbar() {
           <img
             src={logoAsset.url}
             alt="SphinxAI — AI Voice Agents"
-            className="block h-auto w-[200px] object-contain md:w-[240px] lg:w-[270px]"
+            className="block h-auto w-[230px] object-contain md:w-[280px] lg:w-[320px]"
             style={{ objectFit: "contain" }}
-            width={270}
-            height={80}
+            width={320}
+            height={95}
           />
         </Link>
 
