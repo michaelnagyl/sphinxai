@@ -19,15 +19,15 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-white/90 shadow-[0_1px_0_0_rgba(15,23,42,0.04)] backdrop-blur supports-[backdrop-filter]:bg-white/75">
-      <div className="container-page flex h-20 items-center justify-between md:h-[88px]">
+      <div className="container-page flex h-24 items-center justify-between md:h-[100px]">
         <Link to="/" className="flex items-center py-2" onClick={() => setOpen(false)}>
           <img
             src={logoAsset.url}
             alt="SphinxAI — AI Voice Agents"
-            className="block h-auto w-[140px] object-contain md:w-[170px] lg:w-[190px]"
+            className="block h-auto w-[180px] object-contain md:w-[230px] lg:w-[260px]"
             style={{ objectFit: "contain" }}
-            width={190}
-            height={56}
+            width={260}
+            height={76}
           />
         </Link>
 
@@ -79,10 +79,14 @@ export function Navbar() {
               </Link>
             ))}
             <Button asChild variant="hero" size="lg" className="mt-2">
-              <a href="tel:+201286590009" onClick={() => setOpen(false)}>Book Free Demo</a>
+              <a href="tel:+201286590009" onClick={() => setOpen(false)}>
+                Book Free Demo
+              </a>
             </Button>
             <Button asChild variant="outlineBrand" size="lg">
-              <a href="tel:+201039799207" onClick={() => setOpen(false)}>Talk To AI Now</a>
+              <a href="tel:+201039799207" onClick={() => setOpen(false)}>
+                Talk To AI Now
+              </a>
             </Button>
           </div>
         </div>
