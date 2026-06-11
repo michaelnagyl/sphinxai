@@ -2,7 +2,6 @@ import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoAsset from "@/assets/sphinx-logo.png.asset.json";
 
 const links = [
   { to: "/", label: "Home" },
@@ -17,6 +16,7 @@ const links = [
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
+
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-white/90 shadow-[0_1px_0_0_rgba(15,23,42,0.04)] backdrop-blur supports-[backdrop-filter]:bg-white/75">
       <div className="container-page flex h-24 items-center justify-between md:h-[100px]">
@@ -26,7 +26,7 @@ export function Navbar() {
           onClick={() => setOpen(false)}
         >
           <img
-            src={logoAsset.url}
+            src="/sphinx-logo.png"
             alt="SphinxAI - AI Voice Agents"
             className="block h-auto w-[145px] shrink-0 max-w-none object-contain md:w-[170px] lg:w-[185px] xl:w-[200px]"
             style={{ objectFit: "contain" }}
