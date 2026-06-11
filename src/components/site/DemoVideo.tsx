@@ -23,7 +23,6 @@ export function DemoVideo({ className = "" }: { className?: string }) {
         <video
           ref={ref}
           src="/sphinx-demo-video.mp4"
-          poster="/image-2276034329467581.jfif"
           className="h-full w-full object-contain bg-black"
           playsInline
           controls={playing}
