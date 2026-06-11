@@ -27,10 +27,10 @@ export function DemoVideo({ className = "" }: { className?: string }) {
           className="h-full w-full object-contain bg-black"
           playsInline
           controls={playing}
-          preload="metadata"
+          preload="auto"
           onPause={() => setPlaying(false)}
           onEnded={() => setPlaying(false)}
-          onError={() => setErrored(true)}
+          onError={() => console.warn("Demo video failed to load")}
         />
       )}
 
