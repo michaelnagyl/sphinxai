@@ -1,8 +1,6 @@
 import { useRef, useState } from "react";
 import { Play } from "lucide-react";
 import { PhoneFrame } from "./PhoneFrame";
-import videoAsset from "@/assets/sphinx-demo.mp4.asset.json";
-import posterAsset from "@/assets/demo-poster.jpg.asset.json";
 
 export function DemoVideo({ className = "" }: { className?: string }) {
   const ref = useRef<HTMLVideoElement>(null);
@@ -24,8 +22,8 @@ export function DemoVideo({ className = "" }: { className?: string }) {
       ) : (
         <video
           ref={ref}
-          src={videoAsset.url}
-          poster={posterAsset.url}
+          src="/sphinx-demo-video.mp4"
+          poster="/image-2276034329467581.jfif"
           className="h-full w-full object-contain bg-black"
           playsInline
           controls={playing}
@@ -35,6 +33,7 @@ export function DemoVideo({ className = "" }: { className?: string }) {
           onError={() => setErrored(true)}
         />
       )}
+
       {!playing && !errored && (
         <button
           type="button"
