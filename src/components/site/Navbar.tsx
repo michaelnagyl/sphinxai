@@ -19,38 +19,28 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-white/90 shadow-[0_1px_0_0_rgba(15,23,42,0.04)] backdrop-blur supports-[backdrop-filter]:bg-white/75">
-      <div className="container-page flex h-24 items-center justify-between md:h-[100px]">
+      <div className="container-page flex h-24 items-center justify-between gap-4 md:h-[100px]">
         <Link
-  to="/"
-  className="flex shrink-0 items-center gap-3 py-2"
-  onClick={() => setOpen(false)}
-  aria-label="SphinxAI Home"
->
-  <div className="relative h-9 w-9 shrink-0 md:h-10 md:w-10">
-    <span className="absolute left-1/2 top-0 h-2 w-2 -translate-x-1/2 rounded-full bg-gold" />
-    <span className="absolute left-0 top-3 h-2.5 w-2.5 rounded-full bg-gold" />
-    <span className="absolute right-0 top-3 h-2.5 w-2.5 rounded-full bg-gold" />
-    <span className="absolute left-1/2 top-4 h-3.5 w-3.5 -translate-x-1/2 rounded-full bg-gold" />
-    <span className="absolute bottom-0 left-1.5 h-3 w-3 rounded-full bg-gold" />
-    <span className="absolute bottom-0 right-1.5 h-3 w-3 rounded-full bg-gold" />
-  </div>
-
-  <div className="leading-none">
-    <div className="font-display text-xl font-extrabold tracking-wide text-ink md:text-2xl">
-      SPHINX<span className="text-gold">AI</span>
-    </div>
-    <div className="mt-1 hidden text-[9px] font-semibold uppercase tracking-[0.16em] text-muted-foreground sm:block">
-      No Missed Calls. No Missed Business.
-    </div>
-  </div>
-</Link>
+          to="/"
+          className="flex shrink-0 items-center py-2"
+          onClick={() => setOpen(false)}
+          aria-label="SphinxAI Home"
+        >
+          <img
+            src="/sphinx-logo.png"
+            alt="SphinxAI - No Missed Calls. No Missed Business."
+            className="block h-auto w-[185px] max-w-none object-contain sm:w-[205px] lg:w-[220px] xl:w-[240px]"
+            width={400}
+            height={120}
+          />
+        </Link>
 
         <nav className="hidden items-center gap-0.5 xl:gap-1 lg:flex">
           {links.map((l) => (
             <Link
               key={l.to}
               to={l.to}
-              className="rounded-md px-3.5 py-2 text-[15px] font-medium text-muted-foreground transition-colors hover:bg-brand-soft hover:text-brand"
+              className="rounded-md px-3 py-2 text-[15px] font-medium text-muted-foreground transition-colors hover:bg-brand-soft hover:text-brand xl:px-3.5"
               activeProps={{ className: "text-brand bg-brand-soft" }}
               activeOptions={{ exact: l.to === "/" }}
             >
@@ -59,17 +49,18 @@ export function Navbar() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-2 lg:flex">
+        <div className="hidden shrink-0 items-center gap-2 lg:flex">
           <Button asChild variant="ghostBrand" size="sm" className="shrink-0 px-3 text-sm">
             <a href="tel:+201039799207">Talk To AI</a>
           </Button>
+
           <Button asChild variant="hero" size="sm" className="shrink-0 px-4 text-sm">
             <a href="tel:+201286590009">Book Free Demo</a>
           </Button>
         </div>
 
         <button
-          className="inline-flex h-10 w-10 items-center justify-center rounded-md text-ink lg:hidden"
+          className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-md text-ink lg:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-label="Toggle menu"
         >
@@ -92,11 +83,13 @@ export function Navbar() {
                 {l.label}
               </Link>
             ))}
+
             <Button asChild variant="hero" size="lg" className="mt-2">
               <a href="tel:+201286590009" onClick={() => setOpen(false)}>
                 Book Free Demo
               </a>
             </Button>
+
             <Button asChild variant="outlineBrand" size="lg">
               <a href="tel:+201039799207" onClick={() => setOpen(false)}>
                 Talk To AI Now
