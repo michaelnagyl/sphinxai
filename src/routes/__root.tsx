@@ -99,6 +99,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:title", content: "SphinxAI | AI Voice Agents for Calls, Leads & Appointments" },
       { name: "twitter:description", content: "SphinxAI helps businesses answer calls instantly, qualify leads, book appointments, and automate customer communication in Arabic and English." },
       { name: "twitter:image", content: OG_IMAGE_URL },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/YyKQ1yPBLAQzUGfkY4cBays6fll1/social-images/social-1781757935484-ChatGPT_Image_Jun_18,_2026,_07_45_23_AM.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/YyKQ1yPBLAQzUGfkY4cBays6fll1/social-images/social-1781757935484-ChatGPT_Image_Jun_18,_2026,_07_45_23_AM.webp" },
     ],
     links: [
       {
