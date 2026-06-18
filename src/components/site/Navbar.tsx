@@ -21,19 +21,29 @@ export function Navbar() {
     <header className="sticky top-0 z-50 border-b border-border/60 bg-white/90 shadow-[0_1px_0_0_rgba(15,23,42,0.04)] backdrop-blur supports-[backdrop-filter]:bg-white/75">
       <div className="container-page flex h-24 items-center justify-between md:h-[100px]">
         <Link
-          to="/"
-          className="flex shrink-0 min-w-[145px] -ml-4 md:-ml-6 lg:-ml-8 items-center py-2"
-          onClick={() => setOpen(false)}
-        >
-          <img
-            src="/sphinx-logo.png"
-            alt="SphinxAI - AI Voice Agents"
-            className="block h-auto w-[145px] shrink-0 max-w-none object-contain md:w-[170px] lg:w-[185px] xl:w-[200px]"
-            style={{ objectFit: "contain" }}
-            width={200}
-            height={62}
-          />
-        </Link>
+  to="/"
+  className="flex shrink-0 items-center gap-3 py-2"
+  onClick={() => setOpen(false)}
+  aria-label="SphinxAI Home"
+>
+  <div className="relative h-9 w-9 shrink-0 md:h-10 md:w-10">
+    <span className="absolute left-1/2 top-0 h-2 w-2 -translate-x-1/2 rounded-full bg-gold" />
+    <span className="absolute left-0 top-3 h-2.5 w-2.5 rounded-full bg-gold" />
+    <span className="absolute right-0 top-3 h-2.5 w-2.5 rounded-full bg-gold" />
+    <span className="absolute left-1/2 top-4 h-3.5 w-3.5 -translate-x-1/2 rounded-full bg-gold" />
+    <span className="absolute bottom-0 left-1.5 h-3 w-3 rounded-full bg-gold" />
+    <span className="absolute bottom-0 right-1.5 h-3 w-3 rounded-full bg-gold" />
+  </div>
+
+  <div className="leading-none">
+    <div className="font-display text-xl font-extrabold tracking-wide text-ink md:text-2xl">
+      SPHINX<span className="text-gold">AI</span>
+    </div>
+    <div className="mt-1 hidden text-[9px] font-semibold uppercase tracking-[0.16em] text-muted-foreground sm:block">
+      No Missed Calls. No Missed Business.
+    </div>
+  </div>
+</Link>
 
         <nav className="hidden items-center gap-0.5 xl:gap-1 lg:flex">
           {links.map((l) => (
