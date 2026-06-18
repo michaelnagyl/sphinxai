@@ -1,6 +1,5 @@
 import { Link } from "@tanstack/react-router";
 import { Facebook, Instagram, PhoneCall, MessageCircle } from "lucide-react";
-import logoFullAsset from "@/assets/sphinx-logo-full.png.asset.json";
 
 export function Footer() {
   return (
@@ -10,7 +9,7 @@ export function Footer() {
           <div className="md:col-span-1">
             <div className="py-2">
               <img
-                src={logoFullAsset.url}
+                src="/sphinx-logo.png"
                 alt="SphinxAI — No Missed Calls. No Missed Business."
                 className="block h-auto w-[240px] max-w-full object-contain brightness-0 invert md:w-[260px]"
                 style={{ objectFit: "contain" }}
