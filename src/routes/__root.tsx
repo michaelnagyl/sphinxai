@@ -13,6 +13,10 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import faviconAsset from "../assets/sphinx-favicon-32.png.asset.json";
 import faviconLargeAsset from "../assets/sphinx-favicon-512.png.asset.json";
+import ogImageAsset from "../assets/og-image.png.asset.json";
+
+const SITE_URL = "https://sphinxai.lovable.app";
+const OG_IMAGE_URL = `${SITE_URL}${ogImageAsset.url}`;
 
 function NotFoundComponent() {
   return (
@@ -79,19 +83,22 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "SphinxAI — AI Voice Agents For Clinics & Businesses" },
-      { name: "description", content: "Human-like AI voice agents that answer calls, qualify leads, and book appointments 24/7 in Arabic and English." },
+      { title: "SphinxAI | AI Voice Agents for Calls, Leads & Appointments" },
+      { name: "description", content: "SphinxAI helps businesses answer calls instantly, qualify leads, book appointments, and automate customer communication in Arabic and English." },
       { name: "author", content: "SphinxAI" },
       { property: "og:site_name", content: "SphinxAI" },
-      { property: "og:title", content: "SphinxAI — AI Voice Agents For Clinics & Businesses" },
-      { property: "og:description", content: "Human-like AI voice agents that answer calls, qualify leads, and book appointments 24/7 in Arabic and English." },
+      { property: "og:title", content: "SphinxAI | AI Voice Agents for Calls, Leads & Appointments" },
+      { property: "og:description", content: "SphinxAI helps businesses answer calls instantly, qualify leads, book appointments, and automate customer communication in Arabic and English." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "SphinxAI — AI Voice Agents For Clinics & Businesses" },
-      { name: "twitter:description", content: "Human-like AI voice agents that answer calls, qualify leads, and book appointments 24/7 in Arabic and English." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4129a046-8eaf-493c-9b6c-cc9aeda3ad81/id-preview-2569cb82--7d0aab3a-b36a-43af-be15-f76a5ab3b1b5.lovable.app-1781056450205.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4129a046-8eaf-493c-9b6c-cc9aeda3ad81/id-preview-2569cb82--7d0aab3a-b36a-43af-be15-f76a5ab3b1b5.lovable.app-1781056450205.png" },
+      { property: "og:image", content: OG_IMAGE_URL },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:type", content: "image/png" },
+      { property: "og:image:alt", content: "SphinxAI — AI Voice Agents for Calls, Leads & Appointments" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "SphinxAI | AI Voice Agents for Calls, Leads & Appointments" },
+      { name: "twitter:description", content: "SphinxAI helps businesses answer calls instantly, qualify leads, book appointments, and automate customer communication in Arabic and English." },
+      { name: "twitter:image", content: OG_IMAGE_URL },
     ],
     links: [
       {
