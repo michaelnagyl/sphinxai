@@ -1,11 +1,13 @@
 import { PhoneFrame } from "./PhoneFrame";
+import demoVideo from "@/assets/sphinx-demo.mp4.asset.json";
+import demoPoster from "@/assets/demo-poster.jpg.asset.json";
 
 export function DemoVideo({ className = "" }: { className?: string }) {
   return (
     <PhoneFrame className={className}>
       <video
-        src="/sphinx-demo-video.mp4"
-        poster="/image-2276034329467581.jfif"
+        src={demoVideo.url}
+        poster={demoPoster.url}
         className="h-full w-full bg-black object-contain"
         playsInline
         controls
