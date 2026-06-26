@@ -11,8 +11,6 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
-import faviconAsset from "../assets/sphinx-favicon-32.png.asset.json";
-import faviconLargeAsset from "../assets/sphinx-favicon-512.png.asset.json";
 
 const SITE_URL = "https://www.sphinxai.net";
 const OG_IMAGE_URL = "https://www.sphinxai.net/og-image.png";
@@ -196,19 +194,25 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       {
         rel: "icon",
-        type: "image/png",
-        sizes: "32x32",
-        href: faviconAsset.url,
+        href: "/favicon.ico",
+        sizes: "any",
       },
       {
         rel: "icon",
         type: "image/png",
-        sizes: "512x512",
-        href: faviconLargeAsset.url,
+        sizes: "16x16",
+        href: "/favicon-16x16.png",
+      },
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "32x32",
+        href: "/favicon-32x32.png",
       },
       {
         rel: "apple-touch-icon",
-        href: faviconLargeAsset.url,
+        sizes: "180x180",
+        href: "/apple-touch-icon.png",
       },
       {
         rel: "manifest",
