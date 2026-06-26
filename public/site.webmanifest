@@ -1,0 +1,16 @@
+{
+  "name": "SphinxAI",
+  "short_name": "SphinxAI",
+  "description": "AI Voice Agents for Calls, Leads & Appointments",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B1020",
+  "theme_color": "#0B1020",
+  "icons": [
+    {
+      "src": "/sphinx-logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
