@@ -95,7 +95,26 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "SphinxAI helps businesses answer calls instantly, qualify leads, book appointments, and automate customer communication in Arabic and English.",
       },
-      { name: "author", content: "SphinxAI" },
+      {
+        name: "author",
+        content: "SphinxAI",
+      },
+      {
+        name: "application-name",
+        content: "SphinxAI",
+      },
+      {
+        name: "apple-mobile-web-app-title",
+        content: "SphinxAI",
+      },
+      {
+        name: "theme-color",
+        content: "#0B1020",
+      },
+      {
+        name: "msapplication-TileColor",
+        content: "#0B1020",
+      },
 
       {
         property: "og:site_name",
@@ -190,6 +209,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         rel: "apple-touch-icon",
         href: faviconLargeAsset.url,
+      },
+      {
+        rel: "manifest",
+        href: "/site.webmanifest",
       },
       {
         rel: "preconnect",
