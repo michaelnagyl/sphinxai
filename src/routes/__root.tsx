@@ -14,6 +14,11 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 
 const SITE_URL = "https://www.sphinxai.net";
 const OG_IMAGE_URL = "https://www.sphinxai.net/og-image.png";
+const ICON_VERSION = "v=60";
+
+function iconPath(path: string) {
+  return `${path}?${ICON_VERSION}`;
+}
 
 function NotFoundComponent() {
   return (
@@ -192,32 +197,46 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "canonical",
         href: SITE_URL,
       },
+
       {
         rel: "icon",
-        href: "/favicon.ico",
-        sizes: "any",
+        type: "image/png",
+        sizes: "512x512",
+        href: iconPath("/android-chrome-512x512.png"),
       },
       {
         rel: "icon",
         type: "image/png",
-        sizes: "16x16",
-        href: "/favicon-16x16.png",
+        sizes: "192x192",
+        href: iconPath("/android-chrome-192x192.png"),
+      },
+      {
+        rel: "apple-touch-icon",
+        sizes: "180x180",
+        href: iconPath("/apple-touch-icon.png"),
       },
       {
         rel: "icon",
         type: "image/png",
         sizes: "32x32",
-        href: "/favicon-32x32.png",
+        href: iconPath("/favicon-32x32.png"),
       },
       {
-        rel: "apple-touch-icon",
-        sizes: "180x180",
-        href: "/apple-touch-icon.png",
+        rel: "icon",
+        type: "image/png",
+        sizes: "16x16",
+        href: iconPath("/favicon-16x16.png"),
+      },
+      {
+        rel: "icon",
+        href: iconPath("/favicon.ico"),
+        sizes: "any",
       },
       {
         rel: "manifest",
-        href: "/site.webmanifest",
+        href: iconPath("/site.webmanifest"),
       },
+
       {
         rel: "preconnect",
         href: "https://fonts.googleapis.com",
@@ -243,7 +262,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               "@type": "Organization",
               name: "SphinxAI",
               url: SITE_URL,
-              logo: `${SITE_URL}/sphinx-logo.png`,
+              logo: `${SITE_URL}/android-chrome-512x512.png`,
               description:
                 "AI voice agents for clinics, real estate, customer service, and sales teams in Egypt and MENA.",
             },
